@@ -16,7 +16,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.frameworks = 'Foundation'
   s.libraries = 'c++', 'z'
   s.requires_arc = true
-  s.xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
+  s.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
   s.default_subspecs = 'CrashMonitor'
 
   s.subspec 'CrashMonitor' do |crashmonitor|
@@ -32,11 +32,6 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
                                       'CrashMonitor/Recording/GrowingCrashReportFields.h',
                                       'CrashMonitor/Recording/Monitors/GrowingCrashMonitorType.h',
                                       'CrashMonitor/Reporting/Filters/GrowingCrashReportFilter.h'
-
-      recording.subspec 'Tools' do |tools|
-        tools.source_files = 'CrashMonitor/Recording/Tools/*.h'
-        tools.compiler_flags = '-fno-optimize-sibling-calls'
-      end
     end
 
     crashmonitor.subspec 'Reporting' do |reporting|
