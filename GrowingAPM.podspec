@@ -11,16 +11,19 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.source           = { :git => 'https://github.com/growingio/growingio-sdk-ios-performance.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target =  '10.8'
-  s.tvos.deployment_target =  '9.0'
-  s.watchos.deployment_target =  '2.0'
   s.frameworks = 'Foundation'
   s.libraries = 'c++', 'z'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
-  s.default_subspecs = 'CrashMonitor'
+  
+  s.subspec 'Core' do |core|
+    core.source_files = 'Core/**/*.{h,m,mm,c,cpp}'
+  end
 
-  s.subspec 'CrashMonitor' do |crashmonitor|
-    crashmonitor.subspec 'Recording' do |recording|
+  s.subspec 'CrashMonitor' do |monitor|
+    monitor.dependency 'GrowingAPM/Core'
+
+    monitor.subspec 'Recording' do |recording|
       recording.compiler_flags = '-fno-optimize-sibling-calls'
       recording.source_files   = 'CrashMonitor/Recording/**/*.{h,m,mm,c,cpp}',
                                  'CrashMonitor/llvm/**/*.{h,m,mm,c,cpp}',
@@ -34,7 +37,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
                                       'CrashMonitor/Reporting/Filters/GrowingCrashReportFilter.h'
     end
 
-    crashmonitor.subspec 'Reporting' do |reporting|
+    monitor.subspec 'Reporting' do |reporting|
       reporting.dependency 'GrowingAPM/CrashMonitor/Recording'
 
       reporting.subspec 'Filters' do |filters|
@@ -47,10 +50,28 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
       end
     end
 
-    crashmonitor.subspec 'Installations' do |installations|
+    monitor.subspec 'Installations' do |installations|
       installations.dependency 'GrowingAPM/CrashMonitor/Recording'
       installations.dependency 'GrowingAPM/CrashMonitor/Reporting'
       installations.source_files = 'CrashMonitor/Installations/**/*.{h,m,mm,c,cpp}'
     end
+  end
+  
+  s.subspec 'NetworkMonitor' do |monitor|
+    monitor.dependency 'GrowingAPM/Core'
+    
+    monitor.source_files = 'NetworkMonitor/**/*.{h,m,mm,c,cpp}'
+  end
+  
+  s.subspec 'LaunchMonitor' do |monitor|
+    monitor.dependency 'GrowingAPM/Core'
+    
+    monitor.source_files = 'LaunchMonitor/**/*.{h,m,mm,c,cpp}'
+  end
+  
+  s.subspec 'UIMonitor' do |monitor|
+    monitor.dependency 'GrowingAPM/Core'
+    
+    monitor.source_files = 'UIMonitor/**/*.{h,m,mm,c,cpp}'
   end
 end
