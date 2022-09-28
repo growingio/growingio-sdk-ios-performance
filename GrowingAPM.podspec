@@ -17,6 +17,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
   
   s.subspec 'Core' do |core|
+    core.dependency 'GrowingUtils/AutotrackerCore'
     core.source_files = 'Core/**/*.{h,m,mm,c,cpp}'
   end
 
@@ -59,19 +60,16 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   
   s.subspec 'NetworkMonitor' do |monitor|
     monitor.dependency 'GrowingAPM/Core'
-    
     monitor.source_files = 'NetworkMonitor/**/*.{h,m,mm,c,cpp}'
   end
   
   s.subspec 'LaunchMonitor' do |monitor|
     monitor.dependency 'GrowingAPM/Core'
-    
     monitor.source_files = 'LaunchMonitor/**/*.{h,m,mm,c,cpp}'
   end
   
   s.subspec 'UIMonitor' do |monitor|
     monitor.dependency 'GrowingAPM/Core'
-    
     monitor.source_files = 'UIMonitor/**/*.{h,m,mm,c,cpp}'
   end
 end
