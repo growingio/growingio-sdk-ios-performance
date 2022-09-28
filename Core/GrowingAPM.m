@@ -19,13 +19,17 @@
 
 #import "GrowingAPM.h"
 #import "GrowingAPM+Private.h"
-#import "GrowingAPMConfig.h"
 #import "GrowingCrashInstallation.h"
+#import "GrowingViewControllerLifecycle.h"
+#import "GrowingAppLifecycle.h"
 
 @interface GrowingAPM ()
 
 @property (nonatomic, copy) GrowingAPMConfig *config;
 @property (nonatomic, strong) GrowingCrashInstallation *crashInstallation;
+@property (nonatomic, strong) id <GrowingAPMMonitor> launchMonitor;
+@property (nonatomic, strong) id <GrowingAPMMonitor> pageLoadMonitor;
+@property (nonatomic, strong) id <GrowingAPMMonitor> networkMonitor;
 
 @end
 
@@ -45,19 +49,32 @@
     GrowingAPM *apm = GrowingAPM.sharedInstance;
     apm.config = config;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [apm.crashInstallation sendAllReportsWithCompletion:nil];
-    });
+    if (config.monitors & GrowingAPMMonitorsLaunch) {
+        apm.launchMonitor = [[GrowingAPMLaunchMonitor alloc] init];
+        [apm.launchMonitor startMonitor];
+    }
+    
+    if (config.monitors & GrowingAPMMonitorsUserInterface) {
+        apm.pageLoadMonitor = [[GrowingAPMUIMonitor alloc] init];
+        [apm.pageLoadMonitor startMonitor];
+    }
+    
+    if (config.monitors & GrowingAPMMonitorsCrash) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [apm.crashInstallation sendAllReportsWithCompletion:nil];
+        });
+    }
+    
+    if (config.monitors & GrowingAPMMonitorsNetwork) {
+        
+    }
 }
 
 + (void)swizzle:(GrowingAPMMonitors)monitors {
     GrowingAPM *apm = GrowingAPM.sharedInstance;
-    if (monitors & GrowingAPMMonitorsLaunch) {
-        
-    }
-    
-    if (monitors & GrowingAPMMonitorsUserInterface) {
-        
+    if (monitors & GrowingAPMMonitorsLaunch || monitors & GrowingAPMMonitorsUserInterface) {
+        [GrowingViewControllerLifecycle setup];
+        [GrowingAppLifecycle setup];
     }
     
     if (monitors & GrowingAPMMonitorsCrash) {

@@ -18,19 +18,13 @@
 //  limitations under the License.
 
 #import <Foundation/Foundation.h>
+#import "GrowingAPMConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_OPTIONS(NSUInteger, GrowingAPMMonitors) {
-    GrowingAPMMonitorsLaunch = 1 << 0,
-    GrowingAPMMonitorsUserInterface = 1 << 1,
-    GrowingAPMMonitorsCrash = 1 << 2,
-    GrowingAPMMonitorsNetwork = 1 << 3
-};
-
-@class GrowingAPMConfig, GrowingCrashInstallation;
-
 @interface GrowingAPM : NSObject
+
++ (instancetype)sharedInstance;
 
 + (void)startWithConfig:(GrowingAPMConfig *)config;
 

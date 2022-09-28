@@ -1,8 +1,8 @@
 //
-//  GrowingAPMConfig.m
+//  GrowingAPMUIMonitor.h
 //  GrowingAnalytics
 //
-//  Created by YoloMao on 2022/9/26.
+//  Created by YoloMao on 2022/9/27.
 //  Copyright (C) 2022 Beijing Yishu Technology Co., Ltd.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +17,16 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import "GrowingAPMConfig.h"
+#import "GrowingAPMMonitor.h"
 
-@implementation GrowingAPMConfig
+NS_ASSUME_NONNULL_BEGIN
 
-+ (instancetype)config {
-    return [[GrowingAPMConfig alloc] init];
-}
+typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration);
 
-- (id)copyWithZone:(NSZone *)zone {
-    GrowingAPMConfig *config = [[[self class] allocWithZone:zone] init];
-    config->_monitors = _monitors;
-    return config;
-}
+@interface GrowingAPMUIMonitor : NSObject <GrowingAPMMonitor>
+
+@property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

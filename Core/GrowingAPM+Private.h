@@ -18,6 +18,28 @@
 //  limitations under the License.
 
 #import "GrowingAPM.h"
+#import "GrowingAPMMonitor.h"
+
+#if __has_include("GrowingAPMLaunchMonitor.h")
+#import "GrowingAPMLaunchMonitor.h"
+#ifndef GROWING_APM_LAUNCH
+#define GROWING_APM_LAUNCH
+#endif
+#endif
+
+#if __has_include("GrowingAPMUIMonitor.h")
+#import "GrowingAPMUIMonitor.h"
+#ifndef GROWING_APM_UI
+#define GROWING_APM_UI
+#endif
+#endif
+
+#if __has_include("GrowingAPMNetworkMonitor.h")
+#import "GrowingAPMNetworkMonitor.h"
+#ifndef GROWING_APM_NETWORK
+#define GROWING_APM_NETWORK
+#endif
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GrowingAPM (Private)
 
 @property (nonatomic, strong) GrowingCrashInstallation *crashInstallation;
+@property (nonatomic, strong) id <GrowingAPMMonitor> launchMonitor;
+@property (nonatomic, strong) id <GrowingAPMMonitor> pageLoadMonitor;
+@property (nonatomic, strong) id <GrowingAPMMonitor> networkMonitor;
 
 @end
 

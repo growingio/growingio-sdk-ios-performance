@@ -21,7 +21,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_OPTIONS(NSUInteger, GrowingAPMMonitors) {
+    GrowingAPMMonitorsLaunch = 1 << 0,
+    GrowingAPMMonitorsUserInterface = 1 << 1,
+    GrowingAPMMonitorsCrash = 1 << 2,
+    GrowingAPMMonitorsNetwork = 1 << 3
+};
+
 @interface GrowingAPMConfig : NSObject <NSCopying>
+
+@property (nonatomic, assign) GrowingAPMMonitors monitors;
 
 + (instancetype)config;
 
