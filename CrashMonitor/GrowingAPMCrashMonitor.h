@@ -1,8 +1,8 @@
 //
-//  GrowingAPMLaunchMonitor.h
+//  GrowingAPMCrashMonitor.h
 //  GrowingAnalytics
 //
-//  Created by YoloMao on 2022/9/27.
+//  Created by YoloMao on 2022/9/28.
 //  Copyright (C) 2022 Beijing Yishu Technology Co., Ltd.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,12 +21,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^GrowingAPMLaunchMonitorBlock)(double rebootTime, BOOL isWarm);
+typedef void(^GrowingAPMCrashMonitorBlock)(NSArray *filteredReports, BOOL completed, NSError *error);
 
-@interface GrowingAPMLaunchMonitor : NSObject <GrowingAPMMonitor>
+@interface GrowingAPMCrashMonitor : NSObject <GrowingAPMMonitor>
 
-@property (nonatomic, copy) GrowingAPMLaunchMonitorBlock monitorBlock;
-@property (nonatomic, assign) double coldRebootBeginTime;
+@property (nonatomic, copy) GrowingAPMCrashMonitorBlock monitorBlock;
 
 @end
 

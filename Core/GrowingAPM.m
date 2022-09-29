@@ -19,17 +19,33 @@
 
 #import "GrowingAPM.h"
 #import "GrowingAPM+Private.h"
-#import "GrowingCrashInstallation.h"
 #import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
+
+#ifdef GROWING_APM_LAUNCH
+#import "GrowingTimeUtil.h"
+#endif
+
+#ifdef GROWING_APM_CRASH
+#import "GrowingCrashInstallation.h"
+#import <objc/runtime.h>
+#endif
 
 @interface GrowingAPM ()
 
 @property (nonatomic, copy) GrowingAPMConfig *config;
-@property (nonatomic, strong) GrowingCrashInstallation *crashInstallation;
-@property (nonatomic, strong) id <GrowingAPMMonitor> launchMonitor;
-@property (nonatomic, strong) id <GrowingAPMMonitor> pageLoadMonitor;
-@property (nonatomic, strong) id <GrowingAPMMonitor> networkMonitor;
+@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> crashMonitor;
+@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> launchMonitor;
+@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> pageLoadMonitor;
+@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> networkMonitor;
+
+#ifdef GROWING_APM_LAUNCH
+@property (nonatomic, assign) double coldRebootBeginTime;
+#endif
+
+#ifdef GROWING_APM_CRASH
+@property (class, nonatomic, weak) GrowingCrashInstallation *crashInstallation;
+#endif
 
 @end
 
@@ -40,45 +56,70 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[GrowingAPM alloc] init];
-        [sharedInstance prepare];
     });
     return sharedInstance;
 }
 
 + (void)startWithConfig:(GrowingAPMConfig *)config {
+    if (![NSThread isMainThread]) {
+        @throw [NSException exceptionWithName:@"初始化异常" reason:@"请在主线程中调用 +[GrowingAPM startWithConfig:] 进行初始化" userInfo:nil];
+        return;
+    }
+    
     GrowingAPM *apm = GrowingAPM.sharedInstance;
+    if (apm.config) {
+        return;
+    }
     apm.config = config;
     
     if (config.monitors & GrowingAPMMonitorsLaunch) {
-        apm.launchMonitor = [[GrowingAPMLaunchMonitor alloc] init];
-        [apm.launchMonitor startMonitor];
+#ifdef GROWING_APM_LAUNCH
+        GrowingAPMLaunchMonitor *monitor = [[GrowingAPMLaunchMonitor alloc] init];
+        monitor.coldRebootBeginTime = apm.coldRebootBeginTime;
+        [monitor startMonitor];
+        apm.launchMonitor = monitor;
+#endif
     }
     
     if (config.monitors & GrowingAPMMonitorsUserInterface) {
-        apm.pageLoadMonitor = [[GrowingAPMUIMonitor alloc] init];
-        [apm.pageLoadMonitor startMonitor];
+#ifdef GROWING_APM_UI
+        GrowingAPMUIMonitor *monitor = [[GrowingAPMUIMonitor alloc] init];
+        [monitor startMonitor];
+        apm.pageLoadMonitor = monitor;
+#endif
     }
     
     if (config.monitors & GrowingAPMMonitorsCrash) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [apm.crashInstallation sendAllReportsWithCompletion:nil];
-        });
+#ifdef GROWING_APM_CRASH
+        GrowingAPMCrashMonitor *monitor = [[GrowingAPMCrashMonitor alloc] init];
+        [monitor startMonitor];
+        apm.crashMonitor = monitor;
+#endif
     }
     
     if (config.monitors & GrowingAPMMonitorsNetwork) {
+#ifdef GROWING_APM_NETWORK
         
+#endif
     }
 }
 
 + (void)swizzle:(GrowingAPMMonitors)monitors {
-    GrowingAPM *apm = GrowingAPM.sharedInstance;
     if (monitors & GrowingAPMMonitorsLaunch || monitors & GrowingAPMMonitorsUserInterface) {
         [GrowingViewControllerLifecycle setup];
         [GrowingAppLifecycle setup];
     }
     
+    if (monitors & GrowingAPMMonitorsLaunch) {
+#ifdef GROWING_APM_LAUNCH
+        GrowingAPM.sharedInstance.coldRebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
+#endif
+    }
+    
     if (monitors & GrowingAPMMonitorsCrash) {
-        [apm.crashInstallation install];
+#ifdef GROWING_APM_CRASH
+        [GrowingAPM.crashInstallation install];
+#endif
     }
     
     if (monitors & GrowingAPMMonitorsNetwork) {
@@ -86,8 +127,16 @@
     }
 }
 
-- (void)prepare {
-    // override by category
+#ifdef GROWING_APM_CRASH
+#pragma mark - Getter & Setter
+
++ (GrowingCrashInstallation *)crashInstallation {
+    return objc_getAssociatedObject(self, _cmd);
 }
+
++ (void)setCrashInstallation:(GrowingCrashInstallation *)crashInstallation {
+    objc_setAssociatedObject(self, @selector(crashInstallation), crashInstallation, OBJC_ASSOCIATION_ASSIGN);
+}
+#endif
 
 @end

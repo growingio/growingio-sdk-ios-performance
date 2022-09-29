@@ -23,6 +23,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
 
   s.subspec 'CrashMonitor' do |monitor|
     monitor.dependency 'GrowingAPM/Core'
+    monitor.source_files = 'CrashMonitor/GrowingAPMCrashMonitor.{h,m}'
 
     monitor.subspec 'Recording' do |recording|
       recording.compiler_flags = '-fno-optimize-sibling-calls'

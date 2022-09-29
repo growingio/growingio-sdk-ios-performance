@@ -24,7 +24,6 @@
 
 @interface GrowingAPMLaunchMonitor () <GrowingViewControllerLifecycleDelegate, GrowingAppLifecycleDelegate>
 
-@property (nonatomic, assign) double rebootBeginTime;
 @property (nonatomic, assign) double firstVCDidAppearTime;
 
 @end
@@ -34,7 +33,6 @@
 #pragma mark - Monitor
 
 - (void)startMonitor {
-    self.rebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
     [GrowingViewControllerLifecycle.sharedInstance addViewControllerLifecycleDelegate:self];
     [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
 }
@@ -47,17 +45,18 @@
                          viewWillAppearTime:(double)viewWillAppearTime
                           viewDidAppearTime:(double)viewDidAppearTime {
     if (self.firstVCDidAppearTime > 0) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [GrowingViewControllerLifecycle.sharedInstance removeViewControllerLifecycleDelegate:self];
-        });
         return;
     }
     
     // cold reboot
     self.firstVCDidAppearTime = viewDidAppearTime;
     if (self.monitorBlock) {
-        self.monitorBlock(viewDidAppearTime - self.rebootBeginTime, NO);
+        self.monitorBlock(viewDidAppearTime - self.coldRebootBeginTime, NO);
     }
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [GrowingViewControllerLifecycle.sharedInstance removeViewControllerLifecycleDelegate:self];
+    });
 }
 
 #pragma mark - GrowingAppLifecycleDelegate
@@ -65,6 +64,11 @@
 - (void)applicationDidBecomeActive {
     GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
     if (appLifecycle.appDidEnterBackgroundTime == 0) {
+        // 首次启动
+        return;
+    }
+    if (appLifecycle.appWillEnterForegroundTime < appLifecycle.appWillResignActiveTime) {
+        // 下拉通知或进入后台应用列表
         return;
     }
     

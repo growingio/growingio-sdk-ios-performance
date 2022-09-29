@@ -1,8 +1,8 @@
 //
-//  GrowingAPMLaunchMonitor.h
+//  GrowingAPMCrashMonitor.m
 //  GrowingAnalytics
 //
-//  Created by YoloMao on 2022/9/27.
+//  Created by YoloMao on 2022/9/28.
 //  Copyright (C) 2022 Beijing Yishu Technology Co., Ltd.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,17 +17,23 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import "GrowingAPMMonitor.h"
+#import "GrowingAPMCrashMonitor.h"
+#import "GrowingAPM+Private.h"
+#import "GrowingCrashInstallation.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation GrowingAPMCrashMonitor
 
-typedef void(^GrowingAPMLaunchMonitorBlock)(double rebootTime, BOOL isWarm);
+#pragma mark - Monitor
 
-@interface GrowingAPMLaunchMonitor : NSObject <GrowingAPMMonitor>
-
-@property (nonatomic, copy) GrowingAPMLaunchMonitorBlock monitorBlock;
-@property (nonatomic, assign) double coldRebootBeginTime;
+- (void)startMonitor {
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [GrowingAPM.crashInstallation sendAllReportsWithCompletion:^(NSArray *filteredReports, BOOL completed, NSError *error) {
+            if (weakSelf.monitorBlock) {
+                weakSelf.monitorBlock(filteredReports, completed, error);
+            }
+        }];
+    });
+}
 
 @end
-
-NS_ASSUME_NONNULL_END

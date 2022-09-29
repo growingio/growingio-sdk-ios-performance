@@ -20,22 +20,30 @@
 #import "GrowingAPM.h"
 #import "GrowingAPMMonitor.h"
 
-#if __has_include("GrowingAPMLaunchMonitor.h")
-#import "GrowingAPMLaunchMonitor.h"
+#if __has_include(<GrowingAPM/GrowingAPMLaunchMonitor.h>)
+#import <GrowingAPM/GrowingAPMLaunchMonitor.h>
 #ifndef GROWING_APM_LAUNCH
 #define GROWING_APM_LAUNCH
 #endif
 #endif
 
-#if __has_include("GrowingAPMUIMonitor.h")
-#import "GrowingAPMUIMonitor.h"
+#if __has_include(<GrowingAPM/GrowingAPMUIMonitor.h>)
+#import <GrowingAPM/GrowingAPMUIMonitor.h>
 #ifndef GROWING_APM_UI
 #define GROWING_APM_UI
 #endif
 #endif
 
-#if __has_include("GrowingAPMNetworkMonitor.h")
-#import "GrowingAPMNetworkMonitor.h"
+#if __has_include(<GrowingAPM/GrowingAPMCrashMonitor.h>)
+#import <GrowingAPM/GrowingAPMCrashMonitor.h>
+@class GrowingCrashInstallation;
+#ifndef GROWING_APM_CRASH
+#define GROWING_APM_CRASH
+#endif
+#endif
+
+#if __has_include(<GrowingAPM/GrowingAPMNetworkMonitor.h>)
+#import <GrowingAPM/GrowingAPMNetworkMonitor.h>
 #ifndef GROWING_APM_NETWORK
 #define GROWING_APM_NETWORK
 #endif
@@ -43,14 +51,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class GrowingCrashInstallation;
-
 @interface GrowingAPM (Private)
 
-@property (nonatomic, strong) GrowingCrashInstallation *crashInstallation;
-@property (nonatomic, strong) id <GrowingAPMMonitor> launchMonitor;
-@property (nonatomic, strong) id <GrowingAPMMonitor> pageLoadMonitor;
-@property (nonatomic, strong) id <GrowingAPMMonitor> networkMonitor;
+@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> crashMonitor;
+@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> launchMonitor;
+@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> pageLoadMonitor;
+@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> networkMonitor;
+
+#ifdef GROWING_APM_CRASH
+@property (class, nonatomic, weak) GrowingCrashInstallation *crashInstallation;
+#endif
 
 @end
 

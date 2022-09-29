@@ -19,10 +19,12 @@
 
 #import "GrowingAPMUIMonitor.h"
 #import "GrowingViewControllerLifecycle.h"
+#import "GrowingAppLifecycle.h"
 
-@interface GrowingAPMUIMonitor () <GrowingViewControllerLifecycleDelegate>
+@interface GrowingAPMUIMonitor () <GrowingViewControllerLifecycleDelegate, GrowingAppLifecycleDelegate>
 
 @property (nonatomic, strong) NSMutableArray *ignoredPrivateControllers;
+@property (nonatomic, copy) NSString *lastPageName;
 
 @end
 
@@ -32,6 +34,7 @@
 
 - (void)startMonitor {
     [GrowingViewControllerLifecycle.sharedInstance addViewControllerLifecycleDelegate:self];
+    [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
 }
 
 #pragma mark - GrowingViewControllerLifecycleDelegate
@@ -49,9 +52,30 @@
         return;
     }
     
+    self.lastPageName = pageName;
     if (self.monitorBlock) {
         double loadDuration = loadViewTime > 0 ? (viewDidAppearTime - loadViewTime) : (viewDidAppearTime - viewDidLoadTime);
         self.monitorBlock(pageName, loadDuration);
+    }
+}
+
+#pragma mark - GrowingAppLifecycleDelegate
+
+- (void)applicationDidBecomeActive {
+    GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
+    if (appLifecycle.appDidEnterBackgroundTime == 0) {
+        // 首次启动
+        return;
+    }
+    if (appLifecycle.appWillEnterForegroundTime < appLifecycle.appWillResignActiveTime) {
+        // 下拉通知或进入后台应用列表
+        return;
+    }
+     
+    // warm reboot
+    double duration = appLifecycle.appDidBecomeActiveTime - appLifecycle.appWillEnterForegroundTime;
+    if (self.monitorBlock) {
+        self.monitorBlock(self.lastPageName, duration);
     }
 }
 
