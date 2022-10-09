@@ -9,12 +9,10 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.license          = { :type => 'Apache2.0', :file => 'LICENSE' }
   s.author           = { 'GrowingIO' => 'support@growingio.com' }
   s.source           = { :git => 'https://github.com/growingio/growingio-sdk-ios-performance.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target =  '10.8'
+  s.ios.deployment_target = '9.0'
   s.frameworks = 'Foundation'
-  s.libraries = 'c++', 'z'
   s.requires_arc = true
-  s.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
+  s.pod_target_xcconfig = { "OTHER_LDFLAGS" => '$(inherited) -ObjC'}
   
   s.subspec 'Core' do |core|
     core.dependency 'GrowingUtils/AutotrackerCore'
@@ -22,55 +20,19 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   end
 
   s.subspec 'CrashMonitor' do |monitor|
+    monitor.vendored_framework = "CrashMonitor/GrowingAPMCrashMonitor.xcframework"
+    monitor.libraries = 'c++', 'z'
+    monitor.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
     monitor.dependency 'GrowingAPM/Core'
-    monitor.source_files = 'CrashMonitor/GrowingAPMCrashMonitor.{h,m}'
-
-    monitor.subspec 'Recording' do |recording|
-      recording.compiler_flags = '-fno-optimize-sibling-calls'
-      recording.source_files   = 'CrashMonitor/Recording/**/*.{h,m,mm,c,cpp}',
-                                 'CrashMonitor/llvm/**/*.{h,m,mm,c,cpp}',
-                                 'CrashMonitor/swift/**/*.{h,m,mm,c,cpp,def}',
-                                 'CrashMonitor/Reporting/Filters/GrowingCrashReportFilter.h'
-      recording.public_header_files = 'CrashMonitor/Recording/GrowingCrash.h',
-                                      'CrashMonitor/Recording/GrowingCrashC.h',
-                                      'CrashMonitor/Recording/GrowingCrashReportWriter.h',
-                                      'CrashMonitor/Recording/GrowingCrashReportFields.h',
-                                      'CrashMonitor/Recording/Monitors/GrowingCrashMonitorType.h',
-                                      'CrashMonitor/Reporting/Filters/GrowingCrashReportFilter.h'
-    end
-
-    monitor.subspec 'Reporting' do |reporting|
-      reporting.dependency 'GrowingAPM/CrashMonitor/Recording'
-
-      reporting.subspec 'Filters' do |filters|
-        filters.source_files = 'CrashMonitor/Reporting/Filters/**/*.{h,m,mm,c,cpp}'
-        filters.public_header_files = 'CrashMonitor/Reporting/Filters/*.h'
-      end
-
-      reporting.subspec 'Tools' do |tools|
-        tools.source_files = 'CrashMonitor/Reporting/Tools/**/*.{h,m,mm,c,cpp}'
-      end
-    end
-
-    monitor.subspec 'Installations' do |installations|
-      installations.dependency 'GrowingAPM/CrashMonitor/Recording'
-      installations.dependency 'GrowingAPM/CrashMonitor/Reporting'
-      installations.source_files = 'CrashMonitor/Installations/**/*.{h,m,mm,c,cpp}'
-    end
   end
-  
-  s.subspec 'NetworkMonitor' do |monitor|
-    monitor.dependency 'GrowingAPM/Core'
-    monitor.source_files = 'NetworkMonitor/**/*.{h,m,mm,c,cpp}'
-  end
-  
+
   s.subspec 'LaunchMonitor' do |monitor|
+    monitor.vendored_framework = "LaunchMonitor/GrowingAPMLaunchMonitor.xcframework"
     monitor.dependency 'GrowingAPM/Core'
-    monitor.source_files = 'LaunchMonitor/**/*.{h,m,mm,c,cpp}'
   end
-  
+
   s.subspec 'UIMonitor' do |monitor|
+    monitor.vendored_framework = "UIMonitor/GrowingAPMUIMonitor.xcframework"
     monitor.dependency 'GrowingAPM/Core'
-    monitor.source_files = 'UIMonitor/**/*.{h,m,mm,c,cpp}'
   end
 end

@@ -20,30 +20,26 @@
 #import "GrowingAPM.h"
 #import "GrowingAPMMonitor.h"
 
-#if __has_include(<GrowingAPM/GrowingAPMLaunchMonitor.h>)
-#import <GrowingAPM/GrowingAPMLaunchMonitor.h>
+#if __has_include(<GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>)
 #ifndef GROWING_APM_LAUNCH
 #define GROWING_APM_LAUNCH
 #endif
 #endif
 
-#if __has_include(<GrowingAPM/GrowingAPMUIMonitor.h>)
-#import <GrowingAPM/GrowingAPMUIMonitor.h>
+#if __has_include(<GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>)
 #ifndef GROWING_APM_UI
 #define GROWING_APM_UI
 #endif
 #endif
 
-#if __has_include(<GrowingAPM/GrowingAPMCrashMonitor.h>)
-#import <GrowingAPM/GrowingAPMCrashMonitor.h>
+#if __has_include(<GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>)
 @class GrowingCrashInstallation;
 #ifndef GROWING_APM_CRASH
 #define GROWING_APM_CRASH
 #endif
 #endif
 
-#if __has_include(<GrowingAPM/GrowingAPMNetworkMonitor.h>)
-#import <GrowingAPM/GrowingAPMNetworkMonitor.h>
+#if __has_include(<GrowingAPMNetworkMonitor/GrowingAPMNetworkMonitor.h>)
 #ifndef GROWING_APM_NETWORK
 #define GROWING_APM_NETWORK
 #endif

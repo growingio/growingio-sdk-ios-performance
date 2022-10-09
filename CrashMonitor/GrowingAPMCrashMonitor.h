@@ -17,6 +17,18 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
+#import "GrowingCrash.h"
+#import "GrowingCrashC.h"
+#import "GrowingCrashCString.h"
+#import "GrowingCrashInstallation.h"
+#import "GrowingCrashInstallation+Private.h"
+#import "GrowingCrashMonitorType.h"
+#import "GrowingCrashReportFilterAppleFmt.h"
+#import "GrowingCrashReportFilterBasic.h"
+#import "GrowingCrashReportFields.h"
+#import "GrowingCrashReportFilter.h"
+#import "GrowingCrashReportWriter.h"
+
 #import "GrowingAPMMonitor.h"
 
 NS_ASSUME_NONNULL_BEGIN

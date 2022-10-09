@@ -1,0 +1,2312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		349DA40D28F26FBE00C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; };
+		349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */; };
+		349DA42728F26FD700C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; };
+		349DA42C28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */; };
+		349DA43D28F27ACB00C4281F /* GrowingAPMUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 349DA43B28F27ACA00C4281F /* GrowingAPMUIMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		349DA43E28F27ACB00C4281F /* GrowingAPMUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA43C28F27ACB00C4281F /* GrowingAPMUIMonitor.m */; };
+		349DA44128F27AED00C4281F /* GrowingAPMLaunchMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA43F28F27AED00C4281F /* GrowingAPMLaunchMonitor.m */; };
+		349DA44228F27AED00C4281F /* GrowingAPMLaunchMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 349DA44028F27AED00C4281F /* GrowingAPMLaunchMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
+		349DA44428F27B1700C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
+		349DA44628F27B6B00C4281F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA44528F27B6B00C4281F /* UIKit.framework */; };
+		349DA44728F27B7300C4281F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9428F127E5005DF784 /* Foundation.framework */; };
+		349DA44828F27C7E00C4281F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA44528F27B6B00C4281F /* UIKit.framework */; };
+		349DA44928F27C8700C4281F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9428F127E5005DF784 /* Foundation.framework */; };
+		349DA44A28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; platformFilter = ios; };
+		349DA44B28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		349DA44F28F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; platformFilter = ios; };
+		349DA45028F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		349DA45328F29AF400C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; platformFilter = ios; };
+		349DA45428F29AF400C4281F /* GrowingAPMUIMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		349DA45A28F29C7700C4281F /* GrowingAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27DFA28F158F4005DF784 /* GrowingAPM.m */; };
+		349DA45B28F29C7B00C4281F /* GrowingAPMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */; };
+		349DA46528F2A1BB00C4281F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA45728F29C0700C4281F /* libc++.tbd */; };
+		349DA46628F2A1C100C4281F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA45828F29C1B00C4281F /* libz.tbd */; };
+		34E27CA328F1556C005DF784 /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; };
+		34E27CA828F1556C005DF784 /* GrowingAPMCrashMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CA728F1556C005DF784 /* GrowingAPMCrashMonitorTests.m */; };
+		34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB428F155AE005DF784 /* Container+DeepSearch.m */; };
+		34E27D5A28F155AF005DF784 /* Container+DeepSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB528F155AE005DF784 /* Container+DeepSearch.h */; };
+		34E27D5B28F155AF005DF784 /* GrowingCrashVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB628F155AE005DF784 /* GrowingCrashVarArgs.h */; };
+		34E27D5C28F155AF005DF784 /* GrowingCrashReportFilterBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB728F155AE005DF784 /* GrowingCrashReportFilterBasic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D5D28F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB828F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.m */; };
+		34E27D5E28F155AF005DF784 /* GrowingCrashReportFilterBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB928F155AE005DF784 /* GrowingCrashReportFilterBasic.m */; };
+		34E27D5F28F155AF005DF784 /* GrowingCrashReportFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBA28F155AE005DF784 /* GrowingCrashReportFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D6028F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBB28F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D6128F155AF005DF784 /* GrowingCrashCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBD28F155AE005DF784 /* GrowingCrashCString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D6228F155AF005DF784 /* GrowingCrashCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CBE28F155AE005DF784 /* GrowingCrashCString.m */; };
+		34E27D6328F155AF005DF784 /* GrowingAPMCrashMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CBF28F155AE005DF784 /* GrowingAPMCrashMonitor.m */; };
+		34E27D6428F155AF005DF784 /* GrowingCrashMonitor_AppState.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CC228F155AE005DF784 /* GrowingCrashMonitor_AppState.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6528F155AF005DF784 /* GrowingCrashMonitor_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CC328F155AE005DF784 /* GrowingCrashMonitor_Signal.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6628F155AF005DF784 /* GrowingCrashMonitor_CPPException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CC428F155AE005DF784 /* GrowingCrashMonitor_CPPException.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6728F155AF005DF784 /* GrowingCrashMonitor_System.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CC528F155AE005DF784 /* GrowingCrashMonitor_System.h */; };
+		34E27D6828F155AF005DF784 /* GrowingCrashMonitorType.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CC628F155AE005DF784 /* GrowingCrashMonitorType.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6928F155AF005DF784 /* GrowingCrashMonitor.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CC728F155AE005DF784 /* GrowingCrashMonitor.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6A28F155AF005DF784 /* GrowingCrashMonitor_Zombie.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CC828F155AE005DF784 /* GrowingCrashMonitor_Zombie.h */; };
+		34E27D6B28F155AF005DF784 /* GrowingCrashMonitor_MachException.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CC928F155AE005DF784 /* GrowingCrashMonitor_MachException.h */; };
+		34E27D6C28F155AF005DF784 /* GrowingCrashMonitor_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCA28F155AE005DF784 /* GrowingCrashMonitor_User.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6D28F155AF005DF784 /* GrowingCrashMonitor_Deadlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCB28F155AE005DF784 /* GrowingCrashMonitor_Deadlock.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6E28F155AF005DF784 /* GrowingCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCC28F155AE005DF784 /* GrowingCrashMonitor_NSException.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D6F28F155AF005DF784 /* GrowingCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CCD28F155AE005DF784 /* GrowingCrashMonitorType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D7028F155AF005DF784 /* GrowingCrashMonitor_System.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCE28F155AE005DF784 /* GrowingCrashMonitor_System.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D7128F155AF005DF784 /* GrowingCrashMonitor_Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CCF28F155AE005DF784 /* GrowingCrashMonitor_Signal.h */; };
+		34E27D7228F155AF005DF784 /* GrowingCrashMonitor_AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD028F155AE005DF784 /* GrowingCrashMonitor_AppState.h */; };
+		34E27D7328F155AF005DF784 /* GrowingCrashMonitor_CPPException.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD128F155AE005DF784 /* GrowingCrashMonitor_CPPException.h */; };
+		34E27D7428F155AF005DF784 /* GrowingCrashMonitor_MachException.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CD228F155AE005DF784 /* GrowingCrashMonitor_MachException.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D7528F155AF005DF784 /* GrowingCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD328F155AE005DF784 /* GrowingCrashMonitor.h */; };
+		34E27D7628F155AF005DF784 /* GrowingCrashMonitor_Zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CD428F155AE005DF784 /* GrowingCrashMonitor_Zombie.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D7728F155AF005DF784 /* GrowingCrashMonitor_Deadlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD528F155AE005DF784 /* GrowingCrashMonitor_Deadlock.h */; };
+		34E27D7828F155AF005DF784 /* GrowingCrashMonitor_NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD628F155AE005DF784 /* GrowingCrashMonitor_NSException.h */; };
+		34E27D7928F155AF005DF784 /* GrowingCrashMonitor_User.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD728F155AE005DF784 /* GrowingCrashMonitor_User.h */; };
+		34E27D7A28F155AF005DF784 /* GrowingCrashMonitorContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD828F155AE005DF784 /* GrowingCrashMonitorContext.h */; };
+		34E27D7B28F155AF005DF784 /* GrowingCrashReport.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CD928F155AE005DF784 /* GrowingCrashReport.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D7C28F155AF005DF784 /* GrowingCrashObjCApple.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CDB28F155AE005DF784 /* GrowingCrashObjCApple.h */; };
+		34E27D7D28F155AF005DF784 /* GrowingCrashMemory.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CDC28F155AE005DF784 /* GrowingCrashMemory.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D7E28F155AF005DF784 /* GrowingCrashJSONCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CDD28F155AE005DF784 /* GrowingCrashJSONCodec.h */; };
+		34E27D7F28F155AF005DF784 /* GrowingCrashStackCursor_MachineContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CDE28F155AE005DF784 /* GrowingCrashStackCursor_MachineContext.h */; };
+		34E27D8028F155AF005DF784 /* GrowingCrashSignalInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CDF28F155AE005DF784 /* GrowingCrashSignalInfo.h */; };
+		34E27D8128F155AF005DF784 /* GrowingCrashCPU_x86_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CE028F155AE005DF784 /* GrowingCrashCPU_x86_32.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8228F155AF005DF784 /* GrowingCrashObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CE128F155AE005DF784 /* GrowingCrashObjC.h */; };
+		34E27D8328F155AF005DF784 /* GrowingCrashSysCtl.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CE228F155AE005DF784 /* GrowingCrashSysCtl.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8428F155AF005DF784 /* GrowingCrashID.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CE328F155AE005DF784 /* GrowingCrashID.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8528F155AF005DF784 /* GrowingCrashThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CE428F155AE005DF784 /* GrowingCrashThread.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8628F155AF005DF784 /* GrowingCrashSymbolicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CE528F155AE005DF784 /* GrowingCrashSymbolicator.h */; };
+		34E27D8728F155AF005DF784 /* GrowingCrashgetsect.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CE628F155AE005DF784 /* GrowingCrashgetsect.h */; };
+		34E27D8828F155AF005DF784 /* GrowingCrashDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CE728F155AE005DF784 /* GrowingCrashDate.h */; };
+		34E27D8928F155AF005DF784 /* GrowingCrashStackCursor_Backtrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CE828F155AE005DF784 /* GrowingCrashStackCursor_Backtrace.h */; };
+		34E27D8A28F155AF005DF784 /* GrowingCrashCPU_arm.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CE928F155AE005DF784 /* GrowingCrashCPU_arm.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8B28F155AF005DF784 /* GrowingCrashStackCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CEA28F155AE005DF784 /* GrowingCrashStackCursor.h */; };
+		34E27D8C28F155AF005DF784 /* GrowingCrashMach.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CEB28F155AE005DF784 /* GrowingCrashMach.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8D28F155AF005DF784 /* GrowingCrashFileUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CEC28F155AE005DF784 /* GrowingCrashFileUtils.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8E28F155AF005DF784 /* GrowingCrashString.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CED28F155AE005DF784 /* GrowingCrashString.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D8F28F155AF005DF784 /* GrowingCrashCPU_Apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CEE28F155AE005DF784 /* GrowingCrashCPU_Apple.h */; };
+		34E27D9028F155AF005DF784 /* GrowingCrashPlatformSpecificDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CEF28F155AE005DF784 /* GrowingCrashPlatformSpecificDefines.h */; };
+		34E27D9128F155AF005DF784 /* GrowingCrashStackCursor_SelfThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CF028F155AE005DF784 /* GrowingCrashStackCursor_SelfThread.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9228F155AF005DF784 /* GrowingCrashDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CF128F155AE005DF784 /* GrowingCrashDebug.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9328F155AF005DF784 /* GrowingCrashDemangle_CPP.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CF228F155AE005DF784 /* GrowingCrashDemangle_CPP.h */; };
+		34E27D9428F155AF005DF784 /* GrowingCrashDynamicLinker.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CF328F155AE005DF784 /* GrowingCrashDynamicLinker.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9528F155AF005DF784 /* GrowingCrashLogger.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CF428F155AE005DF784 /* GrowingCrashLogger.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9628F155AF005DF784 /* GrowingCxaThrowSwapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CF528F155AE005DF784 /* GrowingCxaThrowSwapper.h */; };
+		34E27D9728F155AF005DF784 /* GrowingCrashCPU.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CF628F155AE005DF784 /* GrowingCrashCPU.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9828F155AF005DF784 /* NSError+GrowingCrashSimpleConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CF728F155AE005DF784 /* NSError+GrowingCrashSimpleConstructor.h */; };
+		34E27D9928F155AF005DF784 /* GrowingCrashMachineContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CF828F155AE005DF784 /* GrowingCrashMachineContext.h */; };
+		34E27D9A28F155AF005DF784 /* GrowingCrashJSONCodecObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CF928F155AE005DF784 /* GrowingCrashJSONCodecObjC.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9B28F155AF005DF784 /* GrowingCrashSignalInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CFA28F155AE005DF784 /* GrowingCrashSignalInfo.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9C28F155AF005DF784 /* GrowingCrashCPU_arm64.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CFB28F155AE005DF784 /* GrowingCrashCPU_arm64.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9D28F155AF005DF784 /* GrowingCrashSysCtl.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CFC28F155AE005DF784 /* GrowingCrashSysCtl.h */; };
+		34E27D9E28F155AF005DF784 /* GrowingCrashObjC.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CFD28F155AE005DF784 /* GrowingCrashObjC.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27D9F28F155AF005DF784 /* GrowingCrashStackCursor_MachineContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CFE28F155AE005DF784 /* GrowingCrashStackCursor_MachineContext.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA028F155AF005DF784 /* GrowingCrashJSONCodec.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CFF28F155AE005DF784 /* GrowingCrashJSONCodec.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA128F155AF005DF784 /* GrowingCrashMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0028F155AE005DF784 /* GrowingCrashMemory.h */; };
+		34E27DA228F155AF005DF784 /* GrowingCrashFileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0128F155AE005DF784 /* GrowingCrashFileUtils.h */; };
+		34E27DA328F155AF005DF784 /* GrowingCrashMach.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0228F155AE005DF784 /* GrowingCrashMach.h */; };
+		34E27DA428F155AF005DF784 /* GrowingCrashStackCursor.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0328F155AE005DF784 /* GrowingCrashStackCursor.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA528F155AF005DF784 /* GrowingCrashStackCursor_Backtrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0428F155AE005DF784 /* GrowingCrashStackCursor_Backtrace.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA628F155AF005DF784 /* GrowingCrashCPU_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0528F155AE005DF784 /* GrowingCrashCPU_x86_64.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA728F155AF005DF784 /* GrowingCrashgetsect.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0628F155AE005DF784 /* GrowingCrashgetsect.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA828F155AF005DF784 /* GrowingCrashSymbolicator.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0728F155AE005DF784 /* GrowingCrashSymbolicator.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DA928F155AF005DF784 /* GrowingCrashThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0828F155AE005DF784 /* GrowingCrashThread.h */; };
+		34E27DAA28F155AF005DF784 /* GrowingCrashDate.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0928F155AE005DF784 /* GrowingCrashDate.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DAB28F155AF005DF784 /* GrowingCrashID.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0A28F155AE005DF784 /* GrowingCrashID.h */; };
+		34E27DAC28F155AF005DF784 /* GrowingCrashMachineContext_Apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0B28F155AE005DF784 /* GrowingCrashMachineContext_Apple.h */; };
+		34E27DAD28F155AF005DF784 /* GrowingCrashDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0C28F155AE005DF784 /* GrowingCrashDebug.h */; };
+		34E27DAE28F155AF005DF784 /* GrowingCrashDemangle_Swift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D0D28F155AE005DF784 /* GrowingCrashDemangle_Swift.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DAF28F155AF005DF784 /* GrowingCrashDemangle_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0E28F155AE005DF784 /* GrowingCrashDemangle_Swift.h */; };
+		34E27DB028F155AF005DF784 /* GrowingCrashStackCursor_SelfThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D0F28F155AE005DF784 /* GrowingCrashStackCursor_SelfThread.h */; };
+		34E27DB128F155AF005DF784 /* GrowingCrashString.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1028F155AE005DF784 /* GrowingCrashString.h */; };
+		34E27DB228F155AF005DF784 /* GrowingCrashMachineContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1128F155AE005DF784 /* GrowingCrashMachineContext.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DB328F155AF005DF784 /* GrowingCrashJSONCodecObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1228F155AE005DF784 /* GrowingCrashJSONCodecObjC.h */; };
+		34E27DB428F155AF005DF784 /* GrowingCrashCPU.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1328F155AE005DF784 /* GrowingCrashCPU.h */; };
+		34E27DB528F155AF005DF784 /* NSError+GrowingCrashSimpleConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1428F155AE005DF784 /* NSError+GrowingCrashSimpleConstructor.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DB628F155AF005DF784 /* GrowingCxaThrowSwapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1528F155AE005DF784 /* GrowingCxaThrowSwapper.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DB728F155AF005DF784 /* GrowingCrashLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1628F155AE005DF784 /* GrowingCrashLogger.h */; };
+		34E27DB828F155AF005DF784 /* GrowingCrashDynamicLinker.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1728F155AE005DF784 /* GrowingCrashDynamicLinker.h */; };
+		34E27DB928F155AF005DF784 /* GrowingCrashDemangle_CPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1828F155AE005DF784 /* GrowingCrashDemangle_CPP.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DBA28F155AF005DF784 /* GrowingCrashC.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1928F155AE005DF784 /* GrowingCrashC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DBB28F155AF005DF784 /* GrowingCrashSystemCapabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1A28F155AE005DF784 /* GrowingCrashSystemCapabilities.h */; };
+		34E27DBC28F155AF005DF784 /* GrowingCrashReportStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1B28F155AE005DF784 /* GrowingCrashReportStore.h */; };
+		34E27DBD28F155AF005DF784 /* GrowingCrashReportFixer.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1C28F155AE005DF784 /* GrowingCrashReportFixer.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DBE28F155AF005DF784 /* GrowingCrashCachedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1D28F155AE005DF784 /* GrowingCrashCachedData.h */; };
+		34E27DBF28F155AF005DF784 /* GrowingCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1E28F155AE005DF784 /* GrowingCrash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DC028F155AF005DF784 /* GrowingCrashReportFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1F28F155AE005DF784 /* GrowingCrashReportFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DC128F155AF005DF784 /* GrowingCrashDoctor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2028F155AF005DF784 /* GrowingCrashDoctor.h */; };
+		34E27DC228F155AF005DF784 /* GrowingCrashReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2128F155AF005DF784 /* GrowingCrashReport.h */; };
+		34E27DC328F155AF005DF784 /* GrowingCrashReportWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2228F155AF005DF784 /* GrowingCrashReportWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DC428F155AF005DF784 /* GrowingCrashReportVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2328F155AF005DF784 /* GrowingCrashReportVersion.h */; };
+		34E27DC528F155AF005DF784 /* GrowingCrashReportStore.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2428F155AF005DF784 /* GrowingCrashReportStore.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DC628F155AF005DF784 /* GrowingCrashC.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2528F155AF005DF784 /* GrowingCrashC.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DC728F155AF005DF784 /* GrowingCrashCachedData.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2628F155AF005DF784 /* GrowingCrashCachedData.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DC828F155AF005DF784 /* GrowingCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2728F155AF005DF784 /* GrowingCrash.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DC928F155AF005DF784 /* GrowingCrashReportFixer.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2828F155AF005DF784 /* GrowingCrashReportFixer.h */; };
+		34E27DCA28F155AF005DF784 /* GrowingCrashDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2928F155AF005DF784 /* GrowingCrashDoctor.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DCB28F155AF005DF784 /* None.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2C28F155AF005DF784 /* None.h */; };
+		34E27DCC28F155AF005DF784 /* StringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2D28F155AF005DF784 /* StringRef.h */; };
+		34E27DCD28F155AF005DF784 /* GrowingCrashOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2E28F155AF005DF784 /* GrowingCrashOptional.h */; };
+		34E27DCE28F155AF005DF784 /* llvm-config.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3028F155AF005DF784 /* llvm-config.h */; };
+		34E27DCF28F155AF005DF784 /* Casting.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3228F155AF005DF784 /* Casting.h */; };
+		34E27DD028F155AF005DF784 /* AlignOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3328F155AF005DF784 /* AlignOf.h */; };
+		34E27DD128F155AF005DF784 /* Compiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3428F155AF005DF784 /* Compiler.h */; };
+		34E27DD228F155B0005DF784 /* type_traits.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3528F155AF005DF784 /* type_traits.h */; };
+		34E27DD428F155B0005DF784 /* GrowingAPMCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3728F155AF005DF784 /* GrowingAPMCrashMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DD528F155B0005DF784 /* GrowingCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3928F155AF005DF784 /* GrowingCrashInstallation+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DD628F155B0005DF784 /* GrowingCrashInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3A28F155AF005DF784 /* GrowingCrashInstallation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DD728F155B0005DF784 /* GrowingCrashInstallation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D3B28F155AF005DF784 /* GrowingCrashInstallation.m */; };
+		34E27DD828F155B0005DF784 /* SwiftStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3D28F155AF005DF784 /* SwiftStrings.h */; };
+		34E27DD928F155B0005DF784 /* NodePrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D3F28F155AF005DF784 /* NodePrinter.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DDA28F155B0005DF784 /* Demangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D4028F155AF005DF784 /* Demangle.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DDB28F155B0005DF784 /* SwiftDemangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4128F155AF005DF784 /* SwiftDemangle.h */; };
+		34E27DDC28F155B0005DF784 /* Demangler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D4228F155AF005DF784 /* Demangler.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DDD28F155B0005DF784 /* Malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4328F155AF005DF784 /* Malloc.h */; };
+		34E27DDE28F155B0005DF784 /* DemangleNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4428F155AF005DF784 /* DemangleNodes.h */; };
+		34E27DDF28F155B0005DF784 /* Punycode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D4528F155AF005DF784 /* Punycode.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DE028F155B0005DF784 /* Demangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4628F155AF005DF784 /* Demangle.h */; };
+		34E27DE128F155B0005DF784 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4728F155AF005DF784 /* Config.h */; };
+		34E27DE228F155B0005DF784 /* DemangleNodes.def in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4828F155AF005DF784 /* DemangleNodes.def */; };
+		34E27DE328F155B0005DF784 /* STLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4928F155AF005DF784 /* STLExtras.h */; };
+		34E27DE428F155B0005DF784 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D4A28F155AF005DF784 /* Context.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DE528F155B0005DF784 /* OldDemangler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D4B28F155AF005DF784 /* OldDemangler.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DE628F155B0005DF784 /* StandardTypesMangling.def in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4C28F155AF005DF784 /* StandardTypesMangling.def */; };
+		34E27DE728F155B0005DF784 /* Punycode.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4D28F155AF005DF784 /* Punycode.h */; };
+		34E27DE828F155B0005DF784 /* Fallthrough.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4E28F155AF005DF784 /* Fallthrough.h */; };
+		34E27DE928F155B0005DF784 /* LLVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D4F28F155AF005DF784 /* LLVM.h */; };
+		34E27DEA28F155B0005DF784 /* Demangler.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5028F155AF005DF784 /* Demangler.h */; };
+		34E27DEB28F155B0005DF784 /* ValueWitnessMangling.def in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5128F155AF005DF784 /* ValueWitnessMangling.def */; };
+		34E27DEC28F155B0005DF784 /* ManglingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5228F155AF005DF784 /* ManglingUtils.h */; };
+		34E27DED28F155B0005DF784 /* ReferenceStorage.def in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5328F155AF005DF784 /* ReferenceStorage.def */; };
+		34E27DEE28F155B0005DF784 /* Visibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5428F155AF005DF784 /* Visibility.h */; };
+		34E27DEF28F155B0005DF784 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5528F155AF005DF784 /* Platform.h */; };
+		34E27DF028F155B0005DF784 /* ManglingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D5628F155AF005DF784 /* ManglingMacros.h */; };
+		34E27DF128F155B0005DF784 /* ManglingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D5728F155AF005DF784 /* ManglingUtils.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
+		34E27DF328F15644005DF784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9428F127E5005DF784 /* Foundation.framework */; };
+		34E27E1228F16026005DF784 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E1128F16026005DF784 /* AppDelegate.m */; };
+		34E27E1528F16026005DF784 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E1428F16026005DF784 /* SceneDelegate.m */; };
+		34E27E1828F16026005DF784 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E1728F16026005DF784 /* ViewController.m */; };
+		34E27E1B28F16026005DF784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E27E1928F16026005DF784 /* Main.storyboard */; };
+		34E27E1D28F16028005DF784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34E27E1C28F16028005DF784 /* Assets.xcassets */; };
+		34E27E2028F16028005DF784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E27E1E28F16028005DF784 /* LaunchScreen.storyboard */; };
+		34E27E2328F16028005DF784 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E2228F16028005DF784 /* main.m */; };
+		34E27E2D28F16029005DF784 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E2C28F16029005DF784 /* ExampleTests.m */; };
+		34E27E3728F16029005DF784 /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E3628F16029005DF784 /* ExampleUITests.m */; };
+		34E27E3928F16029005DF784 /* ExampleUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27E3828F16029005DF784 /* ExampleUITestsLaunchTests.m */; };
+		34E27E7528F1973A005DF784 /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
+		34E27E7628F19745005DF784 /* GrowingAPM+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DF828F158F4005DF784 /* GrowingAPM+Private.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		349DA40E28F26FBE00C4281F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349DA40428F26FBE00C4281F;
+			remoteInfo = GrowingAPMUIMonitor;
+		};
+		349DA42828F26FD700C4281F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349DA41E28F26FD700C4281F;
+			remoteInfo = GrowingAPMLaunchMonitor;
+		};
+		349DA44C28F29AE900C4281F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34E27C9A28F1556B005DF784;
+			remoteInfo = GrowingAPMCrash;
+		};
+		349DA45128F29AEF00C4281F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349DA41E28F26FD700C4281F;
+			remoteInfo = GrowingAPMLaunchMonitor;
+		};
+		349DA45528F29AF400C4281F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349DA40428F26FBE00C4281F;
+			remoteInfo = GrowingAPMUIMonitor;
+		};
+		34E27CA428F1556C005DF784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34E27C9A28F1556B005DF784;
+			remoteInfo = GrowingAPMCrash;
+		};
+		34E27E2928F16029005DF784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34E27E0D28F16026005DF784;
+			remoteInfo = Example;
+		};
+		34E27E3328F16029005DF784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E2797728F12207005DF784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34E27E0D28F16026005DF784;
+			remoteInfo = Example;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		349DA44E28F29AE900C4281F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				349DA44B28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Embed Frameworks */,
+				349DA45028F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Embed Frameworks */,
+				349DA45428F29AF400C4281F /* GrowingAPMUIMonitor.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMUIMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMUIMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMUIMonitorTests.m; sourceTree = "<group>"; };
+		349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMLaunchMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMLaunchMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMLaunchMonitorTests.m; sourceTree = "<group>"; };
+		349DA43B28F27ACA00C4281F /* GrowingAPMUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowingAPMUIMonitor.h; path = ../../../UIMonitor/GrowingAPMUIMonitor.h; sourceTree = "<group>"; };
+		349DA43C28F27ACB00C4281F /* GrowingAPMUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowingAPMUIMonitor.m; path = ../../../UIMonitor/GrowingAPMUIMonitor.m; sourceTree = "<group>"; };
+		349DA43F28F27AED00C4281F /* GrowingAPMLaunchMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowingAPMLaunchMonitor.m; path = ../../../LaunchMonitor/GrowingAPMLaunchMonitor.m; sourceTree = "<group>"; };
+		349DA44028F27AED00C4281F /* GrowingAPMLaunchMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowingAPMLaunchMonitor.h; path = ../../../LaunchMonitor/GrowingAPMLaunchMonitor.h; sourceTree = "<group>"; };
+		349DA44528F27B6B00C4281F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		349DA45728F29C0700C4281F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		349DA45828F29C1B00C4281F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		349DA45928F29C4600C4281F /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		349DA45D28F29F2900C4281F /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		349DA45E28F29F2F00C4281F /* libbz2.1.0.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.8.tbd; path = usr/lib/libbz2.1.0.8.tbd; sourceTree = SDKROOT; };
+		349DA45F28F29F3E00C4281F /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
+		349DA46028F29F4600C4281F /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		34E27C9428F127E5005DF784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMCrashMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E27CA228F1556C005DF784 /* GrowingAPMCrashMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMCrashMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E27CA728F1556C005DF784 /* GrowingAPMCrashMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMCrashMonitorTests.m; sourceTree = "<group>"; };
+		34E27CB428F155AE005DF784 /* Container+DeepSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Container+DeepSearch.m"; sourceTree = "<group>"; };
+		34E27CB528F155AE005DF784 /* Container+DeepSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Container+DeepSearch.h"; sourceTree = "<group>"; };
+		34E27CB628F155AE005DF784 /* GrowingCrashVarArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashVarArgs.h; sourceTree = "<group>"; };
+		34E27CB728F155AE005DF784 /* GrowingCrashReportFilterBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportFilterBasic.h; sourceTree = "<group>"; };
+		34E27CB828F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashReportFilterAppleFmt.m; sourceTree = "<group>"; };
+		34E27CB928F155AE005DF784 /* GrowingCrashReportFilterBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashReportFilterBasic.m; sourceTree = "<group>"; };
+		34E27CBA28F155AE005DF784 /* GrowingCrashReportFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportFilter.h; sourceTree = "<group>"; };
+		34E27CBB28F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportFilterAppleFmt.h; sourceTree = "<group>"; };
+		34E27CBD28F155AE005DF784 /* GrowingCrashCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashCString.h; sourceTree = "<group>"; };
+		34E27CBE28F155AE005DF784 /* GrowingCrashCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashCString.m; sourceTree = "<group>"; };
+		34E27CBF28F155AE005DF784 /* GrowingAPMCrashMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMCrashMonitor.m; sourceTree = "<group>"; };
+		34E27CC228F155AE005DF784 /* GrowingCrashMonitor_AppState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitor_AppState.c; sourceTree = "<group>"; };
+		34E27CC328F155AE005DF784 /* GrowingCrashMonitor_Signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitor_Signal.c; sourceTree = "<group>"; };
+		34E27CC428F155AE005DF784 /* GrowingCrashMonitor_CPPException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowingCrashMonitor_CPPException.cpp; sourceTree = "<group>"; };
+		34E27CC528F155AE005DF784 /* GrowingCrashMonitor_System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_System.h; sourceTree = "<group>"; };
+		34E27CC628F155AE005DF784 /* GrowingCrashMonitorType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitorType.c; sourceTree = "<group>"; };
+		34E27CC728F155AE005DF784 /* GrowingCrashMonitor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitor.c; sourceTree = "<group>"; };
+		34E27CC828F155AE005DF784 /* GrowingCrashMonitor_Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_Zombie.h; sourceTree = "<group>"; };
+		34E27CC928F155AE005DF784 /* GrowingCrashMonitor_MachException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_MachException.h; sourceTree = "<group>"; };
+		34E27CCA28F155AE005DF784 /* GrowingCrashMonitor_User.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitor_User.c; sourceTree = "<group>"; };
+		34E27CCB28F155AE005DF784 /* GrowingCrashMonitor_Deadlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashMonitor_Deadlock.m; sourceTree = "<group>"; };
+		34E27CCC28F155AE005DF784 /* GrowingCrashMonitor_NSException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashMonitor_NSException.m; sourceTree = "<group>"; };
+		34E27CCD28F155AE005DF784 /* GrowingCrashMonitorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitorType.h; sourceTree = "<group>"; };
+		34E27CCE28F155AE005DF784 /* GrowingCrashMonitor_System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashMonitor_System.m; sourceTree = "<group>"; };
+		34E27CCF28F155AE005DF784 /* GrowingCrashMonitor_Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_Signal.h; sourceTree = "<group>"; };
+		34E27CD028F155AE005DF784 /* GrowingCrashMonitor_AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_AppState.h; sourceTree = "<group>"; };
+		34E27CD128F155AE005DF784 /* GrowingCrashMonitor_CPPException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_CPPException.h; sourceTree = "<group>"; };
+		34E27CD228F155AE005DF784 /* GrowingCrashMonitor_MachException.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitor_MachException.c; sourceTree = "<group>"; };
+		34E27CD328F155AE005DF784 /* GrowingCrashMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor.h; sourceTree = "<group>"; };
+		34E27CD428F155AE005DF784 /* GrowingCrashMonitor_Zombie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMonitor_Zombie.c; sourceTree = "<group>"; };
+		34E27CD528F155AE005DF784 /* GrowingCrashMonitor_Deadlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_Deadlock.h; sourceTree = "<group>"; };
+		34E27CD628F155AE005DF784 /* GrowingCrashMonitor_NSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_NSException.h; sourceTree = "<group>"; };
+		34E27CD728F155AE005DF784 /* GrowingCrashMonitor_User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitor_User.h; sourceTree = "<group>"; };
+		34E27CD828F155AE005DF784 /* GrowingCrashMonitorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMonitorContext.h; sourceTree = "<group>"; };
+		34E27CD928F155AE005DF784 /* GrowingCrashReport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashReport.c; sourceTree = "<group>"; };
+		34E27CDB28F155AE005DF784 /* GrowingCrashObjCApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashObjCApple.h; sourceTree = "<group>"; };
+		34E27CDC28F155AE005DF784 /* GrowingCrashMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMemory.c; sourceTree = "<group>"; };
+		34E27CDD28F155AE005DF784 /* GrowingCrashJSONCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashJSONCodec.h; sourceTree = "<group>"; };
+		34E27CDE28F155AE005DF784 /* GrowingCrashStackCursor_MachineContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashStackCursor_MachineContext.h; sourceTree = "<group>"; };
+		34E27CDF28F155AE005DF784 /* GrowingCrashSignalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashSignalInfo.h; sourceTree = "<group>"; };
+		34E27CE028F155AE005DF784 /* GrowingCrashCPU_x86_32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashCPU_x86_32.c; sourceTree = "<group>"; };
+		34E27CE128F155AE005DF784 /* GrowingCrashObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashObjC.h; sourceTree = "<group>"; };
+		34E27CE228F155AE005DF784 /* GrowingCrashSysCtl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashSysCtl.c; sourceTree = "<group>"; };
+		34E27CE328F155AE005DF784 /* GrowingCrashID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashID.c; sourceTree = "<group>"; };
+		34E27CE428F155AE005DF784 /* GrowingCrashThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashThread.c; sourceTree = "<group>"; };
+		34E27CE528F155AE005DF784 /* GrowingCrashSymbolicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashSymbolicator.h; sourceTree = "<group>"; };
+		34E27CE628F155AE005DF784 /* GrowingCrashgetsect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashgetsect.h; sourceTree = "<group>"; };
+		34E27CE728F155AE005DF784 /* GrowingCrashDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashDate.h; sourceTree = "<group>"; };
+		34E27CE828F155AE005DF784 /* GrowingCrashStackCursor_Backtrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashStackCursor_Backtrace.h; sourceTree = "<group>"; };
+		34E27CE928F155AE005DF784 /* GrowingCrashCPU_arm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashCPU_arm.c; sourceTree = "<group>"; };
+		34E27CEA28F155AE005DF784 /* GrowingCrashStackCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashStackCursor.h; sourceTree = "<group>"; };
+		34E27CEB28F155AE005DF784 /* GrowingCrashMach.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMach.c; sourceTree = "<group>"; };
+		34E27CEC28F155AE005DF784 /* GrowingCrashFileUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashFileUtils.c; sourceTree = "<group>"; };
+		34E27CED28F155AE005DF784 /* GrowingCrashString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashString.c; sourceTree = "<group>"; };
+		34E27CEE28F155AE005DF784 /* GrowingCrashCPU_Apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashCPU_Apple.h; sourceTree = "<group>"; };
+		34E27CEF28F155AE005DF784 /* GrowingCrashPlatformSpecificDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashPlatformSpecificDefines.h; sourceTree = "<group>"; };
+		34E27CF028F155AE005DF784 /* GrowingCrashStackCursor_SelfThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashStackCursor_SelfThread.c; sourceTree = "<group>"; };
+		34E27CF128F155AE005DF784 /* GrowingCrashDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashDebug.c; sourceTree = "<group>"; };
+		34E27CF228F155AE005DF784 /* GrowingCrashDemangle_CPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashDemangle_CPP.h; sourceTree = "<group>"; };
+		34E27CF328F155AE005DF784 /* GrowingCrashDynamicLinker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashDynamicLinker.c; sourceTree = "<group>"; };
+		34E27CF428F155AE005DF784 /* GrowingCrashLogger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashLogger.c; sourceTree = "<group>"; };
+		34E27CF528F155AE005DF784 /* GrowingCxaThrowSwapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCxaThrowSwapper.h; sourceTree = "<group>"; };
+		34E27CF628F155AE005DF784 /* GrowingCrashCPU.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashCPU.c; sourceTree = "<group>"; };
+		34E27CF728F155AE005DF784 /* NSError+GrowingCrashSimpleConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+GrowingCrashSimpleConstructor.h"; sourceTree = "<group>"; };
+		34E27CF828F155AE005DF784 /* GrowingCrashMachineContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMachineContext.h; sourceTree = "<group>"; };
+		34E27CF928F155AE005DF784 /* GrowingCrashJSONCodecObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashJSONCodecObjC.m; sourceTree = "<group>"; };
+		34E27CFA28F155AE005DF784 /* GrowingCrashSignalInfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashSignalInfo.c; sourceTree = "<group>"; };
+		34E27CFB28F155AE005DF784 /* GrowingCrashCPU_arm64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashCPU_arm64.c; sourceTree = "<group>"; };
+		34E27CFC28F155AE005DF784 /* GrowingCrashSysCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashSysCtl.h; sourceTree = "<group>"; };
+		34E27CFD28F155AE005DF784 /* GrowingCrashObjC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashObjC.c; sourceTree = "<group>"; };
+		34E27CFE28F155AE005DF784 /* GrowingCrashStackCursor_MachineContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashStackCursor_MachineContext.c; sourceTree = "<group>"; };
+		34E27CFF28F155AE005DF784 /* GrowingCrashJSONCodec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashJSONCodec.c; sourceTree = "<group>"; };
+		34E27D0028F155AE005DF784 /* GrowingCrashMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMemory.h; sourceTree = "<group>"; };
+		34E27D0128F155AE005DF784 /* GrowingCrashFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashFileUtils.h; sourceTree = "<group>"; };
+		34E27D0228F155AE005DF784 /* GrowingCrashMach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMach.h; sourceTree = "<group>"; };
+		34E27D0328F155AE005DF784 /* GrowingCrashStackCursor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashStackCursor.c; sourceTree = "<group>"; };
+		34E27D0428F155AE005DF784 /* GrowingCrashStackCursor_Backtrace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashStackCursor_Backtrace.c; sourceTree = "<group>"; };
+		34E27D0528F155AE005DF784 /* GrowingCrashCPU_x86_64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashCPU_x86_64.c; sourceTree = "<group>"; };
+		34E27D0628F155AE005DF784 /* GrowingCrashgetsect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashgetsect.c; sourceTree = "<group>"; };
+		34E27D0728F155AE005DF784 /* GrowingCrashSymbolicator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashSymbolicator.c; sourceTree = "<group>"; };
+		34E27D0828F155AE005DF784 /* GrowingCrashThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashThread.h; sourceTree = "<group>"; };
+		34E27D0928F155AE005DF784 /* GrowingCrashDate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashDate.c; sourceTree = "<group>"; };
+		34E27D0A28F155AE005DF784 /* GrowingCrashID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashID.h; sourceTree = "<group>"; };
+		34E27D0B28F155AE005DF784 /* GrowingCrashMachineContext_Apple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashMachineContext_Apple.h; sourceTree = "<group>"; };
+		34E27D0C28F155AE005DF784 /* GrowingCrashDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashDebug.h; sourceTree = "<group>"; };
+		34E27D0D28F155AE005DF784 /* GrowingCrashDemangle_Swift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowingCrashDemangle_Swift.cpp; sourceTree = "<group>"; };
+		34E27D0E28F155AE005DF784 /* GrowingCrashDemangle_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashDemangle_Swift.h; sourceTree = "<group>"; };
+		34E27D0F28F155AE005DF784 /* GrowingCrashStackCursor_SelfThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashStackCursor_SelfThread.h; sourceTree = "<group>"; };
+		34E27D1028F155AE005DF784 /* GrowingCrashString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashString.h; sourceTree = "<group>"; };
+		34E27D1128F155AE005DF784 /* GrowingCrashMachineContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashMachineContext.c; sourceTree = "<group>"; };
+		34E27D1228F155AE005DF784 /* GrowingCrashJSONCodecObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashJSONCodecObjC.h; sourceTree = "<group>"; };
+		34E27D1328F155AE005DF784 /* GrowingCrashCPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashCPU.h; sourceTree = "<group>"; };
+		34E27D1428F155AE005DF784 /* NSError+GrowingCrashSimpleConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+GrowingCrashSimpleConstructor.m"; sourceTree = "<group>"; };
+		34E27D1528F155AE005DF784 /* GrowingCxaThrowSwapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCxaThrowSwapper.c; sourceTree = "<group>"; };
+		34E27D1628F155AE005DF784 /* GrowingCrashLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashLogger.h; sourceTree = "<group>"; };
+		34E27D1728F155AE005DF784 /* GrowingCrashDynamicLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashDynamicLinker.h; sourceTree = "<group>"; };
+		34E27D1828F155AE005DF784 /* GrowingCrashDemangle_CPP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrowingCrashDemangle_CPP.cpp; sourceTree = "<group>"; };
+		34E27D1928F155AE005DF784 /* GrowingCrashC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashC.h; sourceTree = "<group>"; };
+		34E27D1A28F155AE005DF784 /* GrowingCrashSystemCapabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashSystemCapabilities.h; sourceTree = "<group>"; };
+		34E27D1B28F155AE005DF784 /* GrowingCrashReportStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportStore.h; sourceTree = "<group>"; };
+		34E27D1C28F155AE005DF784 /* GrowingCrashReportFixer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashReportFixer.c; sourceTree = "<group>"; };
+		34E27D1D28F155AE005DF784 /* GrowingCrashCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashCachedData.h; sourceTree = "<group>"; };
+		34E27D1E28F155AE005DF784 /* GrowingCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrash.h; sourceTree = "<group>"; };
+		34E27D1F28F155AE005DF784 /* GrowingCrashReportFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportFields.h; sourceTree = "<group>"; };
+		34E27D2028F155AF005DF784 /* GrowingCrashDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashDoctor.h; sourceTree = "<group>"; };
+		34E27D2128F155AF005DF784 /* GrowingCrashReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReport.h; sourceTree = "<group>"; };
+		34E27D2228F155AF005DF784 /* GrowingCrashReportWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportWriter.h; sourceTree = "<group>"; };
+		34E27D2328F155AF005DF784 /* GrowingCrashReportVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportVersion.h; sourceTree = "<group>"; };
+		34E27D2428F155AF005DF784 /* GrowingCrashReportStore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashReportStore.c; sourceTree = "<group>"; };
+		34E27D2528F155AF005DF784 /* GrowingCrashC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashC.c; sourceTree = "<group>"; };
+		34E27D2628F155AF005DF784 /* GrowingCrashCachedData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GrowingCrashCachedData.c; sourceTree = "<group>"; };
+		34E27D2728F155AF005DF784 /* GrowingCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrash.m; sourceTree = "<group>"; };
+		34E27D2828F155AF005DF784 /* GrowingCrashReportFixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashReportFixer.h; sourceTree = "<group>"; };
+		34E27D2928F155AF005DF784 /* GrowingCrashDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashDoctor.m; sourceTree = "<group>"; };
+		34E27D2C28F155AF005DF784 /* None.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = None.h; sourceTree = "<group>"; };
+		34E27D2D28F155AF005DF784 /* StringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringRef.h; sourceTree = "<group>"; };
+		34E27D2E28F155AF005DF784 /* GrowingCrashOptional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashOptional.h; sourceTree = "<group>"; };
+		34E27D3028F155AF005DF784 /* llvm-config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "llvm-config.h"; sourceTree = "<group>"; };
+		34E27D3228F155AF005DF784 /* Casting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Casting.h; sourceTree = "<group>"; };
+		34E27D3328F155AF005DF784 /* AlignOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlignOf.h; sourceTree = "<group>"; };
+		34E27D3428F155AF005DF784 /* Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compiler.h; sourceTree = "<group>"; };
+		34E27D3528F155AF005DF784 /* type_traits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = type_traits.h; sourceTree = "<group>"; };
+		34E27D3628F155AF005DF784 /* LICENSE.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.TXT; sourceTree = "<group>"; };
+		34E27D3728F155AF005DF784 /* GrowingAPMCrashMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPMCrashMonitor.h; sourceTree = "<group>"; };
+		34E27D3928F155AF005DF784 /* GrowingCrashInstallation+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GrowingCrashInstallation+Private.h"; sourceTree = "<group>"; };
+		34E27D3A28F155AF005DF784 /* GrowingCrashInstallation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashInstallation.h; sourceTree = "<group>"; };
+		34E27D3B28F155AF005DF784 /* GrowingCrashInstallation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashInstallation.m; sourceTree = "<group>"; };
+		34E27D3D28F155AF005DF784 /* SwiftStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftStrings.h; sourceTree = "<group>"; };
+		34E27D3F28F155AF005DF784 /* NodePrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodePrinter.cpp; sourceTree = "<group>"; };
+		34E27D4028F155AF005DF784 /* Demangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Demangle.cpp; sourceTree = "<group>"; };
+		34E27D4128F155AF005DF784 /* SwiftDemangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftDemangle.h; sourceTree = "<group>"; };
+		34E27D4228F155AF005DF784 /* Demangler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Demangler.cpp; sourceTree = "<group>"; };
+		34E27D4328F155AF005DF784 /* Malloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Malloc.h; sourceTree = "<group>"; };
+		34E27D4428F155AF005DF784 /* DemangleNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemangleNodes.h; sourceTree = "<group>"; };
+		34E27D4528F155AF005DF784 /* Punycode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Punycode.cpp; sourceTree = "<group>"; };
+		34E27D4628F155AF005DF784 /* Demangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demangle.h; sourceTree = "<group>"; };
+		34E27D4728F155AF005DF784 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		34E27D4828F155AF005DF784 /* DemangleNodes.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DemangleNodes.def; sourceTree = "<group>"; };
+		34E27D4928F155AF005DF784 /* STLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLExtras.h; sourceTree = "<group>"; };
+		34E27D4A28F155AF005DF784 /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
+		34E27D4B28F155AF005DF784 /* OldDemangler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OldDemangler.cpp; sourceTree = "<group>"; };
+		34E27D4C28F155AF005DF784 /* StandardTypesMangling.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StandardTypesMangling.def; sourceTree = "<group>"; };
+		34E27D4D28F155AF005DF784 /* Punycode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punycode.h; sourceTree = "<group>"; };
+		34E27D4E28F155AF005DF784 /* Fallthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fallthrough.h; sourceTree = "<group>"; };
+		34E27D4F28F155AF005DF784 /* LLVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLVM.h; sourceTree = "<group>"; };
+		34E27D5028F155AF005DF784 /* Demangler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demangler.h; sourceTree = "<group>"; };
+		34E27D5128F155AF005DF784 /* ValueWitnessMangling.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ValueWitnessMangling.def; sourceTree = "<group>"; };
+		34E27D5228F155AF005DF784 /* ManglingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManglingUtils.h; sourceTree = "<group>"; };
+		34E27D5328F155AF005DF784 /* ReferenceStorage.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReferenceStorage.def; sourceTree = "<group>"; };
+		34E27D5428F155AF005DF784 /* Visibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visibility.h; sourceTree = "<group>"; };
+		34E27D5528F155AF005DF784 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		34E27D5628F155AF005DF784 /* ManglingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManglingMacros.h; sourceTree = "<group>"; };
+		34E27D5728F155AF005DF784 /* ManglingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ManglingUtils.cpp; sourceTree = "<group>"; };
+		34E27D5828F155AF005DF784 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		34E27DF728F158F3005DF784 /* GrowingAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPM.h; sourceTree = "<group>"; };
+		34E27DF828F158F4005DF784 /* GrowingAPM+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GrowingAPM+Private.h"; sourceTree = "<group>"; };
+		34E27DF928F158F4005DF784 /* GrowingAPMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPMConfig.h; sourceTree = "<group>"; };
+		34E27DFA28F158F4005DF784 /* GrowingAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPM.m; sourceTree = "<group>"; };
+		34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPMMonitor.h; sourceTree = "<group>"; };
+		34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMConfig.m; sourceTree = "<group>"; };
+		34E27E0E28F16026005DF784 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E27E1028F16026005DF784 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		34E27E1128F16026005DF784 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		34E27E1328F16026005DF784 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		34E27E1428F16026005DF784 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		34E27E1628F16026005DF784 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		34E27E1728F16026005DF784 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		34E27E1A28F16026005DF784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34E27E1C28F16028005DF784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34E27E1F28F16028005DF784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34E27E2128F16028005DF784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34E27E2228F16028005DF784 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34E27E2828F16029005DF784 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E27E2C28F16029005DF784 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
+		34E27E3228F16029005DF784 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E27E3628F16029005DF784 /* ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUITests.m; sourceTree = "<group>"; };
+		34E27E3828F16029005DF784 /* ExampleUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		349DA40228F26FBE00C4281F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA44628F27B6B00C4281F /* UIKit.framework in Frameworks */,
+				349DA44728F27B7300C4281F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA40928F26FBE00C4281F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA40D28F26FBE00C4281F /* GrowingAPMUIMonitor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA41C28F26FD700C4281F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA44828F27C7E00C4281F /* UIKit.framework in Frameworks */,
+				349DA44928F27C8700C4281F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA42328F26FD700C4281F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA42728F26FD700C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27C9828F1556B005DF784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27DF328F15644005DF784 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27C9F28F1556C005DF784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27CA328F1556C005DF784 /* GrowingAPMCrashMonitor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E0B28F16026005DF784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA46628F2A1C100C4281F /* libz.tbd in Frameworks */,
+				349DA46528F2A1BB00C4281F /* libc++.tbd in Frameworks */,
+				349DA44F28F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */,
+				349DA45328F29AF400C4281F /* GrowingAPMUIMonitor.framework in Frameworks */,
+				349DA44A28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E2528F16029005DF784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E2F28F16029005DF784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		349DA40628F26FBE00C4281F /* GrowingAPMUIMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				349DA43B28F27ACA00C4281F /* GrowingAPMUIMonitor.h */,
+				349DA43C28F27ACB00C4281F /* GrowingAPMUIMonitor.m */,
+			);
+			path = GrowingAPMUIMonitor;
+			sourceTree = "<group>";
+		};
+		349DA41028F26FBE00C4281F /* GrowingAPMUIMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */,
+			);
+			path = GrowingAPMUIMonitorTests;
+			sourceTree = "<group>";
+		};
+		349DA42028F26FD700C4281F /* GrowingAPMLaunchMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				349DA44028F27AED00C4281F /* GrowingAPMLaunchMonitor.h */,
+				349DA43F28F27AED00C4281F /* GrowingAPMLaunchMonitor.m */,
+			);
+			path = GrowingAPMLaunchMonitor;
+			sourceTree = "<group>";
+		};
+		349DA42A28F26FD700C4281F /* GrowingAPMLaunchMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */,
+			);
+			path = GrowingAPMLaunchMonitorTests;
+			sourceTree = "<group>";
+		};
+		34E2797628F12207005DF784 = {
+			isa = PBXGroup;
+			children = (
+				34E2798228F12207005DF784 /* GrowingAPM */,
+				34E27C9C28F1556B005DF784 /* GrowingAPMCrashMonitor */,
+				34E27CA628F1556C005DF784 /* GrowingAPMCrashMonitorTests */,
+				349DA40628F26FBE00C4281F /* GrowingAPMUIMonitor */,
+				349DA41028F26FBE00C4281F /* GrowingAPMUIMonitorTests */,
+				349DA42028F26FD700C4281F /* GrowingAPMLaunchMonitor */,
+				349DA42A28F26FD700C4281F /* GrowingAPMLaunchMonitorTests */,
+				34E27E0F28F16026005DF784 /* Example */,
+				34E27E2B28F16029005DF784 /* ExampleTests */,
+				34E27E3528F16029005DF784 /* ExampleUITests */,
+				34E2798128F12207005DF784 /* Products */,
+				B317EFE237FABF3BCDFB1783 /* Pods */,
+				6E4E217250941B412217835F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		34E2798128F12207005DF784 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */,
+				34E27CA228F1556C005DF784 /* GrowingAPMCrashMonitorTests.xctest */,
+				34E27E0E28F16026005DF784 /* Example.app */,
+				34E27E2828F16029005DF784 /* ExampleTests.xctest */,
+				34E27E3228F16029005DF784 /* ExampleUITests.xctest */,
+				349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */,
+				349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */,
+				349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */,
+				349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34E2798228F12207005DF784 /* GrowingAPM */ = {
+			isa = PBXGroup;
+			children = (
+				34E27DF628F158F3005DF784 /* Core */,
+			);
+			path = GrowingAPM;
+			sourceTree = "<group>";
+		};
+		34E27C9C28F1556B005DF784 /* GrowingAPMCrashMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CB028F155AE005DF784 /* CrashMonitor */,
+			);
+			path = GrowingAPMCrashMonitor;
+			sourceTree = "<group>";
+		};
+		34E27CA628F1556C005DF784 /* GrowingAPMCrashMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CA728F1556C005DF784 /* GrowingAPMCrashMonitorTests.m */,
+			);
+			path = GrowingAPMCrashMonitorTests;
+			sourceTree = "<group>";
+		};
+		34E27CB028F155AE005DF784 /* CrashMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D3728F155AF005DF784 /* GrowingAPMCrashMonitor.h */,
+				34E27CBF28F155AE005DF784 /* GrowingAPMCrashMonitor.m */,
+				34E27CB128F155AE005DF784 /* Reporting */,
+				34E27CC028F155AE005DF784 /* Recording */,
+				34E27D3828F155AF005DF784 /* Installations */,
+				34E27D2A28F155AF005DF784 /* llvm */,
+				34E27D3C28F155AF005DF784 /* swift */,
+			);
+			name = CrashMonitor;
+			path = ../../../CrashMonitor;
+			sourceTree = "<group>";
+		};
+		34E27CB128F155AE005DF784 /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CB228F155AE005DF784 /* Filters */,
+				34E27CBC28F155AE005DF784 /* Tools */,
+			);
+			path = Reporting;
+			sourceTree = "<group>";
+		};
+		34E27CB228F155AE005DF784 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CB328F155AE005DF784 /* Tools */,
+				34E27CB728F155AE005DF784 /* GrowingCrashReportFilterBasic.h */,
+				34E27CB828F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.m */,
+				34E27CB928F155AE005DF784 /* GrowingCrashReportFilterBasic.m */,
+				34E27CBA28F155AE005DF784 /* GrowingCrashReportFilter.h */,
+				34E27CBB28F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.h */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		34E27CB328F155AE005DF784 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CB428F155AE005DF784 /* Container+DeepSearch.m */,
+				34E27CB528F155AE005DF784 /* Container+DeepSearch.h */,
+				34E27CB628F155AE005DF784 /* GrowingCrashVarArgs.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		34E27CBC28F155AE005DF784 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CBD28F155AE005DF784 /* GrowingCrashCString.h */,
+				34E27CBE28F155AE005DF784 /* GrowingCrashCString.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		34E27CC028F155AE005DF784 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CC128F155AE005DF784 /* Monitors */,
+				34E27CD928F155AE005DF784 /* GrowingCrashReport.c */,
+				34E27CDA28F155AE005DF784 /* Tools */,
+				34E27D1928F155AE005DF784 /* GrowingCrashC.h */,
+				34E27D1A28F155AE005DF784 /* GrowingCrashSystemCapabilities.h */,
+				34E27D1B28F155AE005DF784 /* GrowingCrashReportStore.h */,
+				34E27D1C28F155AE005DF784 /* GrowingCrashReportFixer.c */,
+				34E27D1D28F155AE005DF784 /* GrowingCrashCachedData.h */,
+				34E27D1E28F155AE005DF784 /* GrowingCrash.h */,
+				34E27D1F28F155AE005DF784 /* GrowingCrashReportFields.h */,
+				34E27D2028F155AF005DF784 /* GrowingCrashDoctor.h */,
+				34E27D2128F155AF005DF784 /* GrowingCrashReport.h */,
+				34E27D2228F155AF005DF784 /* GrowingCrashReportWriter.h */,
+				34E27D2328F155AF005DF784 /* GrowingCrashReportVersion.h */,
+				34E27D2428F155AF005DF784 /* GrowingCrashReportStore.c */,
+				34E27D2528F155AF005DF784 /* GrowingCrashC.c */,
+				34E27D2628F155AF005DF784 /* GrowingCrashCachedData.c */,
+				34E27D2728F155AF005DF784 /* GrowingCrash.m */,
+				34E27D2828F155AF005DF784 /* GrowingCrashReportFixer.h */,
+				34E27D2928F155AF005DF784 /* GrowingCrashDoctor.m */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		34E27CC128F155AE005DF784 /* Monitors */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CC228F155AE005DF784 /* GrowingCrashMonitor_AppState.c */,
+				34E27CC328F155AE005DF784 /* GrowingCrashMonitor_Signal.c */,
+				34E27CC428F155AE005DF784 /* GrowingCrashMonitor_CPPException.cpp */,
+				34E27CC528F155AE005DF784 /* GrowingCrashMonitor_System.h */,
+				34E27CC628F155AE005DF784 /* GrowingCrashMonitorType.c */,
+				34E27CC728F155AE005DF784 /* GrowingCrashMonitor.c */,
+				34E27CC828F155AE005DF784 /* GrowingCrashMonitor_Zombie.h */,
+				34E27CC928F155AE005DF784 /* GrowingCrashMonitor_MachException.h */,
+				34E27CCA28F155AE005DF784 /* GrowingCrashMonitor_User.c */,
+				34E27CCB28F155AE005DF784 /* GrowingCrashMonitor_Deadlock.m */,
+				34E27CCC28F155AE005DF784 /* GrowingCrashMonitor_NSException.m */,
+				34E27CCD28F155AE005DF784 /* GrowingCrashMonitorType.h */,
+				34E27CCE28F155AE005DF784 /* GrowingCrashMonitor_System.m */,
+				34E27CCF28F155AE005DF784 /* GrowingCrashMonitor_Signal.h */,
+				34E27CD028F155AE005DF784 /* GrowingCrashMonitor_AppState.h */,
+				34E27CD128F155AE005DF784 /* GrowingCrashMonitor_CPPException.h */,
+				34E27CD228F155AE005DF784 /* GrowingCrashMonitor_MachException.c */,
+				34E27CD328F155AE005DF784 /* GrowingCrashMonitor.h */,
+				34E27CD428F155AE005DF784 /* GrowingCrashMonitor_Zombie.c */,
+				34E27CD528F155AE005DF784 /* GrowingCrashMonitor_Deadlock.h */,
+				34E27CD628F155AE005DF784 /* GrowingCrashMonitor_NSException.h */,
+				34E27CD728F155AE005DF784 /* GrowingCrashMonitor_User.h */,
+				34E27CD828F155AE005DF784 /* GrowingCrashMonitorContext.h */,
+			);
+			path = Monitors;
+			sourceTree = "<group>";
+		};
+		34E27CDA28F155AE005DF784 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				34E27CDB28F155AE005DF784 /* GrowingCrashObjCApple.h */,
+				34E27CDC28F155AE005DF784 /* GrowingCrashMemory.c */,
+				34E27CDD28F155AE005DF784 /* GrowingCrashJSONCodec.h */,
+				34E27CDE28F155AE005DF784 /* GrowingCrashStackCursor_MachineContext.h */,
+				34E27CDF28F155AE005DF784 /* GrowingCrashSignalInfo.h */,
+				34E27CE028F155AE005DF784 /* GrowingCrashCPU_x86_32.c */,
+				34E27CE128F155AE005DF784 /* GrowingCrashObjC.h */,
+				34E27CE228F155AE005DF784 /* GrowingCrashSysCtl.c */,
+				34E27CE328F155AE005DF784 /* GrowingCrashID.c */,
+				34E27CE428F155AE005DF784 /* GrowingCrashThread.c */,
+				34E27CE528F155AE005DF784 /* GrowingCrashSymbolicator.h */,
+				34E27CE628F155AE005DF784 /* GrowingCrashgetsect.h */,
+				34E27CE728F155AE005DF784 /* GrowingCrashDate.h */,
+				34E27CE828F155AE005DF784 /* GrowingCrashStackCursor_Backtrace.h */,
+				34E27CE928F155AE005DF784 /* GrowingCrashCPU_arm.c */,
+				34E27CEA28F155AE005DF784 /* GrowingCrashStackCursor.h */,
+				34E27CEB28F155AE005DF784 /* GrowingCrashMach.c */,
+				34E27CEC28F155AE005DF784 /* GrowingCrashFileUtils.c */,
+				34E27CED28F155AE005DF784 /* GrowingCrashString.c */,
+				34E27CEE28F155AE005DF784 /* GrowingCrashCPU_Apple.h */,
+				34E27CEF28F155AE005DF784 /* GrowingCrashPlatformSpecificDefines.h */,
+				34E27CF028F155AE005DF784 /* GrowingCrashStackCursor_SelfThread.c */,
+				34E27CF128F155AE005DF784 /* GrowingCrashDebug.c */,
+				34E27CF228F155AE005DF784 /* GrowingCrashDemangle_CPP.h */,
+				34E27CF328F155AE005DF784 /* GrowingCrashDynamicLinker.c */,
+				34E27CF428F155AE005DF784 /* GrowingCrashLogger.c */,
+				34E27CF528F155AE005DF784 /* GrowingCxaThrowSwapper.h */,
+				34E27CF628F155AE005DF784 /* GrowingCrashCPU.c */,
+				34E27CF728F155AE005DF784 /* NSError+GrowingCrashSimpleConstructor.h */,
+				34E27CF828F155AE005DF784 /* GrowingCrashMachineContext.h */,
+				34E27CF928F155AE005DF784 /* GrowingCrashJSONCodecObjC.m */,
+				34E27CFA28F155AE005DF784 /* GrowingCrashSignalInfo.c */,
+				34E27CFB28F155AE005DF784 /* GrowingCrashCPU_arm64.c */,
+				34E27CFC28F155AE005DF784 /* GrowingCrashSysCtl.h */,
+				34E27CFD28F155AE005DF784 /* GrowingCrashObjC.c */,
+				34E27CFE28F155AE005DF784 /* GrowingCrashStackCursor_MachineContext.c */,
+				34E27CFF28F155AE005DF784 /* GrowingCrashJSONCodec.c */,
+				34E27D0028F155AE005DF784 /* GrowingCrashMemory.h */,
+				34E27D0128F155AE005DF784 /* GrowingCrashFileUtils.h */,
+				34E27D0228F155AE005DF784 /* GrowingCrashMach.h */,
+				34E27D0328F155AE005DF784 /* GrowingCrashStackCursor.c */,
+				34E27D0428F155AE005DF784 /* GrowingCrashStackCursor_Backtrace.c */,
+				34E27D0528F155AE005DF784 /* GrowingCrashCPU_x86_64.c */,
+				34E27D0628F155AE005DF784 /* GrowingCrashgetsect.c */,
+				34E27D0728F155AE005DF784 /* GrowingCrashSymbolicator.c */,
+				34E27D0828F155AE005DF784 /* GrowingCrashThread.h */,
+				34E27D0928F155AE005DF784 /* GrowingCrashDate.c */,
+				34E27D0A28F155AE005DF784 /* GrowingCrashID.h */,
+				34E27D0B28F155AE005DF784 /* GrowingCrashMachineContext_Apple.h */,
+				34E27D0C28F155AE005DF784 /* GrowingCrashDebug.h */,
+				34E27D0D28F155AE005DF784 /* GrowingCrashDemangle_Swift.cpp */,
+				34E27D0E28F155AE005DF784 /* GrowingCrashDemangle_Swift.h */,
+				34E27D0F28F155AE005DF784 /* GrowingCrashStackCursor_SelfThread.h */,
+				34E27D1028F155AE005DF784 /* GrowingCrashString.h */,
+				34E27D1128F155AE005DF784 /* GrowingCrashMachineContext.c */,
+				34E27D1228F155AE005DF784 /* GrowingCrashJSONCodecObjC.h */,
+				34E27D1328F155AE005DF784 /* GrowingCrashCPU.h */,
+				34E27D1428F155AE005DF784 /* NSError+GrowingCrashSimpleConstructor.m */,
+				34E27D1528F155AE005DF784 /* GrowingCxaThrowSwapper.c */,
+				34E27D1628F155AE005DF784 /* GrowingCrashLogger.h */,
+				34E27D1728F155AE005DF784 /* GrowingCrashDynamicLinker.h */,
+				34E27D1828F155AE005DF784 /* GrowingCrashDemangle_CPP.cpp */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		34E27D2A28F155AF005DF784 /* llvm */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D2B28F155AF005DF784 /* ADT */,
+				34E27D2F28F155AF005DF784 /* Config */,
+				34E27D3128F155AF005DF784 /* Support */,
+				34E27D3628F155AF005DF784 /* LICENSE.TXT */,
+			);
+			path = llvm;
+			sourceTree = "<group>";
+		};
+		34E27D2B28F155AF005DF784 /* ADT */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D2C28F155AF005DF784 /* None.h */,
+				34E27D2D28F155AF005DF784 /* StringRef.h */,
+				34E27D2E28F155AF005DF784 /* GrowingCrashOptional.h */,
+			);
+			path = ADT;
+			sourceTree = "<group>";
+		};
+		34E27D2F28F155AF005DF784 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D3028F155AF005DF784 /* llvm-config.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		34E27D3128F155AF005DF784 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D3228F155AF005DF784 /* Casting.h */,
+				34E27D3328F155AF005DF784 /* AlignOf.h */,
+				34E27D3428F155AF005DF784 /* Compiler.h */,
+				34E27D3528F155AF005DF784 /* type_traits.h */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		34E27D3828F155AF005DF784 /* Installations */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D3928F155AF005DF784 /* GrowingCrashInstallation+Private.h */,
+				34E27D3A28F155AF005DF784 /* GrowingCrashInstallation.h */,
+				34E27D3B28F155AF005DF784 /* GrowingCrashInstallation.m */,
+			);
+			path = Installations;
+			sourceTree = "<group>";
+		};
+		34E27D3C28F155AF005DF784 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D3D28F155AF005DF784 /* SwiftStrings.h */,
+				34E27D3E28F155AF005DF784 /* Basic */,
+				34E27D5828F155AF005DF784 /* LICENSE.txt */,
+			);
+			path = swift;
+			sourceTree = "<group>";
+		};
+		34E27D3E28F155AF005DF784 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				34E27D3F28F155AF005DF784 /* NodePrinter.cpp */,
+				34E27D4028F155AF005DF784 /* Demangle.cpp */,
+				34E27D4128F155AF005DF784 /* SwiftDemangle.h */,
+				34E27D4228F155AF005DF784 /* Demangler.cpp */,
+				34E27D4328F155AF005DF784 /* Malloc.h */,
+				34E27D4428F155AF005DF784 /* DemangleNodes.h */,
+				34E27D4528F155AF005DF784 /* Punycode.cpp */,
+				34E27D4628F155AF005DF784 /* Demangle.h */,
+				34E27D4728F155AF005DF784 /* Config.h */,
+				34E27D4828F155AF005DF784 /* DemangleNodes.def */,
+				34E27D4928F155AF005DF784 /* STLExtras.h */,
+				34E27D4A28F155AF005DF784 /* Context.cpp */,
+				34E27D4B28F155AF005DF784 /* OldDemangler.cpp */,
+				34E27D4C28F155AF005DF784 /* StandardTypesMangling.def */,
+				34E27D4D28F155AF005DF784 /* Punycode.h */,
+				34E27D4E28F155AF005DF784 /* Fallthrough.h */,
+				34E27D4F28F155AF005DF784 /* LLVM.h */,
+				34E27D5028F155AF005DF784 /* Demangler.h */,
+				34E27D5128F155AF005DF784 /* ValueWitnessMangling.def */,
+				34E27D5228F155AF005DF784 /* ManglingUtils.h */,
+				34E27D5328F155AF005DF784 /* ReferenceStorage.def */,
+				34E27D5428F155AF005DF784 /* Visibility.h */,
+				34E27D5528F155AF005DF784 /* Platform.h */,
+				34E27D5628F155AF005DF784 /* ManglingMacros.h */,
+				34E27D5728F155AF005DF784 /* ManglingUtils.cpp */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		34E27DF628F158F3005DF784 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				34E27DF728F158F3005DF784 /* GrowingAPM.h */,
+				34E27DF828F158F4005DF784 /* GrowingAPM+Private.h */,
+				34E27DFA28F158F4005DF784 /* GrowingAPM.m */,
+				34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */,
+				34E27DF928F158F4005DF784 /* GrowingAPMConfig.h */,
+				34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */,
+			);
+			name = Core;
+			path = ../../../Core;
+			sourceTree = "<group>";
+		};
+		34E27E0F28F16026005DF784 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				34E27E1028F16026005DF784 /* AppDelegate.h */,
+				34E27E1128F16026005DF784 /* AppDelegate.m */,
+				34E27E1328F16026005DF784 /* SceneDelegate.h */,
+				34E27E1428F16026005DF784 /* SceneDelegate.m */,
+				34E27E1628F16026005DF784 /* ViewController.h */,
+				34E27E1728F16026005DF784 /* ViewController.m */,
+				34E27E1928F16026005DF784 /* Main.storyboard */,
+				34E27E1C28F16028005DF784 /* Assets.xcassets */,
+				34E27E1E28F16028005DF784 /* LaunchScreen.storyboard */,
+				34E27E2128F16028005DF784 /* Info.plist */,
+				34E27E2228F16028005DF784 /* main.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		34E27E2B28F16029005DF784 /* ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				34E27E2C28F16029005DF784 /* ExampleTests.m */,
+			);
+			path = ExampleTests;
+			sourceTree = "<group>";
+		};
+		34E27E3528F16029005DF784 /* ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				34E27E3628F16029005DF784 /* ExampleUITests.m */,
+				34E27E3828F16029005DF784 /* ExampleUITestsLaunchTests.m */,
+			);
+			path = ExampleUITests;
+			sourceTree = "<group>";
+		};
+		6E4E217250941B412217835F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				349DA46028F29F4600C4281F /* libz.1.tbd */,
+				349DA45F28F29F3E00C4281F /* libz.1.2.8.tbd */,
+				349DA45E28F29F2F00C4281F /* libbz2.1.0.8.tbd */,
+				349DA45D28F29F2900C4281F /* libbz2.1.0.tbd */,
+				349DA45928F29C4600C4281F /* libc++.1.tbd */,
+				349DA45828F29C1B00C4281F /* libz.tbd */,
+				349DA45728F29C0700C4281F /* libc++.tbd */,
+				349DA44528F27B6B00C4281F /* UIKit.framework */,
+				34E27C9428F127E5005DF784 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B317EFE237FABF3BCDFB1783 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		349DA40028F26FBE00C4281F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA43D28F27ACB00C4281F /* GrowingAPMUIMonitor.h in Headers */,
+				349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA41A28F26FD700C4281F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA44228F27AED00C4281F /* GrowingAPMLaunchMonitor.h in Headers */,
+				349DA44428F27B1700C4281F /* GrowingAPMMonitor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27C9628F1556B005DF784 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27DBF28F155AF005DF784 /* GrowingCrash.h in Headers */,
+				34E27DBA28F155AF005DF784 /* GrowingCrashC.h in Headers */,
+				34E27D6128F155AF005DF784 /* GrowingCrashCString.h in Headers */,
+				34E27DD428F155B0005DF784 /* GrowingAPMCrashMonitor.h in Headers */,
+				34E27DD628F155B0005DF784 /* GrowingCrashInstallation.h in Headers */,
+				34E27DD528F155B0005DF784 /* GrowingCrashInstallation+Private.h in Headers */,
+				34E27D6F28F155AF005DF784 /* GrowingCrashMonitorType.h in Headers */,
+				34E27D6028F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.h in Headers */,
+				34E27D5C28F155AF005DF784 /* GrowingCrashReportFilterBasic.h in Headers */,
+				34E27DC028F155AF005DF784 /* GrowingCrashReportFields.h in Headers */,
+				34E27D5F28F155AF005DF784 /* GrowingCrashReportFilter.h in Headers */,
+				34E27DC328F155AF005DF784 /* GrowingCrashReportWriter.h in Headers */,
+				34E27DEA28F155B0005DF784 /* Demangler.h in Headers */,
+				34E27D9928F155AF005DF784 /* GrowingCrashMachineContext.h in Headers */,
+				34E27DE728F155B0005DF784 /* Punycode.h in Headers */,
+				34E27DCE28F155AF005DF784 /* llvm-config.h in Headers */,
+				34E27DDD28F155B0005DF784 /* Malloc.h in Headers */,
+				34E27DD828F155B0005DF784 /* SwiftStrings.h in Headers */,
+				34E27DA228F155AF005DF784 /* GrowingCrashFileUtils.h in Headers */,
+				34E27D6B28F155AF005DF784 /* GrowingCrashMonitor_MachException.h in Headers */,
+				34E27DAF28F155AF005DF784 /* GrowingCrashDemangle_Swift.h in Headers */,
+				34E27DE028F155B0005DF784 /* Demangle.h in Headers */,
+				34E27DE128F155B0005DF784 /* Config.h in Headers */,
+				34E27D8228F155AF005DF784 /* GrowingCrashObjC.h in Headers */,
+				34E27DEF28F155B0005DF784 /* Platform.h in Headers */,
+				34E27DA128F155AF005DF784 /* GrowingCrashMemory.h in Headers */,
+				34E27DB728F155AF005DF784 /* GrowingCrashLogger.h in Headers */,
+				34E27D7228F155AF005DF784 /* GrowingCrashMonitor_AppState.h in Headers */,
+				34E27DBE28F155AF005DF784 /* GrowingCrashCachedData.h in Headers */,
+				34E27D8728F155AF005DF784 /* GrowingCrashgetsect.h in Headers */,
+				34E27DCC28F155AF005DF784 /* StringRef.h in Headers */,
+				34E27DAB28F155AF005DF784 /* GrowingCrashID.h in Headers */,
+				34E27DAC28F155AF005DF784 /* GrowingCrashMachineContext_Apple.h in Headers */,
+				34E27DB128F155AF005DF784 /* GrowingCrashString.h in Headers */,
+				34E27D7828F155AF005DF784 /* GrowingCrashMonitor_NSException.h in Headers */,
+				34E27E7628F19745005DF784 /* GrowingAPM+Private.h in Headers */,
+				34E27DB028F155AF005DF784 /* GrowingCrashStackCursor_SelfThread.h in Headers */,
+				34E27DB828F155AF005DF784 /* GrowingCrashDynamicLinker.h in Headers */,
+				34E27DD028F155AF005DF784 /* AlignOf.h in Headers */,
+				34E27D8028F155AF005DF784 /* GrowingCrashSignalInfo.h in Headers */,
+				34E27DAD28F155AF005DF784 /* GrowingCrashDebug.h in Headers */,
+				34E27D5A28F155AF005DF784 /* Container+DeepSearch.h in Headers */,
+				34E27DCF28F155AF005DF784 /* Casting.h in Headers */,
+				34E27D7528F155AF005DF784 /* GrowingCrashMonitor.h in Headers */,
+				34E27D7928F155AF005DF784 /* GrowingCrashMonitor_User.h in Headers */,
+				34E27D8B28F155AF005DF784 /* GrowingCrashStackCursor.h in Headers */,
+				34E27D5B28F155AF005DF784 /* GrowingCrashVarArgs.h in Headers */,
+				34E27DC128F155AF005DF784 /* GrowingCrashDoctor.h in Headers */,
+				34E27D7E28F155AF005DF784 /* GrowingCrashJSONCodec.h in Headers */,
+				34E27D9D28F155AF005DF784 /* GrowingCrashSysCtl.h in Headers */,
+				34E27D9028F155AF005DF784 /* GrowingCrashPlatformSpecificDefines.h in Headers */,
+				34E27D8628F155AF005DF784 /* GrowingCrashSymbolicator.h in Headers */,
+				34E27D7728F155AF005DF784 /* GrowingCrashMonitor_Deadlock.h in Headers */,
+				34E27DEE28F155B0005DF784 /* Visibility.h in Headers */,
+				34E27DC428F155AF005DF784 /* GrowingCrashReportVersion.h in Headers */,
+				34E27DE328F155B0005DF784 /* STLExtras.h in Headers */,
+				34E27D6A28F155AF005DF784 /* GrowingCrashMonitor_Zombie.h in Headers */,
+				34E27D9828F155AF005DF784 /* NSError+GrowingCrashSimpleConstructor.h in Headers */,
+				34E27DD228F155B0005DF784 /* type_traits.h in Headers */,
+				34E27DE828F155B0005DF784 /* Fallthrough.h in Headers */,
+				34E27DBC28F155AF005DF784 /* GrowingCrashReportStore.h in Headers */,
+				34E27DB428F155AF005DF784 /* GrowingCrashCPU.h in Headers */,
+				34E27D7A28F155AF005DF784 /* GrowingCrashMonitorContext.h in Headers */,
+				34E27E7528F1973A005DF784 /* GrowingAPMMonitor.h in Headers */,
+				34E27DA928F155AF005DF784 /* GrowingCrashThread.h in Headers */,
+				34E27DC228F155AF005DF784 /* GrowingCrashReport.h in Headers */,
+				34E27D8F28F155AF005DF784 /* GrowingCrashCPU_Apple.h in Headers */,
+				34E27D7128F155AF005DF784 /* GrowingCrashMonitor_Signal.h in Headers */,
+				34E27DC928F155AF005DF784 /* GrowingCrashReportFixer.h in Headers */,
+				34E27D6728F155AF005DF784 /* GrowingCrashMonitor_System.h in Headers */,
+				34E27D8828F155AF005DF784 /* GrowingCrashDate.h in Headers */,
+				34E27DDB28F155B0005DF784 /* SwiftDemangle.h in Headers */,
+				34E27DA328F155AF005DF784 /* GrowingCrashMach.h in Headers */,
+				34E27D7328F155AF005DF784 /* GrowingCrashMonitor_CPPException.h in Headers */,
+				34E27D7C28F155AF005DF784 /* GrowingCrashObjCApple.h in Headers */,
+				34E27D8928F155AF005DF784 /* GrowingCrashStackCursor_Backtrace.h in Headers */,
+				34E27D9628F155AF005DF784 /* GrowingCxaThrowSwapper.h in Headers */,
+				34E27DF028F155B0005DF784 /* ManglingMacros.h in Headers */,
+				34E27DD128F155AF005DF784 /* Compiler.h in Headers */,
+				34E27DCB28F155AF005DF784 /* None.h in Headers */,
+				34E27DCD28F155AF005DF784 /* GrowingCrashOptional.h in Headers */,
+				34E27DE928F155B0005DF784 /* LLVM.h in Headers */,
+				34E27DB328F155AF005DF784 /* GrowingCrashJSONCodecObjC.h in Headers */,
+				34E27D9328F155AF005DF784 /* GrowingCrashDemangle_CPP.h in Headers */,
+				34E27D7F28F155AF005DF784 /* GrowingCrashStackCursor_MachineContext.h in Headers */,
+				34E27DBB28F155AF005DF784 /* GrowingCrashSystemCapabilities.h in Headers */,
+				34E27DEC28F155B0005DF784 /* ManglingUtils.h in Headers */,
+				34E27DDE28F155B0005DF784 /* DemangleNodes.h in Headers */,
+				34E27DEB28F155B0005DF784 /* ValueWitnessMangling.def in Headers */,
+				34E27DED28F155B0005DF784 /* ReferenceStorage.def in Headers */,
+				34E27DE228F155B0005DF784 /* DemangleNodes.def in Headers */,
+				34E27DE628F155B0005DF784 /* StandardTypesMangling.def in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		349DA40428F26FBE00C4281F /* GrowingAPMUIMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349DA41428F26FBF00C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMUIMonitor" */;
+			buildPhases = (
+				349DA40028F26FBE00C4281F /* Headers */,
+				349DA40128F26FBE00C4281F /* Sources */,
+				349DA40228F26FBE00C4281F /* Frameworks */,
+				349DA40328F26FBE00C4281F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrowingAPMUIMonitor;
+			productName = GrowingAPMUIMonitor;
+			productReference = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		349DA40B28F26FBE00C4281F /* GrowingAPMUIMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349DA41728F26FBF00C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMUIMonitorTests" */;
+			buildPhases = (
+				349DA40828F26FBE00C4281F /* Sources */,
+				349DA40928F26FBE00C4281F /* Frameworks */,
+				349DA40A28F26FBE00C4281F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349DA40F28F26FBE00C4281F /* PBXTargetDependency */,
+			);
+			name = GrowingAPMUIMonitorTests;
+			productName = GrowingAPMUIMonitorTests;
+			productReference = 349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349DA42E28F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitor" */;
+			buildPhases = (
+				349DA41A28F26FD700C4281F /* Headers */,
+				349DA41B28F26FD700C4281F /* Sources */,
+				349DA41C28F26FD700C4281F /* Frameworks */,
+				349DA41D28F26FD700C4281F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrowingAPMLaunchMonitor;
+			productName = GrowingAPMLaunchMonitor;
+			productReference = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		349DA42528F26FD700C4281F /* GrowingAPMLaunchMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349DA43128F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitorTests" */;
+			buildPhases = (
+				349DA42228F26FD700C4281F /* Sources */,
+				349DA42328F26FD700C4281F /* Frameworks */,
+				349DA42428F26FD700C4281F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349DA42928F26FD700C4281F /* PBXTargetDependency */,
+			);
+			name = GrowingAPMLaunchMonitorTests;
+			productName = GrowingAPMLaunchMonitorTests;
+			productReference = 349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		34E27C9A28F1556B005DF784 /* GrowingAPMCrashMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E27CAE28F1556C005DF784 /* Build configuration list for PBXNativeTarget "GrowingAPMCrashMonitor" */;
+			buildPhases = (
+				34E27C9628F1556B005DF784 /* Headers */,
+				34E27C9728F1556B005DF784 /* Sources */,
+				34E27C9828F1556B005DF784 /* Frameworks */,
+				34E27C9928F1556B005DF784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrowingAPMCrashMonitor;
+			productName = GrowingAPMCrash;
+			productReference = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34E27CA128F1556C005DF784 /* GrowingAPMCrashMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E27CAF28F1556C005DF784 /* Build configuration list for PBXNativeTarget "GrowingAPMCrashMonitorTests" */;
+			buildPhases = (
+				34E27C9E28F1556C005DF784 /* Sources */,
+				34E27C9F28F1556C005DF784 /* Frameworks */,
+				34E27CA028F1556C005DF784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34E27CA528F1556C005DF784 /* PBXTargetDependency */,
+			);
+			name = GrowingAPMCrashMonitorTests;
+			productName = GrowingAPMCrashTests;
+			productReference = 34E27CA228F1556C005DF784 /* GrowingAPMCrashMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		34E27E0D28F16026005DF784 /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E27E3A28F16029005DF784 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				34E27E0A28F16026005DF784 /* Sources */,
+				34E27E0B28F16026005DF784 /* Frameworks */,
+				34E27E0C28F16026005DF784 /* Resources */,
+				349DA44E28F29AE900C4281F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349DA44D28F29AE900C4281F /* PBXTargetDependency */,
+				349DA45228F29AEF00C4281F /* PBXTargetDependency */,
+				349DA45628F29AF400C4281F /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = 34E27E0E28F16026005DF784 /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		34E27E2728F16029005DF784 /* ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E27E3D28F16029005DF784 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
+			buildPhases = (
+				34E27E2428F16029005DF784 /* Sources */,
+				34E27E2528F16029005DF784 /* Frameworks */,
+				34E27E2628F16029005DF784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34E27E2A28F16029005DF784 /* PBXTargetDependency */,
+			);
+			name = ExampleTests;
+			productName = ExampleTests;
+			productReference = 34E27E2828F16029005DF784 /* ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		34E27E3128F16029005DF784 /* ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E27E4028F16029005DF784 /* Build configuration list for PBXNativeTarget "ExampleUITests" */;
+			buildPhases = (
+				34E27E2E28F16029005DF784 /* Sources */,
+				34E27E2F28F16029005DF784 /* Frameworks */,
+				34E27E3028F16029005DF784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34E27E3428F16029005DF784 /* PBXTargetDependency */,
+			);
+			name = ExampleUITests;
+			productName = ExampleUITests;
+			productReference = 34E27E3228F16029005DF784 /* ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34E2797728F12207005DF784 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					349DA40428F26FBE00C4281F = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					349DA40B28F26FBE00C4281F = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					349DA41E28F26FD700C4281F = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					349DA42528F26FD700C4281F = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					34E27C9A28F1556B005DF784 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					34E27CA128F1556C005DF784 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					34E27E0D28F16026005DF784 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					34E27E2728F16029005DF784 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 34E27E0D28F16026005DF784;
+					};
+					34E27E3128F16029005DF784 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 34E27E0D28F16026005DF784;
+					};
+				};
+			};
+			buildConfigurationList = 34E2797A28F12207005DF784 /* Build configuration list for PBXProject "GrowingAPM" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 34E2797628F12207005DF784;
+			productRefGroup = 34E2798128F12207005DF784 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34E27C9A28F1556B005DF784 /* GrowingAPMCrashMonitor */,
+				34E27CA128F1556C005DF784 /* GrowingAPMCrashMonitorTests */,
+				349DA40428F26FBE00C4281F /* GrowingAPMUIMonitor */,
+				349DA40B28F26FBE00C4281F /* GrowingAPMUIMonitorTests */,
+				349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */,
+				349DA42528F26FD700C4281F /* GrowingAPMLaunchMonitorTests */,
+				34E27E0D28F16026005DF784 /* Example */,
+				34E27E2728F16029005DF784 /* ExampleTests */,
+				34E27E3128F16029005DF784 /* ExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		349DA40328F26FBE00C4281F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA40A28F26FBE00C4281F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA41D28F26FD700C4281F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA42428F26FD700C4281F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27C9928F1556B005DF784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27CA028F1556C005DF784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E0C28F16026005DF784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27E2028F16028005DF784 /* LaunchScreen.storyboard in Resources */,
+				34E27E1D28F16028005DF784 /* Assets.xcassets in Resources */,
+				34E27E1B28F16026005DF784 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E2628F16029005DF784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E3028F16029005DF784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		349DA40128F26FBE00C4281F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA43E28F27ACB00C4281F /* GrowingAPMUIMonitor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA40828F26FBE00C4281F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA41B28F26FD700C4281F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA44128F27AED00C4281F /* GrowingAPMLaunchMonitor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349DA42228F26FD700C4281F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349DA42C28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27C9728F1556B005DF784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27D6228F155AF005DF784 /* GrowingCrashCString.m in Sources */,
+				34E27DAA28F155AF005DF784 /* GrowingCrashDate.c in Sources */,
+				34E27DE528F155B0005DF784 /* OldDemangler.cpp in Sources */,
+				34E27D6D28F155AF005DF784 /* GrowingCrashMonitor_Deadlock.m in Sources */,
+				34E27DDC28F155B0005DF784 /* Demangler.cpp in Sources */,
+				34E27D9428F155AF005DF784 /* GrowingCrashDynamicLinker.c in Sources */,
+				34E27D8128F155AF005DF784 /* GrowingCrashCPU_x86_32.c in Sources */,
+				34E27DA428F155AF005DF784 /* GrowingCrashStackCursor.c in Sources */,
+				34E27D7B28F155AF005DF784 /* GrowingCrashReport.c in Sources */,
+				34E27DC828F155AF005DF784 /* GrowingCrash.m in Sources */,
+				34E27D9E28F155AF005DF784 /* GrowingCrashObjC.c in Sources */,
+				34E27D9C28F155AF005DF784 /* GrowingCrashCPU_arm64.c in Sources */,
+				34E27D5E28F155AF005DF784 /* GrowingCrashReportFilterBasic.m in Sources */,
+				34E27D6928F155AF005DF784 /* GrowingCrashMonitor.c in Sources */,
+				34E27D8D28F155AF005DF784 /* GrowingCrashFileUtils.c in Sources */,
+				34E27D6428F155AF005DF784 /* GrowingCrashMonitor_AppState.c in Sources */,
+				34E27D8528F155AF005DF784 /* GrowingCrashThread.c in Sources */,
+				34E27DDF28F155B0005DF784 /* Punycode.cpp in Sources */,
+				34E27DAE28F155AF005DF784 /* GrowingCrashDemangle_Swift.cpp in Sources */,
+				34E27DC528F155AF005DF784 /* GrowingCrashReportStore.c in Sources */,
+				34E27DA828F155AF005DF784 /* GrowingCrashSymbolicator.c in Sources */,
+				34E27DCA28F155AF005DF784 /* GrowingCrashDoctor.m in Sources */,
+				34E27D6828F155AF005DF784 /* GrowingCrashMonitorType.c in Sources */,
+				34E27DDA28F155B0005DF784 /* Demangle.cpp in Sources */,
+				34E27D8E28F155AF005DF784 /* GrowingCrashString.c in Sources */,
+				34E27D6C28F155AF005DF784 /* GrowingCrashMonitor_User.c in Sources */,
+				34E27D9728F155AF005DF784 /* GrowingCrashCPU.c in Sources */,
+				34E27DA028F155AF005DF784 /* GrowingCrashJSONCodec.c in Sources */,
+				34E27D9F28F155AF005DF784 /* GrowingCrashStackCursor_MachineContext.c in Sources */,
+				34E27DA528F155AF005DF784 /* GrowingCrashStackCursor_Backtrace.c in Sources */,
+				34E27D9528F155AF005DF784 /* GrowingCrashLogger.c in Sources */,
+				34E27D8A28F155AF005DF784 /* GrowingCrashCPU_arm.c in Sources */,
+				34E27D9228F155AF005DF784 /* GrowingCrashDebug.c in Sources */,
+				34E27DB928F155AF005DF784 /* GrowingCrashDemangle_CPP.cpp in Sources */,
+				34E27DE428F155B0005DF784 /* Context.cpp in Sources */,
+				34E27DBD28F155AF005DF784 /* GrowingCrashReportFixer.c in Sources */,
+				34E27D7028F155AF005DF784 /* GrowingCrashMonitor_System.m in Sources */,
+				34E27DB228F155AF005DF784 /* GrowingCrashMachineContext.c in Sources */,
+				34E27D9128F155AF005DF784 /* GrowingCrashStackCursor_SelfThread.c in Sources */,
+				34E27D7628F155AF005DF784 /* GrowingCrashMonitor_Zombie.c in Sources */,
+				34E27DC728F155AF005DF784 /* GrowingCrashCachedData.c in Sources */,
+				34E27D5D28F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.m in Sources */,
+				34E27D6628F155AF005DF784 /* GrowingCrashMonitor_CPPException.cpp in Sources */,
+				34E27DA728F155AF005DF784 /* GrowingCrashgetsect.c in Sources */,
+				34E27DC628F155AF005DF784 /* GrowingCrashC.c in Sources */,
+				34E27D6528F155AF005DF784 /* GrowingCrashMonitor_Signal.c in Sources */,
+				34E27DA628F155AF005DF784 /* GrowingCrashCPU_x86_64.c in Sources */,
+				34E27D8428F155AF005DF784 /* GrowingCrashID.c in Sources */,
+				34E27DF128F155B0005DF784 /* ManglingUtils.cpp in Sources */,
+				34E27DB528F155AF005DF784 /* NSError+GrowingCrashSimpleConstructor.m in Sources */,
+				34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */,
+				34E27D8C28F155AF005DF784 /* GrowingCrashMach.c in Sources */,
+				34E27D9A28F155AF005DF784 /* GrowingCrashJSONCodecObjC.m in Sources */,
+				34E27D6328F155AF005DF784 /* GrowingAPMCrashMonitor.m in Sources */,
+				34E27D6E28F155AF005DF784 /* GrowingCrashMonitor_NSException.m in Sources */,
+				34E27D8328F155AF005DF784 /* GrowingCrashSysCtl.c in Sources */,
+				34E27DD928F155B0005DF784 /* NodePrinter.cpp in Sources */,
+				34E27DB628F155AF005DF784 /* GrowingCxaThrowSwapper.c in Sources */,
+				34E27D7D28F155AF005DF784 /* GrowingCrashMemory.c in Sources */,
+				34E27DD728F155B0005DF784 /* GrowingCrashInstallation.m in Sources */,
+				34E27D9B28F155AF005DF784 /* GrowingCrashSignalInfo.c in Sources */,
+				34E27D7428F155AF005DF784 /* GrowingCrashMonitor_MachException.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27C9E28F1556C005DF784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27CA828F1556C005DF784 /* GrowingAPMCrashMonitorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E0A28F16026005DF784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27E1828F16026005DF784 /* ViewController.m in Sources */,
+				34E27E1228F16026005DF784 /* AppDelegate.m in Sources */,
+				349DA45A28F29C7700C4281F /* GrowingAPM.m in Sources */,
+				34E27E2328F16028005DF784 /* main.m in Sources */,
+				349DA45B28F29C7B00C4281F /* GrowingAPMConfig.m in Sources */,
+				34E27E1528F16026005DF784 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E2428F16029005DF784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27E2D28F16029005DF784 /* ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E27E2E28F16029005DF784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E27E3728F16029005DF784 /* ExampleUITests.m in Sources */,
+				34E27E3928F16029005DF784 /* ExampleUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		349DA40F28F26FBE00C4281F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349DA40428F26FBE00C4281F /* GrowingAPMUIMonitor */;
+			targetProxy = 349DA40E28F26FBE00C4281F /* PBXContainerItemProxy */;
+		};
+		349DA42928F26FD700C4281F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */;
+			targetProxy = 349DA42828F26FD700C4281F /* PBXContainerItemProxy */;
+		};
+		349DA44D28F29AE900C4281F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 34E27C9A28F1556B005DF784 /* GrowingAPMCrashMonitor */;
+			targetProxy = 349DA44C28F29AE900C4281F /* PBXContainerItemProxy */;
+		};
+		349DA45228F29AEF00C4281F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */;
+			targetProxy = 349DA45128F29AEF00C4281F /* PBXContainerItemProxy */;
+		};
+		349DA45628F29AF400C4281F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 349DA40428F26FBE00C4281F /* GrowingAPMUIMonitor */;
+			targetProxy = 349DA45528F29AF400C4281F /* PBXContainerItemProxy */;
+		};
+		34E27CA528F1556C005DF784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34E27C9A28F1556B005DF784 /* GrowingAPMCrashMonitor */;
+			targetProxy = 34E27CA428F1556C005DF784 /* PBXContainerItemProxy */;
+		};
+		34E27E2A28F16029005DF784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34E27E0D28F16026005DF784 /* Example */;
+			targetProxy = 34E27E2928F16029005DF784 /* PBXContainerItemProxy */;
+		};
+		34E27E3428F16029005DF784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34E27E0D28F16026005DF784 /* Example */;
+			targetProxy = 34E27E3328F16029005DF784 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		34E27E1928F16026005DF784 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34E27E1A28F16026005DF784 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		34E27E1E28F16028005DF784 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34E27E1F28F16028005DF784 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		349DA41528F26FBF00C4281F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMUIMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		349DA41628F26FBF00C4281F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMUIMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		349DA41828F26FBF00C4281F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMUIMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		349DA41928F26FBF00C4281F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMUIMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		349DA42F28F26FD700C4281F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		349DA43028F26FD700C4281F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		349DA43228F26FD700C4281F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		349DA43328F26FD700C4281F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		34E2799028F12207005DF784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34E2799128F12207005DF784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34E27CAA28F1556C005DF784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMCrashMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		34E27CAB28F1556C005DF784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMCrashMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		34E27CAC28F1556C005DF784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMCrashMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		34E27CAD28F1556C005DF784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMCrashMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		34E27E3B28F16029005DF784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "GrowingIO.GrowingIOTest-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		34E27E3C28F16029005DF784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "GrowingIO.GrowingIOTest-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		34E27E3E28F16029005DF784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.ExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
+			};
+			name = Debug;
+		};
+		34E27E3F28F16029005DF784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.ExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
+			};
+			name = Release;
+		};
+		34E27E4128F16029005DF784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.ExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Debug;
+		};
+		34E27E4228F16029005DF784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.ExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		349DA41428F26FBF00C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMUIMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349DA41528F26FBF00C4281F /* Debug */,
+				349DA41628F26FBF00C4281F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349DA41728F26FBF00C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMUIMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349DA41828F26FBF00C4281F /* Debug */,
+				349DA41928F26FBF00C4281F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349DA42E28F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349DA42F28F26FD700C4281F /* Debug */,
+				349DA43028F26FD700C4281F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349DA43128F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349DA43228F26FD700C4281F /* Debug */,
+				349DA43328F26FD700C4281F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E2797A28F12207005DF784 /* Build configuration list for PBXProject "GrowingAPM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E2799028F12207005DF784 /* Debug */,
+				34E2799128F12207005DF784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E27CAE28F1556C005DF784 /* Build configuration list for PBXNativeTarget "GrowingAPMCrashMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E27CAA28F1556C005DF784 /* Debug */,
+				34E27CAB28F1556C005DF784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E27CAF28F1556C005DF784 /* Build configuration list for PBXNativeTarget "GrowingAPMCrashMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E27CAC28F1556C005DF784 /* Debug */,
+				34E27CAD28F1556C005DF784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E27E3A28F16029005DF784 /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E27E3B28F16029005DF784 /* Debug */,
+				34E27E3C28F16029005DF784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E27E3D28F16029005DF784 /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E27E3E28F16029005DF784 /* Debug */,
+				34E27E3F28F16029005DF784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E27E4028F16029005DF784 /* Build configuration list for PBXNativeTarget "ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E27E4128F16029005DF784 /* Debug */,
+				34E27E4228F16029005DF784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34E2797728F12207005DF784 /* Project object */;
+}

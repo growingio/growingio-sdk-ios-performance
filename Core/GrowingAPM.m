@@ -17,17 +17,28 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
+#if __has_include(<GrowingAPM/GrowingAPM.h>)
+#import <GrowingAPM/GrowingAPM.h>
+#else
 #import "GrowingAPM.h"
+#endif
+
 #import "GrowingAPM+Private.h"
 #import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
 
 #ifdef GROWING_APM_LAUNCH
 #import "GrowingTimeUtil.h"
+#import <GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>
+#endif
+
+#ifdef GROWING_APM_UI
+#import <GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>
 #endif
 
 #ifdef GROWING_APM_CRASH
-#import "GrowingCrashInstallation.h"
+#import <GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>
+#import <GrowingAPMCrashMonitor/GrowingCrashInstallation.h>
 #import <objc/runtime.h>
 #endif
 
