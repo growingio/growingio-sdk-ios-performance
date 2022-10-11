@@ -94,7 +94,7 @@
     
     if (config.monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
-        GrowingAPMUIMonitor *monitor = [[GrowingAPMUIMonitor alloc] init];
+        GrowingAPMUIMonitor *monitor = [GrowingAPMUIMonitor sharedInstance];
         [monitor startMonitor];
         apm.pageLoadMonitor = monitor;
 #endif
@@ -116,14 +116,18 @@
 }
 
 + (void)swizzle:(GrowingAPMMonitors)monitors {
-    if (monitors & GrowingAPMMonitorsLaunch || monitors & GrowingAPMMonitorsUserInterface) {
-        [GrowingViewControllerLifecycle setup];
-        [GrowingAppLifecycle setup];
-    }
-    
     if (monitors & GrowingAPMMonitorsLaunch) {
 #ifdef GROWING_APM_LAUNCH
+        [GrowingViewControllerLifecycle setup];
+        [GrowingAppLifecycle setup];
         GrowingAPM.sharedInstance.coldRebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
+#endif
+    }
+    
+    if (monitors & GrowingAPMMonitorsUserInterface) {
+#ifdef GROWING_APM_UI
+        [GrowingAppLifecycle setup];
+        [UIViewController growingapm_startUIMonitorSwizzle];
 #endif
     }
     
@@ -134,7 +138,9 @@
     }
     
     if (monitors & GrowingAPMMonitorsNetwork) {
+#ifdef GROWING_APM_NETWORK
         
+#endif
     }
 }
 

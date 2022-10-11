@@ -39,16 +39,13 @@
 
 #pragma mark - GrowingViewControllerLifecycleDelegate
 
-- (void)pageLoadCompletedWithViewController:(UIViewController *)viewController
-                               loadViewTime:(double)loadViewTime
-                            viewDidLoadTime:(double)viewDidLoadTime
-                         viewWillAppearTime:(double)viewWillAppearTime
-                          viewDidAppearTime:(double)viewDidAppearTime {
+- (void)viewControllerDidAppear:(UIViewController *)controller {
     if (self.firstVCDidAppearTime > 0) {
         return;
     }
     
     // cold reboot
+    double viewDidAppearTime = [GrowingTimeUtil currentSystemTimeMillis];
     self.firstVCDidAppearTime = viewDidAppearTime;
     if (self.monitorBlock) {
         self.monitorBlock(viewDidAppearTime - self.coldRebootBeginTime, NO);

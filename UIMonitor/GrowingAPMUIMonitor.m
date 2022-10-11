@@ -18,10 +18,9 @@
 //  limitations under the License.
 
 #import "GrowingAPMUIMonitor.h"
-#import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
 
-@interface GrowingAPMUIMonitor () <GrowingViewControllerLifecycleDelegate, GrowingAppLifecycleDelegate>
+@interface GrowingAPMUIMonitor () <GrowingAppLifecycleDelegate>
 
 @property (nonatomic, strong) NSMutableArray *ignoredPrivateControllers;
 @property (nonatomic, copy) NSString *lastPageName;
@@ -30,14 +29,22 @@
 
 @implementation GrowingAPMUIMonitor
 
++ (instancetype)sharedInstance {
+    static id _sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    return _sharedInstance;
+}
+
 #pragma mark - Monitor
 
 - (void)startMonitor {
-    [GrowingViewControllerLifecycle.sharedInstance addViewControllerLifecycleDelegate:self];
     [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
 }
 
-#pragma mark - GrowingViewControllerLifecycleDelegate
+#pragma mark - Private Method
 
 - (void)pageLoadCompletedWithViewController:(UIViewController *)viewController
                                loadViewTime:(double)loadViewTime
@@ -54,7 +61,7 @@
     
     self.lastPageName = pageName;
     if (self.monitorBlock) {
-        double loadDuration = loadViewTime > 0 ? (viewDidAppearTime - loadViewTime) : (viewDidAppearTime - viewDidLoadTime);
+        double loadDuration = loadViewTime + viewDidLoadTime + viewWillAppearTime + viewDidAppearTime;
         self.monitorBlock(pageName, loadDuration);
     }
 }
@@ -62,6 +69,9 @@
 #pragma mark - GrowingAppLifecycleDelegate
 
 - (void)applicationDidBecomeActive {
+    if (!self.lastPageName) {
+        return;
+    }
     GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
     if (appLifecycle.appDidEnterBackgroundTime == 0) {
         // 首次启动
@@ -94,6 +104,7 @@
             @"UIApplicationRotationFollowingController",
             @"UIAlertController",
             @"FlutterViewController",
+            @"UIEditingOverlayViewController" // did not call [super viewDidAppear:animated]
         ]];
     }
     return _ignoredPrivateControllers;

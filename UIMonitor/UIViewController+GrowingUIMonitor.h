@@ -1,8 +1,8 @@
 //
-//  GrowingAPMUIMonitor.h
+//  UIViewController+GrowingUIMonitor.h
 //  GrowingAnalytics
 //
-//  Created by YoloMao on 2022/9/27.
+//  Created by YoloMao on 2022/10/10.
 //  Copyright (C) 2022 Beijing Yishu Technology Co., Ltd.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,17 +17,18 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import "GrowingAPMMonitor.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration);
+@interface UIViewController (GrowingUIMonitor)
 
-@interface GrowingAPMUIMonitor : NSObject <GrowingAPMMonitor>
+@property (nonatomic, assign) double growingapm_loadViewTime;
+@property (nonatomic, assign) double growingapm_viewDidLoadTime;
+@property (nonatomic, assign) double growingapm_viewWillAppearTime;
+@property (nonatomic, assign) double growingapm_viewDidAppearTime;
 
-+ (instancetype)sharedInstance;
-
-@property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
++ (void)growingapm_startUIMonitorSwizzle;
 
 @end
 

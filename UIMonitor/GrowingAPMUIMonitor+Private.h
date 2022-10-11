@@ -1,8 +1,8 @@
 //
-//  GrowingAPMUIMonitor.h
+//  GrowingAPMUIMonitor+Private.h
 //  GrowingAnalytics
 //
-//  Created by YoloMao on 2022/9/27.
+//  Created by YoloMao on 2022/10/11.
 //  Copyright (C) 2022 Beijing Yishu Technology Co., Ltd.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,17 +17,17 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import "GrowingAPMMonitor.h"
+#import "GrowingAPMUIMonitor.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration);
+@interface GrowingAPMUIMonitor (Private)
 
-@interface GrowingAPMUIMonitor : NSObject <GrowingAPMMonitor>
-
-+ (instancetype)sharedInstance;
-
-@property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
+- (void)pageLoadCompletedWithViewController:(UIViewController *)viewController
+                               loadViewTime:(double)loadViewTime
+                            viewDidLoadTime:(double)viewDidLoadTime
+                         viewWillAppearTime:(double)viewWillAppearTime
+                          viewDidAppearTime:(double)viewDidAppearTime;
 
 @end
 
