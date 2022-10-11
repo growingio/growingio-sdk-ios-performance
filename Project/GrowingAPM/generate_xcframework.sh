@@ -34,7 +34,7 @@ for i in ${schemes[@]}; do
 	iPHONE_OS_FRAMEWORK_PATH=${iPHONE_OS_ARCHIVE_PATH}.xcarchive/Products/Library/Frameworks/${FRAMEWORK_NAME}.framework
 	iPHONE_SIMULATOR_ARCHIVE_PATH="${ARCHIVE_PATH}/iphonesimulator"
 	iPHONE_SIMULATOR_FRAMEWORK_PATH=${iPHONE_SIMULATOR_ARCHIVE_PATH}.xcarchive/Products/Library/Frameworks/${FRAMEWORK_NAME}.framework
-	OUTPUT_PATH="../../${FRAMEWORK_NAME}.xcframework"
+	OUTPUT_PATH="../../Lib/${FRAMEWORK_NAME}.xcframework"
 
 	echo "---------------------"
 	echo -e "\033[36m step: clear output \033[0m"

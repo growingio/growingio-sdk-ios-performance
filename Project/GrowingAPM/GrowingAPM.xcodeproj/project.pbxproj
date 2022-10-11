@@ -11,10 +11,6 @@
 		349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */; };
 		349DA42728F26FD700C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; };
 		349DA42C28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */; };
-		349DA43D28F27ACB00C4281F /* GrowingAPMUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 349DA43B28F27ACA00C4281F /* GrowingAPMUIMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		349DA43E28F27ACB00C4281F /* GrowingAPMUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA43C28F27ACB00C4281F /* GrowingAPMUIMonitor.m */; };
-		349DA44128F27AED00C4281F /* GrowingAPMLaunchMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA43F28F27AED00C4281F /* GrowingAPMLaunchMonitor.m */; };
-		349DA44228F27AED00C4281F /* GrowingAPMLaunchMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 349DA44028F27AED00C4281F /* GrowingAPMLaunchMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
 		349DA44428F27B1700C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
 		349DA44628F27B6B00C4281F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA44528F27B6B00C4281F /* UIKit.framework */; };
@@ -31,9 +27,13 @@
 		349DA45B28F29C7B00C4281F /* GrowingAPMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */; };
 		349DA46528F2A1BB00C4281F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA45728F29C0700C4281F /* libc++.tbd */; };
 		349DA46628F2A1C100C4281F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA45828F29C1B00C4281F /* libz.tbd */; };
-		34A606E928F537C60013C5B5 /* GrowingAPMUIMonitor+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606E628F537C60013C5B5 /* GrowingAPMUIMonitor+Private.h */; };
-		34A606EA28F537C60013C5B5 /* UIViewController+GrowingUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606E728F537C60013C5B5 /* UIViewController+GrowingUIMonitor.m */; };
-		34A606EB28F537C60013C5B5 /* UIViewController+GrowingUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606E828F537C60013C5B5 /* UIViewController+GrowingUIMonitor.h */; };
+		34A606F228F53D790013C5B5 /* GrowingAPMUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606ED28F53D790013C5B5 /* GrowingAPMUIMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A606F328F53D790013C5B5 /* GrowingAPMUIMonitor+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606EE28F53D790013C5B5 /* GrowingAPMUIMonitor+Private.h */; };
+		34A606F428F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */; };
+		34A606F528F53D790013C5B5 /* GrowingAPMUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */; };
+		34A606F628F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */; };
+		34A606FA28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */; };
+		34A606FB28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34E27CA328F1556C005DF784 /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; };
 		34E27CA828F1556C005DF784 /* GrowingAPMCrashMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CA728F1556C005DF784 /* GrowingAPMCrashMonitorTests.m */; };
 		34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB428F155AE005DF784 /* Container+DeepSearch.m */; };
@@ -285,10 +285,6 @@
 		349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMLaunchMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMLaunchMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMLaunchMonitorTests.m; sourceTree = "<group>"; };
-		349DA43B28F27ACA00C4281F /* GrowingAPMUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowingAPMUIMonitor.h; path = ../../../UIMonitor/GrowingAPMUIMonitor.h; sourceTree = "<group>"; };
-		349DA43C28F27ACB00C4281F /* GrowingAPMUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowingAPMUIMonitor.m; path = ../../../UIMonitor/GrowingAPMUIMonitor.m; sourceTree = "<group>"; };
-		349DA43F28F27AED00C4281F /* GrowingAPMLaunchMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowingAPMLaunchMonitor.m; path = ../../../LaunchMonitor/GrowingAPMLaunchMonitor.m; sourceTree = "<group>"; };
-		349DA44028F27AED00C4281F /* GrowingAPMLaunchMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowingAPMLaunchMonitor.h; path = ../../../LaunchMonitor/GrowingAPMLaunchMonitor.h; sourceTree = "<group>"; };
 		349DA44528F27B6B00C4281F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		349DA45728F29C0700C4281F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		349DA45828F29C1B00C4281F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -297,9 +293,13 @@
 		349DA45E28F29F2F00C4281F /* libbz2.1.0.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.8.tbd; path = usr/lib/libbz2.1.0.8.tbd; sourceTree = SDKROOT; };
 		349DA45F28F29F3E00C4281F /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		349DA46028F29F4600C4281F /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
-		34A606E628F537C60013C5B5 /* GrowingAPMUIMonitor+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GrowingAPMUIMonitor+Private.h"; path = "../../../UIMonitor/GrowingAPMUIMonitor+Private.h"; sourceTree = "<group>"; };
-		34A606E728F537C60013C5B5 /* UIViewController+GrowingUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GrowingUIMonitor.m"; path = "../../../UIMonitor/UIViewController+GrowingUIMonitor.m"; sourceTree = "<group>"; };
-		34A606E828F537C60013C5B5 /* UIViewController+GrowingUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GrowingUIMonitor.h"; path = "../../../UIMonitor/UIViewController+GrowingUIMonitor.h"; sourceTree = "<group>"; };
+		34A606ED28F53D790013C5B5 /* GrowingAPMUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPMUIMonitor.h; sourceTree = "<group>"; };
+		34A606EE28F53D790013C5B5 /* GrowingAPMUIMonitor+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GrowingAPMUIMonitor+Private.h"; sourceTree = "<group>"; };
+		34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GrowingUIMonitor.m"; sourceTree = "<group>"; };
+		34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMUIMonitor.m; sourceTree = "<group>"; };
+		34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GrowingUIMonitor.h"; sourceTree = "<group>"; };
+		34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMLaunchMonitor.m; sourceTree = "<group>"; };
+		34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPMLaunchMonitor.h; sourceTree = "<group>"; };
 		34E27C9428F127E5005DF784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMCrashMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E27CA228F1556C005DF784 /* GrowingAPMCrashMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMCrashMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -566,11 +566,7 @@
 		349DA40628F26FBE00C4281F /* GrowingAPMUIMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				349DA43B28F27ACA00C4281F /* GrowingAPMUIMonitor.h */,
-				34A606E628F537C60013C5B5 /* GrowingAPMUIMonitor+Private.h */,
-				349DA43C28F27ACB00C4281F /* GrowingAPMUIMonitor.m */,
-				34A606E828F537C60013C5B5 /* UIViewController+GrowingUIMonitor.h */,
-				34A606E728F537C60013C5B5 /* UIViewController+GrowingUIMonitor.m */,
+				34A606EC28F53D790013C5B5 /* UIMonitor */,
 			);
 			path = GrowingAPMUIMonitor;
 			sourceTree = "<group>";
@@ -586,8 +582,7 @@
 		349DA42028F26FD700C4281F /* GrowingAPMLaunchMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				349DA44028F27AED00C4281F /* GrowingAPMLaunchMonitor.h */,
-				349DA43F28F27AED00C4281F /* GrowingAPMLaunchMonitor.m */,
+				34A606F728F53DC30013C5B5 /* LaunchMonitor */,
 			);
 			path = GrowingAPMLaunchMonitor;
 			sourceTree = "<group>";
@@ -598,6 +593,29 @@
 				349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */,
 			);
 			path = GrowingAPMLaunchMonitorTests;
+			sourceTree = "<group>";
+		};
+		34A606EC28F53D790013C5B5 /* UIMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				34A606ED28F53D790013C5B5 /* GrowingAPMUIMonitor.h */,
+				34A606EE28F53D790013C5B5 /* GrowingAPMUIMonitor+Private.h */,
+				34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */,
+				34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */,
+				34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */,
+			);
+			name = UIMonitor;
+			path = ../../../Sources/UIMonitor;
+			sourceTree = "<group>";
+		};
+		34A606F728F53DC30013C5B5 /* LaunchMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */,
+				34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */,
+			);
+			name = LaunchMonitor;
+			path = ../../../Sources/LaunchMonitor;
 			sourceTree = "<group>";
 		};
 		34E2797628F12207005DF784 = {
@@ -671,7 +689,7 @@
 				34E27D3C28F155AF005DF784 /* swift */,
 			);
 			name = CrashMonitor;
-			path = ../../../CrashMonitor;
+			path = ../../../Sources/CrashMonitor;
 			sourceTree = "<group>";
 		};
 		34E27CB128F155AE005DF784 /* Reporting */ = {
@@ -944,7 +962,7 @@
 				34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */,
 			);
 			name = Core;
-			path = ../../../Core;
+			path = ../../../Sources/Core;
 			sourceTree = "<group>";
 		};
 		34E27E0F28F16026005DF784 /* Example */ = {
@@ -1012,10 +1030,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A606EB28F537C60013C5B5 /* UIViewController+GrowingUIMonitor.h in Headers */,
-				349DA43D28F27ACB00C4281F /* GrowingAPMUIMonitor.h in Headers */,
+				34A606F228F53D790013C5B5 /* GrowingAPMUIMonitor.h in Headers */,
+				34A606F628F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h in Headers */,
+				34A606F328F53D790013C5B5 /* GrowingAPMUIMonitor+Private.h in Headers */,
 				349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */,
-				34A606E928F537C60013C5B5 /* GrowingAPMUIMonitor+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,7 +1041,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349DA44228F27AED00C4281F /* GrowingAPMLaunchMonitor.h in Headers */,
+				34A606FB28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h in Headers */,
 				349DA44428F27B1700C4281F /* GrowingAPMMonitor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1435,8 +1453,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349DA43E28F27ACB00C4281F /* GrowingAPMUIMonitor.m in Sources */,
-				34A606EA28F537C60013C5B5 /* UIViewController+GrowingUIMonitor.m in Sources */,
+				34A606F428F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m in Sources */,
+				34A606F528F53D790013C5B5 /* GrowingAPMUIMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1452,7 +1470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349DA44128F27AED00C4281F /* GrowingAPMLaunchMonitor.m in Sources */,
+				34A606FA28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
