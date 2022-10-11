@@ -29,17 +29,36 @@
 
 #ifdef GROWING_APM_LAUNCH
 #import "GrowingTimeUtil.h"
+
+#if __has_include(<GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>)
 #import <GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>
+#elif __has_include("GrowingAPMLaunchMonitor.h")
+#import "GrowingAPMLaunchMonitor.h"
+#endif
+
 #endif
 
 #ifdef GROWING_APM_UI
+
+#if __has_include(<GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>)
 #import <GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>
+#elif __has_include("GrowingAPMUIMonitor.h")
+#import "GrowingAPMUIMonitor.h"
+#endif
+
 #endif
 
 #ifdef GROWING_APM_CRASH
+#import <objc/runtime.h>
+
+#if __has_include(<GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>)
 #import <GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>
 #import <GrowingAPMCrashMonitor/GrowingCrashInstallation.h>
-#import <objc/runtime.h>
+#elif __has_include("GrowingAPMCrashMonitor.h")
+#import "GrowingAPMCrashMonitor.h"
+#import "GrowingCrashInstallation.h"
+#endif
+
 #endif
 
 @interface GrowingAPM ()
@@ -127,7 +146,7 @@
     if (monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
         [GrowingAppLifecycle setup];
-        [UIViewController growingapm_startUIMonitorSwizzle];
+        [GrowingAPMUIMonitor setup];
 #endif
     }
     

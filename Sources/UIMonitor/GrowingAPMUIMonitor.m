@@ -19,6 +19,7 @@
 
 #import "GrowingAPMUIMonitor.h"
 #import "GrowingAppLifecycle.h"
+#import "UIViewController+GrowingUIMonitor.h"
 
 @interface GrowingAPMUIMonitor () <GrowingAppLifecycleDelegate>
 
@@ -42,6 +43,13 @@
 
 - (void)startMonitor {
     [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
+}
+
++ (void)setup {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [UIViewController growingapm_startUIMonitorSwizzle];
+    });
 }
 
 #pragma mark - Private Method

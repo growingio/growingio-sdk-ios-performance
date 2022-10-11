@@ -27,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)startMonitor;
 @property (nonatomic, copy) id monitorBlock;
 
+@optional
++ (instancetype)sharedInstance;
++ (void)setup;
+
 @end
 
 NS_ASSUME_NONNULL_END

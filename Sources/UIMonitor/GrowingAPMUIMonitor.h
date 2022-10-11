@@ -27,6 +27,8 @@ typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration)
 
 + (instancetype)sharedInstance;
 
++ (void)setup;
+
 @property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
 
 @end

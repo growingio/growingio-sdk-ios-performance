@@ -24,9 +24,17 @@
 #ifndef GROWING_APM_LAUNCH
 #define GROWING_APM_LAUNCH
 #endif
+#elif __has_include("GrowingAPMLaunchMonitor.h")
+#ifndef GROWING_APM_LAUNCH
+#define GROWING_APM_LAUNCH
+#endif
 #endif
 
 #if __has_include(<GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>)
+#ifndef GROWING_APM_UI
+#define GROWING_APM_UI
+#endif
+#elif __has_include("GrowingAPMUIMonitor.h")
 #ifndef GROWING_APM_UI
 #define GROWING_APM_UI
 #endif
@@ -37,9 +45,18 @@
 #ifndef GROWING_APM_CRASH
 #define GROWING_APM_CRASH
 #endif
+#elif __has_include("GrowingAPMCrashMonitor.h")
+@class GrowingCrashInstallation;
+#ifndef GROWING_APM_CRASH
+#define GROWING_APM_CRASH
+#endif
 #endif
 
 #if __has_include(<GrowingAPMNetworkMonitor/GrowingAPMNetworkMonitor.h>)
+#ifndef GROWING_APM_NETWORK
+#define GROWING_APM_NETWORK
+#endif
+#elif __has_include("GrowingAPMNetworkMonitor.h")
 #ifndef GROWING_APM_NETWORK
 #define GROWING_APM_NETWORK
 #endif
