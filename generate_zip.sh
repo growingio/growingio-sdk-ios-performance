@@ -3,7 +3,7 @@
 mkdir Lib
 cd ./Project/GrowingAPM
 sh ./generate_xcframework.sh
-cd ../../../
+cd ../../
 mkdir GrowingAPM
 mkdir GrowingAPM/CrashMonitor
 mkdir GrowingAPM/UIMonitor
