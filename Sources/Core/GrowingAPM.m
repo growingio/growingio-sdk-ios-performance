@@ -27,39 +27,45 @@
 #import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
 
+// -------- LAUNCH MONITOR --------
 #ifdef GROWING_APM_LAUNCH
 #import "GrowingTimeUtil.h"
 
-#if __has_include(<GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>)
-#import <GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>
-#elif __has_include("GrowingAPMLaunchMonitor.h")
+#ifdef GROWING_APM_LAUNCH_SOURCE
 #import "GrowingAPMLaunchMonitor.h"
+#else
+#import <GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>
 #endif
 
 #endif
+// -------- LAUNCH MONITOR --------
 
+// -------- UI MONITOR --------
 #ifdef GROWING_APM_UI
 
-#if __has_include(<GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>)
-#import <GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>
-#elif __has_include("GrowingAPMUIMonitor.h")
+#ifdef GROWING_APM_UI_SOURCE
 #import "GrowingAPMUIMonitor.h"
+#else
+#import <GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>
 #endif
 
 #endif
+// -------- UI MONITOR --------
 
+// -------- CRASH MONITOR --------
 #ifdef GROWING_APM_CRASH
 #import <objc/runtime.h>
 
-#if __has_include(<GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>)
-#import <GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>
-#import <GrowingAPMCrashMonitor/GrowingCrashInstallation.h>
-#elif __has_include("GrowingAPMCrashMonitor.h")
+#ifdef GROWING_APM_CRASH_SOURCE
 #import "GrowingAPMCrashMonitor.h"
 #import "GrowingCrashInstallation.h"
+#else
+#import <GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>
+#import <GrowingAPMCrashMonitor/GrowingCrashInstallation.h>
 #endif
 
 #endif
+// -------- CRASH MONITOR --------
 
 @interface GrowingAPM ()
 

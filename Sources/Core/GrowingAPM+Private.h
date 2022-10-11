@@ -27,6 +27,7 @@
 #elif __has_include("GrowingAPMLaunchMonitor.h")
 #ifndef GROWING_APM_LAUNCH
 #define GROWING_APM_LAUNCH
+#define GROWING_APM_LAUNCH_SOURCE
 #endif
 #endif
 
@@ -37,6 +38,7 @@
 #elif __has_include("GrowingAPMUIMonitor.h")
 #ifndef GROWING_APM_UI
 #define GROWING_APM_UI
+#define GROWING_APM_UI_SOURCE
 #endif
 #endif
 
@@ -49,6 +51,7 @@
 @class GrowingCrashInstallation;
 #ifndef GROWING_APM_CRASH
 #define GROWING_APM_CRASH
+#define GROWING_APM_CRASH_SOURCE
 #endif
 #endif
 
@@ -59,6 +62,7 @@
 #elif __has_include("GrowingAPMNetworkMonitor.h")
 #ifndef GROWING_APM_NETWORK
 #define GROWING_APM_NETWORK
+#define GROWING_APM_NETWORK_SOURCE
 #endif
 #endif
 
