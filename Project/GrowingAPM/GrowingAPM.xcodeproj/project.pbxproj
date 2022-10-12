@@ -568,7 +568,7 @@
 			children = (
 				34A606EC28F53D790013C5B5 /* UIMonitor */,
 			);
-			path = GrowingAPMUIMonitor;
+			name = GrowingAPMUIMonitor;
 			sourceTree = "<group>";
 		};
 		349DA41028F26FBE00C4281F /* GrowingAPMUIMonitorTests */ = {
@@ -584,7 +584,7 @@
 			children = (
 				34A606F728F53DC30013C5B5 /* LaunchMonitor */,
 			);
-			path = GrowingAPMLaunchMonitor;
+			name = GrowingAPMLaunchMonitor;
 			sourceTree = "<group>";
 		};
 		349DA42A28F26FD700C4281F /* GrowingAPMLaunchMonitorTests */ = {
@@ -605,7 +605,7 @@
 				34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */,
 			);
 			name = UIMonitor;
-			path = ../../../Sources/UIMonitor;
+			path = ../../Sources/UIMonitor;
 			sourceTree = "<group>";
 		};
 		34A606F728F53DC30013C5B5 /* LaunchMonitor */ = {
@@ -615,7 +615,7 @@
 				34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */,
 			);
 			name = LaunchMonitor;
-			path = ../../../Sources/LaunchMonitor;
+			path = ../../Sources/LaunchMonitor;
 			sourceTree = "<group>";
 		};
 		34E2797628F12207005DF784 = {
@@ -658,7 +658,7 @@
 			children = (
 				34E27DF628F158F3005DF784 /* Core */,
 			);
-			path = GrowingAPM;
+			name = GrowingAPM;
 			sourceTree = "<group>";
 		};
 		34E27C9C28F1556B005DF784 /* GrowingAPMCrashMonitor */ = {
@@ -666,7 +666,7 @@
 			children = (
 				34E27CB028F155AE005DF784 /* CrashMonitor */,
 			);
-			path = GrowingAPMCrashMonitor;
+			name = GrowingAPMCrashMonitor;
 			sourceTree = "<group>";
 		};
 		34E27CA628F1556C005DF784 /* GrowingAPMCrashMonitorTests */ = {
@@ -689,7 +689,7 @@
 				34E27D3C28F155AF005DF784 /* swift */,
 			);
 			name = CrashMonitor;
-			path = ../../../Sources/CrashMonitor;
+			path = ../../Sources/CrashMonitor;
 			sourceTree = "<group>";
 		};
 		34E27CB128F155AE005DF784 /* Reporting */ = {
@@ -962,7 +962,7 @@
 				34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */,
 			);
 			name = Core;
-			path = ../../../Sources/Core;
+			path = ../../Sources/Core;
 			sourceTree = "<group>";
 		};
 		34E27E0F28F16026005DF784 /* Example */ = {
