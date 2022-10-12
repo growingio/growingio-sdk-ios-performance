@@ -110,7 +110,7 @@
     
     if (config.monitors & GrowingAPMMonitorsLaunch) {
 #ifdef GROWING_APM_LAUNCH
-        GrowingAPMLaunchMonitor *monitor = [[GrowingAPMLaunchMonitor alloc] init];
+        GrowingAPMLaunchMonitor *monitor = [GrowingAPMLaunchMonitor sharedInstance];
         monitor.coldRebootBeginTime = apm.coldRebootBeginTime;
         [monitor startMonitor];
         apm.launchMonitor = monitor;
@@ -145,6 +145,7 @@
 #ifdef GROWING_APM_LAUNCH
         [GrowingViewControllerLifecycle setup];
         [GrowingAppLifecycle setup];
+        [GrowingAPMLaunchMonitor setup];
         GrowingAPM.sharedInstance.coldRebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
 #endif
     }

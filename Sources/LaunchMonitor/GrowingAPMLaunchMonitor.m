@@ -25,35 +25,70 @@
 @interface GrowingAPMLaunchMonitor () <GrowingViewControllerLifecycleDelegate, GrowingAppLifecycleDelegate>
 
 @property (nonatomic, assign) double firstVCDidAppearTime;
+@property (nonatomic, assign) BOOL didSendColdReboot;
 
 @end
 
 @implementation GrowingAPMLaunchMonitor
 
++ (instancetype)sharedInstance {
+    static id _sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    return _sharedInstance;
+}
+
 #pragma mark - Monitor
 
 - (void)startMonitor {
-    [GrowingViewControllerLifecycle.sharedInstance addViewControllerLifecycleDelegate:self];
     [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self sendColdReboot];
+    });
+}
+
++ (void)setup {
+    GrowingAPMLaunchMonitor *monitor = [GrowingAPMLaunchMonitor sharedInstance];
+    [GrowingViewControllerLifecycle.sharedInstance addViewControllerLifecycleDelegate:monitor];
+}
+
+#pragma mark - Private Method
+
+- (void)sendColdReboot {
+    if (self.didSendColdReboot) {
+        return;
+    }
+    
+    if (self.firstVCDidAppearTime == 0) {
+        return;
+    }
+    
+    if (self.coldRebootBeginTime == 0) {
+        return;
+    }
+    
+    if (self.monitorBlock) {
+        self.monitorBlock(self.firstVCDidAppearTime - self.coldRebootBeginTime, NO);
+        self.didSendColdReboot = YES;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [GrowingViewControllerLifecycle.sharedInstance removeViewControllerLifecycleDelegate:self];
+        });
+    }
 }
 
 #pragma mark - GrowingViewControllerLifecycleDelegate
 
 - (void)viewControllerDidAppear:(UIViewController *)controller {
-    if (self.firstVCDidAppearTime > 0) {
-        return;
-    }
-    
     // cold reboot
-    double viewDidAppearTime = [GrowingTimeUtil currentSystemTimeMillis];
-    self.firstVCDidAppearTime = viewDidAppearTime;
-    if (self.monitorBlock) {
-        self.monitorBlock(viewDidAppearTime - self.coldRebootBeginTime, NO);
+    if (self.firstVCDidAppearTime == 0) {
+        self.firstVCDidAppearTime = [GrowingTimeUtil currentSystemTimeMillis];
     }
     
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [GrowingViewControllerLifecycle.sharedInstance removeViewControllerLifecycleDelegate:self];
-    });
+    [self sendColdReboot];
 }
 
 #pragma mark - GrowingAppLifecycleDelegate

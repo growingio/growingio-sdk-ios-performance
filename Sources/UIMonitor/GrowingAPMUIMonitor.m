@@ -24,7 +24,6 @@
 @interface GrowingAPMUIMonitor () <GrowingAppLifecycleDelegate>
 
 @property (nonatomic, strong) NSMutableArray *ignoredPrivateControllers;
-@property (nonatomic, copy) NSString *lastPageName;
 
 @end
 
@@ -67,7 +66,6 @@
         return;
     }
     
-    self.lastPageName = pageName;
     if (self.monitorBlock) {
         double loadDuration = loadViewTime + viewDidLoadTime + viewWillAppearTime + viewDidAppearTime;
         self.monitorBlock(pageName, loadDuration);
@@ -77,9 +75,6 @@
 #pragma mark - GrowingAppLifecycleDelegate
 
 - (void)applicationDidBecomeActive {
-    if (!self.lastPageName) {
-        return;
-    }
     GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
     if (appLifecycle.appDidEnterBackgroundTime == 0) {
         // 首次启动
@@ -90,11 +85,59 @@
         return;
     }
      
+    UIViewController *curController = [self topViewController:self.keyWindow.rootViewController];
+    while (curController.presentedViewController) {
+        curController = [self topViewController:curController.presentedViewController];
+    }
+    if (!curController) {
+        return;
+    }
+    
     // warm reboot
     double duration = appLifecycle.appDidBecomeActiveTime - appLifecycle.appWillEnterForegroundTime;
     if (self.monitorBlock) {
-        self.monitorBlock(self.lastPageName, duration);
+        self.monitorBlock(NSStringFromClass([curController class]), duration);
     }
+}
+
+- (UIViewController *)topViewController:(UIViewController *)controller {
+    if ([controller isKindOfClass:[UINavigationController class]]) {
+        return [self topViewController:[(UINavigationController *)controller topViewController]];
+    } else if ([controller isKindOfClass:[UITabBarController class]]) {
+        return [self topViewController:[(UITabBarController *)controller selectedViewController]];
+    } else {
+        return controller;
+    }
+    return nil;
+}
+
+- (UIWindow *)keyWindow {
+    if (@available(iOS 13.0, *)) {
+        for (UIWindowScene *windowScene in [UIApplication sharedApplication].connectedScenes) {
+            if (windowScene.activationState == UISceneActivationStateForegroundActive) {
+                NSArray *windows = windowScene.windows;
+                for (UIWindow *window in windows) {
+                    if (!window.hidden) {
+                        return window;
+                    }
+                }
+            }
+        }
+    }
+    
+    UIWindow *keyWindow = nil;
+    if ([UIApplication.sharedApplication.delegate respondsToSelector:@selector(window)]) {
+        keyWindow = UIApplication.sharedApplication.delegate.window;
+    } else {
+        NSArray *windows = [UIApplication sharedApplication].windows;
+        for (UIWindow *window in windows) {
+            if (!window.hidden) {
+                keyWindow = window;
+                break;
+            }
+        }
+    }
+    return keyWindow;
 }
 
 #pragma mark - Getter & Setter
