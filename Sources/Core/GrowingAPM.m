@@ -113,7 +113,7 @@
         GrowingAPMLaunchMonitor *monitor = [GrowingAPMLaunchMonitor sharedInstance];
         monitor.coldRebootBeginTime = apm.coldRebootBeginTime;
         [monitor startMonitor];
-        apm.launchMonitor = monitor;
+        apm.launchMonitor = (id <GrowingAPMMonitor>)monitor;
 #endif
     }
     
@@ -121,7 +121,7 @@
 #ifdef GROWING_APM_UI
         GrowingAPMUIMonitor *monitor = [GrowingAPMUIMonitor sharedInstance];
         [monitor startMonitor];
-        apm.pageLoadMonitor = monitor;
+        apm.pageLoadMonitor = (id <GrowingAPMMonitor>)monitor;
 #endif
     }
     
@@ -129,7 +129,7 @@
 #ifdef GROWING_APM_CRASH
         GrowingAPMCrashMonitor *monitor = [[GrowingAPMCrashMonitor alloc] init];
         [monitor startMonitor];
-        apm.crashMonitor = monitor;
+        apm.crashMonitor = (id <GrowingAPMMonitor>)monitor;
 #endif
     }
     

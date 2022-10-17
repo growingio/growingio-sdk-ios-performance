@@ -17,19 +17,19 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import "GrowingAPMMonitor.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration);
 
-@interface GrowingAPMUIMonitor : NSObject <GrowingAPMMonitor>
-
-+ (instancetype)sharedInstance;
-
-+ (void)setup;
+@interface GrowingAPMUIMonitor : NSObject
 
 @property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
+
++ (instancetype)sharedInstance;
++ (void)setup;
+- (void)startMonitor;
 
 @end
 

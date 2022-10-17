@@ -611,8 +611,8 @@
 		34A606F728F53DC30013C5B5 /* LaunchMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */,
 				34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */,
+				34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */,
 			);
 			name = LaunchMonitor;
 			path = ../../Sources/LaunchMonitor;

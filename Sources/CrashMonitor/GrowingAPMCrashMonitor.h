@@ -17,6 +17,8 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
+#import <Foundation/Foundation.h>
+
 #import "GrowingCrash.h"
 #import "GrowingCrashC.h"
 #import "GrowingCrashCString.h"
@@ -29,15 +31,15 @@
 #import "GrowingCrashReportFilter.h"
 #import "GrowingCrashReportWriter.h"
 
-#import "GrowingAPMMonitor.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^GrowingAPMCrashMonitorBlock)(NSArray *filteredReports, BOOL completed, NSError *error);
 
-@interface GrowingAPMCrashMonitor : NSObject <GrowingAPMMonitor>
+@interface GrowingAPMCrashMonitor : NSObject
 
 @property (nonatomic, copy) GrowingAPMCrashMonitorBlock monitorBlock;
+
+- (void)startMonitor;
 
 @end
 

@@ -18,10 +18,11 @@
 //  limitations under the License.
 
 #import "GrowingAPMUIMonitor.h"
+#import "GrowingAPMMonitor.h"
 #import "GrowingAppLifecycle.h"
 #import "UIViewController+GrowingUIMonitor.h"
 
-@interface GrowingAPMUIMonitor () <GrowingAppLifecycleDelegate>
+@interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingAppLifecycleDelegate>
 
 @property (nonatomic, strong) NSMutableArray *ignoredPrivateControllers;
 

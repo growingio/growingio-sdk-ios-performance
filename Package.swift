@@ -5,7 +5,7 @@
 //  Package.swift
 //  GrowingAnalytics
 //
-//  Created by YoloMao on 2022/10/14.
+//  Created by YoloMao on 2022/10/17.
 //  Copyright (C) 2022 Beijing Yishu Technology Co., Ltd.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,67 +30,49 @@ let package = Package(
             name: "GrowingAPM",
             targets: ["GrowingAPM_Wrapper"]
         ),
-        .library(
-            name: "GrowingAPMCrashMonitor",
-            targets: ["GrowingAPMCrashMonitor"]
-        ),
-        .library(
-            name: "GrowingAPMUIMonitor",
-            targets: ["GrowingAPMUIMonitor"]
-        ),
-        .library(
-            name: "GrowingAPMLaunchMonitor",
-            targets: ["GrowingAPMLaunchMonitor"]
-        ),
     ],
     dependencies: [
         .package(
-          name: "GrowingUtils",
-          url: "https://github.com/growingio/growingio-sdk-ios-utilities.git"
+            name: "GrowingUtils",
+            url: "https://github.com/growingio/growingio-sdk-ios-utilities.git",
+            .exact("0.0.1")
         ),
     ],
     targets: [
+        
+        // MARK: - GrowingAPM Wrapper
+        
         .target(
-            name: "GrowingAPMCore",
+            name: "GrowingAPM_Wrapper",
             dependencies: [
-                .product(name: "AutotrackerCore", package: "GrowingUtils"),
+                "GrowingAPMCrashMonitor",
+                "GrowingAPMUIMonitor",
+                "GrowingAPMLaunchMonitor",
+                .product(name: "GrowingUtilsAutotrackerCore", package: "GrowingUtils"),
             ],
-            path: "Core"
-        ),
-        .binaryTarget(
-            name: "GrowingAPMCrashMonitor",
-            dependencies: ["GrowingAPMCore"],
-            path: "CrashMonitor/GrowingAPMCrashMonitor.xcframework"
+            path: "Core",
+            cxxSettings: [
+                .define("GCC_ENABLE_CPP_EXCEPTIONS", to: "YES"),
+            ],
             linkerSettings: [
                 .linkedLibrary("c++"),
                 .linkedLibrary("z"),
-            ],
-            cxxSettings: [
-                .define("GCC_ENABLE_CPP_EXCEPTIONS", to: "YES"),
             ]
+        ),
+        
+        // MARK: - GrowingAPM Modules
+        
+        .binaryTarget(
+            name: "GrowingAPMCrashMonitor",
+            path: "CrashMonitor/GrowingAPMCrashMonitor.xcframework"
         ),
         .binaryTarget(
             name: "GrowingAPMUIMonitor",
-            dependencies: ["GrowingAPMCore"],
             path: "UIMonitor/GrowingAPMUIMonitor.xcframework"
         ),
         .binaryTarget(
             name: "GrowingAPMLaunchMonitor",
-            dependencies: ["GrowingAPMCore"],
             path: "LaunchMonitor/GrowingAPMLaunchMonitor.xcframework"
-        ),
-
-        // MARK: - GrowingAPM Wrapper
-        .target(
-            name: "GrowingAPM_Wrapper",
-            dependencies: [
-                "GrowingAPM_Core",
-                "GrowingAPMCrashMonitor",
-                "GrowingAPMUIMonitor",
-                "GrowingAPMLaunchMonitor"
-            ],
-
-            path: "SwiftPM-Wrap/GrowingAPM_Wrapper"
         ),
     ]
 )

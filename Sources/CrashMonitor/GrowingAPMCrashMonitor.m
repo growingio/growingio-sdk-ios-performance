@@ -18,8 +18,13 @@
 //  limitations under the License.
 
 #import "GrowingAPMCrashMonitor.h"
+#import "GrowingAPMMonitor.h"
 #import "GrowingAPM+Private.h"
 #import "GrowingCrashInstallation.h"
+
+@interface GrowingAPMCrashMonitor () <GrowingAPMMonitor>
+
+@end
 
 @implementation GrowingAPMCrashMonitor
 

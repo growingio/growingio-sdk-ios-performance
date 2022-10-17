@@ -17,16 +17,20 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import "GrowingAPMMonitor.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^GrowingAPMLaunchMonitorBlock)(double rebootTime, BOOL isWarm);
 
-@interface GrowingAPMLaunchMonitor : NSObject <GrowingAPMMonitor>
+@interface GrowingAPMLaunchMonitor : NSObject
 
 @property (nonatomic, copy) GrowingAPMLaunchMonitorBlock monitorBlock;
 @property (nonatomic, assign) double coldRebootBeginTime;
+
++ (instancetype)sharedInstance;
++ (void)setup;
+- (void)startMonitor;
 
 @end
 

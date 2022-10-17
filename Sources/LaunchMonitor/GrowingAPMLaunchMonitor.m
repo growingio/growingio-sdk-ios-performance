@@ -18,11 +18,12 @@
 //  limitations under the License.
 
 #import "GrowingAPMLaunchMonitor.h"
+#import "GrowingAPMMonitor.h"
 #import "GrowingTimeUtil.h"
 #import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
 
-@interface GrowingAPMLaunchMonitor () <GrowingViewControllerLifecycleDelegate, GrowingAppLifecycleDelegate>
+@interface GrowingAPMLaunchMonitor () <GrowingAPMMonitor, GrowingViewControllerLifecycleDelegate, GrowingAppLifecycleDelegate>
 
 @property (nonatomic, assign) double firstVCDidAppearTime;
 @property (nonatomic, assign) BOOL didSendColdReboot;

@@ -8,7 +8,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.homepage         = 'https://www.growingio.com/'
   s.license          = { :type => 'Apache2.0', :file => 'LICENSE' }
   s.author           = { 'GrowingIO' => 'support@growingio.com' }
-  s.source           = { :git => 'https://github.com/growingio/growingio-sdk-ios-performance.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/growingio/growingio-sdk-ios-performance-ext.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
   s.frameworks = 'Foundation'
   s.requires_arc = true
