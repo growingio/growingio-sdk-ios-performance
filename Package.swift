@@ -51,6 +51,7 @@ let package = Package(
                 .product(name: "GrowingUtilsAutotrackerCore", package: "GrowingUtils"),
             ],
             path: "Core",
+            publicHeadersPath: ".",
             cxxSettings: [
                 .define("GCC_ENABLE_CPP_EXCEPTIONS", to: "YES"),
             ],
