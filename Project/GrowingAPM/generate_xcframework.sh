@@ -20,7 +20,7 @@ echo -e "\033[36m step: clean build folder \033[0m"
 rm -rf ${DERIVED_DATA_PATH}
 rm -rf ${ARCHIVE_PATH}
 
-schemes=("GrowingAPMCrashMonitor" "GrowingAPMLaunchMonitor" GrowingAPMUIMonitor)
+schemes=("GrowingAPMCrashMonitor" "GrowingAPMUIMonitor")
 if [ $# -gt 0 ]
 then
 	schemes=($@)

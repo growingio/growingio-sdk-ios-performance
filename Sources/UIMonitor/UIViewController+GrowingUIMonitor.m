@@ -74,11 +74,14 @@ static void growingapm_viewDidAppear(UIViewController *self, SEL sel, BOOL anima
     double endTime = [GrowingTimeUtil currentSystemTimeMillis];
     self.growingapm_viewDidAppearTime = endTime - startTime;
     
-    [[GrowingAPMUIMonitor sharedInstance] pageLoadCompletedWithViewController:self
-                                                                 loadViewTime:self.growingapm_loadViewTime
-                                                              viewDidLoadTime:self.growingapm_viewDidLoadTime
-                                                           viewWillAppearTime:self.growingapm_viewWillAppearTime
-                                                            viewDidAppearTime:self.growingapm_viewDidAppearTime];
+    if (!self.growingapm_didAppear) {
+        [[GrowingAPMUIMonitor sharedInstance] pageLoadCompletedWithViewController:self
+                                                                     loadViewTime:self.growingapm_loadViewTime
+                                                                  viewDidLoadTime:self.growingapm_viewDidLoadTime
+                                                               viewWillAppearTime:self.growingapm_viewWillAppearTime
+                                                                viewDidAppearTime:self.growingapm_viewDidAppearTime];
+        self.growingapm_didAppear = YES;
+    }
 }
 
 #pragma mark - KVO Helpers
@@ -214,6 +217,14 @@ static char kAssociateRemoveKey;
 
 - (void)setGrowingapm_viewDidAppearTime:(double)time {
     objc_setAssociatedObject(self, @selector(growingapm_viewDidAppearTime), @(time), OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (BOOL)growingapm_didAppear {
+    return ((NSNumber *)objc_getAssociatedObject(self, _cmd)).boolValue;
+}
+
+- (void)setGrowingapm_didAppear:(BOOL)didAppear {
+    objc_setAssociatedObject(self, @selector(growingapm_didAppear), @(didAppear), OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end

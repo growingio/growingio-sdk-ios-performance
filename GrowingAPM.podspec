@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GrowingAPM'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'iOS SDK of GrowingIO.'
   s.description      = <<-DESC
 GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动分析、页面加载分析等。
@@ -15,7 +15,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.pod_target_xcconfig = { "OTHER_LDFLAGS" => '$(inherited) -ObjC'}
   
   s.subspec 'Core' do |core|
-    core.dependency 'GrowingUtils/AutotrackerCore'
+    core.dependency 'GrowingUtils/TrackerCore'
     core.source_files = 'Core/**/*.{h,m,mm,c,cpp}'
   end
 
@@ -23,11 +23,6 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
     monitor.vendored_framework = "CrashMonitor/GrowingAPMCrashMonitor.xcframework"
     monitor.libraries = 'c++', 'z'
     monitor.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
-    monitor.dependency 'GrowingAPM/Core'
-  end
-
-  s.subspec 'LaunchMonitor' do |monitor|
-    monitor.vendored_framework = "LaunchMonitor/GrowingAPMLaunchMonitor.xcframework"
     monitor.dependency 'GrowingAPM/Core'
   end
 

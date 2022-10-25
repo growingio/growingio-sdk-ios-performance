@@ -27,21 +27,9 @@
 #import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
 
-// -------- LAUNCH MONITOR --------
-#ifdef GROWING_APM_LAUNCH
-#import "GrowingTimeUtil.h"
-
-#ifdef GROWING_APM_LAUNCH_SOURCE
-#import "GrowingAPMLaunchMonitor.h"
-#else
-#import <GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>
-#endif
-
-#endif
-// -------- LAUNCH MONITOR --------
-
 // -------- UI MONITOR --------
 #ifdef GROWING_APM_UI
+#import "GrowingTimeUtil.h"
 
 #ifdef GROWING_APM_UI_SOURCE
 #import "GrowingAPMUIMonitor.h"
@@ -71,11 +59,10 @@
 
 @property (nonatomic, copy) GrowingAPMConfig *config;
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> crashMonitor;
-@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> launchMonitor;
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> pageLoadMonitor;
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> networkMonitor;
 
-#ifdef GROWING_APM_LAUNCH
+#ifdef GROWING_APM_UI
 @property (nonatomic, assign) double coldRebootBeginTime;
 #endif
 
@@ -108,18 +95,10 @@
     }
     apm.config = config;
     
-    if (config.monitors & GrowingAPMMonitorsLaunch) {
-#ifdef GROWING_APM_LAUNCH
-        GrowingAPMLaunchMonitor *monitor = [GrowingAPMLaunchMonitor sharedInstance];
-        monitor.coldRebootBeginTime = apm.coldRebootBeginTime;
-        [monitor startMonitor];
-        apm.launchMonitor = (id <GrowingAPMMonitor>)monitor;
-#endif
-    }
-    
     if (config.monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
         GrowingAPMUIMonitor *monitor = [GrowingAPMUIMonitor sharedInstance];
+        monitor.coldRebootBeginTime = apm.coldRebootBeginTime;
         [monitor startMonitor];
         apm.pageLoadMonitor = (id <GrowingAPMMonitor>)monitor;
 #endif
@@ -141,19 +120,11 @@
 }
 
 + (void)swizzle:(GrowingAPMMonitors)monitors {
-    if (monitors & GrowingAPMMonitorsLaunch) {
-#ifdef GROWING_APM_LAUNCH
-        [GrowingViewControllerLifecycle setup];
-        [GrowingAppLifecycle setup];
-        [GrowingAPMLaunchMonitor setup];
-        GrowingAPM.sharedInstance.coldRebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
-#endif
-    }
-    
     if (monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
         [GrowingAppLifecycle setup];
         [GrowingAPMUIMonitor setup];
+        GrowingAPM.sharedInstance.coldRebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
 #endif
     }
     

@@ -47,8 +47,7 @@ let package = Package(
             dependencies: [
                 "GrowingAPMCrashMonitor",
                 "GrowingAPMUIMonitor",
-                "GrowingAPMLaunchMonitor",
-                .product(name: "GrowingUtilsAutotrackerCore", package: "GrowingUtils"),
+                .product(name: "GrowingUtilsTrackerCore", package: "GrowingUtils"),
             ],
             path: "Core",
             publicHeadersPath: ".",
@@ -70,10 +69,6 @@ let package = Package(
         .binaryTarget(
             name: "GrowingAPMUIMonitor",
             path: "UIMonitor/GrowingAPMUIMonitor.xcframework"
-        ),
-        .binaryTarget(
-            name: "GrowingAPMLaunchMonitor",
-            path: "LaunchMonitor/GrowingAPMLaunchMonitor.xcframework"
         ),
     ]
 )

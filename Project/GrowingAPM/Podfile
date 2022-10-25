@@ -7,11 +7,6 @@ target 'GrowingAPMUIMonitor' do
   pod 'GrowingUtils/AutotrackerCore'
 end
 
-target 'GrowingAPMLaunchMonitor' do
-  use_frameworks!
-  pod 'GrowingUtils/AutotrackerCore'
-end
-
 target 'Example' do
   use_frameworks!
   pod 'GrowingUtils/AutotrackerCore'

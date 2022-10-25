@@ -21,11 +21,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration);
+typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration, double rebootTime, BOOL isWarm);
 
 @interface GrowingAPMUIMonitor : NSObject
 
 @property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
+@property (nonatomic, assign) double coldRebootBeginTime;
 
 + (instancetype)sharedInstance;
 + (void)setup;

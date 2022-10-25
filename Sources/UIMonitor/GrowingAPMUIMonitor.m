@@ -19,10 +19,16 @@
 
 #import "GrowingAPMUIMonitor.h"
 #import "GrowingAPMMonitor.h"
+#import "GrowingTimeUtil.h"
 #import "GrowingAppLifecycle.h"
 #import "UIViewController+GrowingUIMonitor.h"
 
 @interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingAppLifecycleDelegate>
+
+@property (nonatomic, copy) NSString *firstPageName;
+@property (nonatomic, assign) double firstPageloadDuration;
+@property (nonatomic, assign) double firstPageDidAppearTime;
+@property (nonatomic, assign) BOOL didSendColdReboot;
 
 @property (nonatomic, strong) NSMutableArray *ignoredPrivateControllers;
 
@@ -43,6 +49,11 @@
 
 - (void)startMonitor {
     [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
+    
+    // 延迟初始化时，补发 cold reboot (如果未发)
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self sendColdReboot];
+    });
 }
 
 + (void)setup {
@@ -53,6 +64,27 @@
 }
 
 #pragma mark - Private Method
+
+- (void)sendColdReboot {
+    if (self.didSendColdReboot) {
+        return;
+    }
+    
+    if (self.firstPageName.length == 0
+        || self.firstPageloadDuration == 0
+        || self.firstPageDidAppearTime == 0
+        || self.coldRebootBeginTime == 0) {
+        return;
+    }
+    
+    if (self.monitorBlock) {
+        self.monitorBlock(self.firstPageName,
+                          self.firstPageloadDuration,
+                          self.firstPageDidAppearTime - self.coldRebootBeginTime,
+                          NO);
+        self.didSendColdReboot = YES;
+    }
+}
 
 - (void)pageLoadCompletedWithViewController:(UIViewController *)viewController
                                loadViewTime:(double)loadViewTime
@@ -67,37 +99,22 @@
         return;
     }
     
-    if (self.monitorBlock) {
-        double loadDuration = loadViewTime + viewDidLoadTime + viewWillAppearTime + viewDidAppearTime;
-        self.monitorBlock(pageName, loadDuration);
-    }
-}
-
-#pragma mark - GrowingAppLifecycleDelegate
-
-- (void)applicationDidBecomeActive {
-    GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
-    if (appLifecycle.appDidEnterBackgroundTime == 0) {
-        // 首次启动
-        return;
-    }
-    if (appLifecycle.appWillEnterForegroundTime < appLifecycle.appWillResignActiveTime) {
-        // 下拉通知或进入后台应用列表
-        return;
-    }
-     
-    UIViewController *curController = [self topViewController:self.keyWindow.rootViewController];
-    while (curController.presentedViewController) {
-        curController = [self topViewController:curController.presentedViewController];
-    }
-    if (!curController) {
-        return;
-    }
+    double loadDuration = loadViewTime + viewDidLoadTime + viewWillAppearTime + viewDidAppearTime;
     
-    // warm reboot
-    double duration = appLifecycle.appDidBecomeActiveTime - appLifecycle.appWillEnterForegroundTime;
-    if (self.monitorBlock) {
-        self.monitorBlock(NSStringFromClass([curController class]), duration);
+    if (!self.didSendColdReboot) {
+        // cold reboot
+        if (self.firstPageDidAppearTime == 0) {
+            self.firstPageName = pageName;
+            self.firstPageloadDuration = loadDuration;
+            self.firstPageDidAppearTime = [GrowingTimeUtil currentSystemTimeMillis];
+        }
+        
+        [self sendColdReboot];
+    } else {
+        // usual page loading
+        if (self.monitorBlock) {
+            self.monitorBlock(pageName, loadDuration, 0, NO);
+        }
     }
 }
 
@@ -139,6 +156,35 @@
         }
     }
     return keyWindow;
+}
+
+#pragma mark - GrowingAppLifecycleDelegate
+
+- (void)applicationDidBecomeActive {
+    GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
+    if (appLifecycle.appDidEnterBackgroundTime == 0) {
+        // 首次启动
+        return;
+    }
+    if (appLifecycle.appWillEnterForegroundTime < appLifecycle.appWillResignActiveTime) {
+        // 下拉通知或进入后台应用列表
+        return;
+    }
+    
+    // 动态获取当前页面
+    UIViewController *curController = [self topViewController:self.keyWindow.rootViewController];
+    while (curController.presentedViewController) {
+        curController = [self topViewController:curController.presentedViewController];
+    }
+    if (!curController) {
+        return;
+    }
+    
+    // warm reboot
+    double duration = appLifecycle.appDidBecomeActiveTime - appLifecycle.appWillEnterForegroundTime;
+    if (self.monitorBlock) {
+        self.monitorBlock(NSStringFromClass([curController class]), duration, duration, YES);
+    }
 }
 
 #pragma mark - Getter & Setter

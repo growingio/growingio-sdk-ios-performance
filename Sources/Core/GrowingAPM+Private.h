@@ -20,17 +20,6 @@
 #import "GrowingAPM.h"
 #import "GrowingAPMMonitor.h"
 
-#if __has_include(<GrowingAPMLaunchMonitor/GrowingAPMLaunchMonitor.h>)
-#ifndef GROWING_APM_LAUNCH
-#define GROWING_APM_LAUNCH
-#endif
-#elif __has_include("GrowingAPMLaunchMonitor.h")
-#ifndef GROWING_APM_LAUNCH
-#define GROWING_APM_LAUNCH
-#define GROWING_APM_LAUNCH_SOURCE
-#endif
-#endif
-
 #if __has_include(<GrowingAPMUIMonitor/GrowingAPMUIMonitor.h>)
 #ifndef GROWING_APM_UI
 #define GROWING_APM_UI
@@ -71,7 +60,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GrowingAPM (Private)
 
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> crashMonitor;
-@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> launchMonitor;
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> pageLoadMonitor;
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> networkMonitor;
 

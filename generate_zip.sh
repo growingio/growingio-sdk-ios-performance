@@ -7,11 +7,9 @@ cd ../../
 mkdir GrowingAPM
 mkdir GrowingAPM/CrashMonitor
 mkdir GrowingAPM/UIMonitor
-mkdir GrowingAPM/LaunchMonitor
 cp -r Sources/Core GrowingAPM/
 cp -r Lib/GrowingAPMCrashMonitor.xcframework GrowingAPM/CrashMonitor
 cp -r Lib/GrowingAPMUIMonitor.xcframework GrowingAPM/UIMonitor
-cp -r Lib/GrowingAPMLaunchMonitor.xcframework GrowingAPM/LaunchMonitor
 cp ./GrowingAPM.podspec GrowingAPM/
 cp ./Package.swift GrowingAPM/
 zip -q -r GrowingAPM.zip GrowingAPM/

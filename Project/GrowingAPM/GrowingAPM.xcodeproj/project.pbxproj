@@ -9,18 +9,11 @@
 /* Begin PBXBuildFile section */
 		349DA40D28F26FBE00C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; };
 		349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */; };
-		349DA42728F26FD700C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; };
-		349DA42C28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */; };
 		349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
-		349DA44428F27B1700C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
 		349DA44628F27B6B00C4281F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA44528F27B6B00C4281F /* UIKit.framework */; };
 		349DA44728F27B7300C4281F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9428F127E5005DF784 /* Foundation.framework */; };
-		349DA44828F27C7E00C4281F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA44528F27B6B00C4281F /* UIKit.framework */; };
-		349DA44928F27C8700C4281F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9428F127E5005DF784 /* Foundation.framework */; };
 		349DA44A28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; platformFilter = ios; };
 		349DA44B28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		349DA44F28F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; platformFilter = ios; };
-		349DA45028F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		349DA45328F29AF400C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; platformFilter = ios; };
 		349DA45428F29AF400C4281F /* GrowingAPMUIMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		349DA45A28F29C7700C4281F /* GrowingAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27DFA28F158F4005DF784 /* GrowingAPM.m */; };
@@ -32,8 +25,6 @@
 		34A606F428F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */; };
 		34A606F528F53D790013C5B5 /* GrowingAPMUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */; };
 		34A606F628F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */; };
-		34A606FA28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */; };
-		34A606FB28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34E27CA328F1556C005DF784 /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; };
 		34E27CA828F1556C005DF784 /* GrowingAPMCrashMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CA728F1556C005DF784 /* GrowingAPMCrashMonitorTests.m */; };
 		34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB428F155AE005DF784 /* Container+DeepSearch.m */; };
@@ -211,26 +202,12 @@
 			remoteGlobalIDString = 349DA40428F26FBE00C4281F;
 			remoteInfo = GrowingAPMUIMonitor;
 		};
-		349DA42828F26FD700C4281F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34E2797728F12207005DF784 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 349DA41E28F26FD700C4281F;
-			remoteInfo = GrowingAPMLaunchMonitor;
-		};
 		349DA44C28F29AE900C4281F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 34E2797728F12207005DF784 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 34E27C9A28F1556B005DF784;
 			remoteInfo = GrowingAPMCrash;
-		};
-		349DA45128F29AEF00C4281F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34E2797728F12207005DF784 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 349DA41E28F26FD700C4281F;
-			remoteInfo = GrowingAPMLaunchMonitor;
 		};
 		349DA45528F29AF400C4281F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -270,7 +247,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				349DA44B28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Embed Frameworks */,
-				349DA45028F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Embed Frameworks */,
 				349DA45428F29AF400C4281F /* GrowingAPMUIMonitor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -282,9 +258,6 @@
 		349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMUIMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMUIMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMUIMonitorTests.m; sourceTree = "<group>"; };
-		349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMLaunchMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMLaunchMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMLaunchMonitorTests.m; sourceTree = "<group>"; };
 		349DA44528F27B6B00C4281F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		349DA45728F29C0700C4281F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		349DA45828F29C1B00C4281F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -298,8 +271,6 @@
 		34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GrowingUIMonitor.m"; sourceTree = "<group>"; };
 		34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMUIMonitor.m; sourceTree = "<group>"; };
 		34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GrowingUIMonitor.h"; sourceTree = "<group>"; };
-		34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMLaunchMonitor.m; sourceTree = "<group>"; };
-		34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingAPMLaunchMonitor.h; sourceTree = "<group>"; };
 		34E27C9428F127E5005DF784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMCrashMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E27CA228F1556C005DF784 /* GrowingAPMCrashMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMCrashMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -501,23 +472,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		349DA41C28F26FD700C4281F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				349DA44828F27C7E00C4281F /* UIKit.framework in Frameworks */,
-				349DA44928F27C8700C4281F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		349DA42328F26FD700C4281F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				349DA42728F26FD700C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34E27C9828F1556B005DF784 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,7 +494,6 @@
 			files = (
 				349DA46628F2A1C100C4281F /* libz.tbd in Frameworks */,
 				349DA46528F2A1BB00C4281F /* libc++.tbd in Frameworks */,
-				349DA44F28F29AEF00C4281F /* GrowingAPMLaunchMonitor.framework in Frameworks */,
 				349DA45328F29AF400C4281F /* GrowingAPMUIMonitor.framework in Frameworks */,
 				349DA44A28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Frameworks */,
 			);
@@ -579,22 +532,6 @@
 			path = GrowingAPMUIMonitorTests;
 			sourceTree = "<group>";
 		};
-		349DA42028F26FD700C4281F /* GrowingAPMLaunchMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				34A606F728F53DC30013C5B5 /* LaunchMonitor */,
-			);
-			name = GrowingAPMLaunchMonitor;
-			sourceTree = "<group>";
-		};
-		349DA42A28F26FD700C4281F /* GrowingAPMLaunchMonitorTests */ = {
-			isa = PBXGroup;
-			children = (
-				349DA42B28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m */,
-			);
-			path = GrowingAPMLaunchMonitorTests;
-			sourceTree = "<group>";
-		};
 		34A606EC28F53D790013C5B5 /* UIMonitor */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,16 +545,6 @@
 			path = ../../Sources/UIMonitor;
 			sourceTree = "<group>";
 		};
-		34A606F728F53DC30013C5B5 /* LaunchMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				34A606F928F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h */,
-				34A606F828F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m */,
-			);
-			name = LaunchMonitor;
-			path = ../../Sources/LaunchMonitor;
-			sourceTree = "<group>";
-		};
 		34E2797628F12207005DF784 = {
 			isa = PBXGroup;
 			children = (
@@ -626,8 +553,6 @@
 				34E27CA628F1556C005DF784 /* GrowingAPMCrashMonitorTests */,
 				349DA40628F26FBE00C4281F /* GrowingAPMUIMonitor */,
 				349DA41028F26FBE00C4281F /* GrowingAPMUIMonitorTests */,
-				349DA42028F26FD700C4281F /* GrowingAPMLaunchMonitor */,
-				349DA42A28F26FD700C4281F /* GrowingAPMLaunchMonitorTests */,
 				34E27E0F28F16026005DF784 /* Example */,
 				34E27E2B28F16029005DF784 /* ExampleTests */,
 				34E27E3528F16029005DF784 /* ExampleUITests */,
@@ -647,8 +572,6 @@
 				34E27E3228F16029005DF784 /* ExampleUITests.xctest */,
 				349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */,
 				349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */,
-				349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */,
-				349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1037,15 +960,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		349DA41A28F26FD700C4281F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34A606FB28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.h in Headers */,
-				349DA44428F27B1700C4281F /* GrowingAPMMonitor.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34E27C9628F1556B005DF784 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1184,42 +1098,6 @@
 			productReference = 349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 349DA42E28F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitor" */;
-			buildPhases = (
-				349DA41A28F26FD700C4281F /* Headers */,
-				349DA41B28F26FD700C4281F /* Sources */,
-				349DA41C28F26FD700C4281F /* Frameworks */,
-				349DA41D28F26FD700C4281F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GrowingAPMLaunchMonitor;
-			productName = GrowingAPMLaunchMonitor;
-			productReference = 349DA41F28F26FD700C4281F /* GrowingAPMLaunchMonitor.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		349DA42528F26FD700C4281F /* GrowingAPMLaunchMonitorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 349DA43128F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitorTests" */;
-			buildPhases = (
-				349DA42228F26FD700C4281F /* Sources */,
-				349DA42328F26FD700C4281F /* Frameworks */,
-				349DA42428F26FD700C4281F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				349DA42928F26FD700C4281F /* PBXTargetDependency */,
-			);
-			name = GrowingAPMLaunchMonitorTests;
-			productName = GrowingAPMLaunchMonitorTests;
-			productReference = 349DA42628F26FD700C4281F /* GrowingAPMLaunchMonitorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		34E27C9A28F1556B005DF784 /* GrowingAPMCrashMonitor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34E27CAE28F1556C005DF784 /* Build configuration list for PBXNativeTarget "GrowingAPMCrashMonitor" */;
@@ -1269,7 +1147,6 @@
 			);
 			dependencies = (
 				349DA44D28F29AE900C4281F /* PBXTargetDependency */,
-				349DA45228F29AEF00C4281F /* PBXTargetDependency */,
 				349DA45628F29AF400C4281F /* PBXTargetDependency */,
 			);
 			name = Example;
@@ -1328,12 +1205,6 @@
 					349DA40B28F26FBE00C4281F = {
 						CreatedOnToolsVersion = 13.1;
 					};
-					349DA41E28F26FD700C4281F = {
-						CreatedOnToolsVersion = 13.1;
-					};
-					349DA42528F26FD700C4281F = {
-						CreatedOnToolsVersion = 13.1;
-					};
 					34E27C9A28F1556B005DF784 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -1370,8 +1241,6 @@
 				34E27CA128F1556C005DF784 /* GrowingAPMCrashMonitorTests */,
 				349DA40428F26FBE00C4281F /* GrowingAPMUIMonitor */,
 				349DA40B28F26FBE00C4281F /* GrowingAPMUIMonitorTests */,
-				349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */,
-				349DA42528F26FD700C4281F /* GrowingAPMLaunchMonitorTests */,
 				34E27E0D28F16026005DF784 /* Example */,
 				34E27E2728F16029005DF784 /* ExampleTests */,
 				34E27E3128F16029005DF784 /* ExampleUITests */,
@@ -1388,20 +1257,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		349DA40A28F26FBE00C4281F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		349DA41D28F26FD700C4281F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		349DA42428F26FD700C4281F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1463,22 +1318,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		349DA41B28F26FD700C4281F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34A606FA28F53DC30013C5B5 /* GrowingAPMLaunchMonitor.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		349DA42228F26FD700C4281F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				349DA42C28F26FD700C4281F /* GrowingAPMLaunchMonitorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1597,22 +1436,11 @@
 			target = 349DA40428F26FBE00C4281F /* GrowingAPMUIMonitor */;
 			targetProxy = 349DA40E28F26FBE00C4281F /* PBXContainerItemProxy */;
 		};
-		349DA42928F26FD700C4281F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */;
-			targetProxy = 349DA42828F26FD700C4281F /* PBXContainerItemProxy */;
-		};
 		349DA44D28F29AE900C4281F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
 			target = 34E27C9A28F1556B005DF784 /* GrowingAPMCrashMonitor */;
 			targetProxy = 349DA44C28F29AE900C4281F /* PBXContainerItemProxy */;
-		};
-		349DA45228F29AEF00C4281F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 349DA41E28F26FD700C4281F /* GrowingAPMLaunchMonitor */;
-			targetProxy = 349DA45128F29AEF00C4281F /* PBXContainerItemProxy */;
 		};
 		349DA45628F29AF400C4281F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1755,110 +1583,6 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMUIMonitorTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		349DA42F28F26FD700C4281F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = SXBU677CPT;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitor;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = NO;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		349DA43028F26FD700C4281F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = SXBU677CPT;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitor;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = NO;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		349DA43228F26FD700C4281F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SXBU677CPT;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitorTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		349DA43328F26FD700C4281F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SXBU677CPT;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.GrowingAPMLaunchMonitorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2260,24 +1984,6 @@
 			buildConfigurations = (
 				349DA41828F26FBF00C4281F /* Debug */,
 				349DA41928F26FBF00C4281F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		349DA42E28F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				349DA42F28F26FD700C4281F /* Debug */,
-				349DA43028F26FD700C4281F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		349DA43128F26FD700C4281F /* Build configuration list for PBXNativeTarget "GrowingAPMLaunchMonitorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				349DA43228F26FD700C4281F /* Debug */,
-				349DA43328F26FD700C4281F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

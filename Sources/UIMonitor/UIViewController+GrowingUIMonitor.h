@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) double growingapm_viewDidLoadTime;
 @property (nonatomic, assign) double growingapm_viewWillAppearTime;
 @property (nonatomic, assign) double growingapm_viewDidAppearTime;
+@property (nonatomic, assign) BOOL growingapm_didAppear;
 
 + (void)growingapm_startUIMonitorSwizzle;
 
