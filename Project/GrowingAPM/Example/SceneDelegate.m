@@ -21,7 +21,7 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     GrowingAPMConfig *config = [GrowingAPMConfig config];
-    config.monitors = GrowingAPMMonitorsCrash | GrowingAPMMonitorsLaunch | GrowingAPMMonitorsUserInterface;
+    config.monitors = GrowingAPMMonitorsCrash | GrowingAPMMonitorsUserInterface;
     [GrowingAPM startWithConfig:config];
 }
 
