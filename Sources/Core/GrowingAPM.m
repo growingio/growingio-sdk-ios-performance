@@ -24,7 +24,6 @@
 #endif
 
 #import "GrowingAPM+Private.h"
-#import "GrowingViewControllerLifecycle.h"
 #import "GrowingAppLifecycle.h"
 
 // -------- UI MONITOR --------
