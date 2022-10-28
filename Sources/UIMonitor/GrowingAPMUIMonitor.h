@@ -27,8 +27,6 @@ typedef void(^GrowingAPMUIMonitorBlock)(NSString *pageName, double loadDuration,
 
 @property (nonatomic, copy) GrowingAPMUIMonitorBlock monitorBlock;
 
-@property (class, nonatomic, assign) double mainStartTime;
-
 + (instancetype)sharedInstance;
 + (void)setup:(Class)appDelegateClass;
 - (void)startMonitor;

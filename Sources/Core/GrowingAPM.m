@@ -117,7 +117,6 @@
     if (monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
         [GrowingAppLifecycle setup];
-        GrowingAPMUIMonitor.mainStartTime = GrowingTimeUtil.currentSystemTimeMillis;
         [GrowingAPMUIMonitor setup:appDelegateClass];
 #endif
     }

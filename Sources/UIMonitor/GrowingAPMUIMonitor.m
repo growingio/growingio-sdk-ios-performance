@@ -31,6 +31,7 @@
 
 @interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingAppLifecycleDelegate>
 
+@property (class, nonatomic, assign) double mainStartTime;
 @property (nonatomic, copy) NSString *firstPageName;
 @property (nonatomic, assign) double firstPageloadDuration;
 @property (nonatomic, assign) double firstPageDidAppearTime;
@@ -67,23 +68,35 @@
     dispatch_once(&onceToken, ^{
         [UIViewController growingapm_startUIMonitorSwizzle];
         
-        if ([UIDevice currentDevice].systemVersion.doubleValue >= 15.0) {
-            // iOS 15.0+有pre-warm，main函数的时间不准确
-            // 使用 hook 方式来实现虽然侵入性大，但考虑到 GrowingAnalyticsSDK + GrowingAPMSDK 延迟初始化的场景，比起在
-            // -[GrowingAPMUIMonitor startMonitor] 中计算更合理一些
-            Class class = appDelegateClass;
-            if (!class) {
-                return;
+        BOOL isActivePrewarm = [[NSProcessInfo processInfo].environment[@"ActivePrewarm"] isEqualToString:@"1"];
+        if (isActivePrewarm) {
+            // 依据 Sentry SDK 的注释可知，iOS 14 设备上 App 启动就已经有 prewarming
+            // https://github.com/getsentry/sentry-cocoa/blob/0979ac6c30342058175f08b68d136e42b5187c43/Sources/Sentry/SentryAppStartTracker.m#L74
+            if (@available(iOS 14, *)) {
+                
+                // https://developer.apple.com/documentation/uikit/app_and_environment/responding_to_the_launch_of_your_app/about_the_app_launch_sequence#3894431
+                // iOS 15.0+ 有 prewarming，main 函数的时间不准确
+                // 使用 hook 方式来实现虽然侵入性大，但考虑到 GrowingAnalyticsSDK + GrowingAPMSDK 延迟初始化的场景，比起在
+                // -[GrowingAPMUIMonitor startMonitor] 中直接计算 mainStartTime 更合理一些
+                
+                Class class = appDelegateClass;
+                if (!class) {
+                    return;
+                }
+                __block NSInvocation *invocation = nil;
+                SEL selector = NSSelectorFromString(@"application:didFinishLaunchingWithOptions:");
+                if (![class instancesRespondToSelector:selector]) {
+                    return;
+                }
+                id block = ^(id delegate, UIApplication *app, NSDictionary *options) {
+                    return applicationDidFinishLaunchingWithOptions(invocation, delegate, app, options);
+                };
+                invocation = [class growing_swizzleMethod:selector withBlock:block error:nil];
+            } else {
+                self.mainStartTime = GrowingTimeUtil.currentTimeMillis;
             }
-            __block NSInvocation *invocation = nil;
-            SEL selector = NSSelectorFromString(@"application:didFinishLaunchingWithOptions:");
-            if (![class instancesRespondToSelector:selector]) {
-                return;
-            }
-            id block = ^(id delegate, UIApplication *app, NSDictionary *options) {
-                return applicationDidFinishLaunchingWithOptions(invocation, delegate, app, options);
-            };
-            invocation = [class growing_swizzleMethod:selector withBlock:block error:nil];
+        } else {
+            self.mainStartTime = GrowingTimeUtil.currentTimeMillis;
         }
     });
 }
@@ -136,8 +149,7 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
     
     if (self.firstPageName.length == 0
         || self.firstPageloadDuration == 0
-        || self.firstPageDidAppearTime == 0
-        || GrowingAPMUIMonitor.mainStartTime == 0) {
+        || self.firstPageDidAppearTime == 0) {
         return;
     }
     
@@ -149,12 +161,25 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
     // pre-main:
     // exec to c++ init
 
-    // after-main(由于 iOS 15+ pre-warm 的原因，分别计算):
+    // after-main(由于 iOS 15+ prewarming 的原因，分别计算):
     // iOS 15+: didFinishLaunching to first_vc_didAppear
     // iOS 15-: main to first_vc_didAppear
 
     // total:
     // pre-main + after-main
+    
+    if (GrowingAPMUIMonitor.mainStartTime == 0) {
+        // mainStartTime 没获取到（prewarming 且 hook UIApplicationDelegate 方法失败，可能未传入 AppDelegate Class）
+        if (self.monitorBlock) {
+            self.monitorBlock(self.firstPageName,
+                              self.firstPageloadDuration,
+                              0,
+                              NO);
+            self.didSendColdReboot = YES;
+        }
+        return;
+    }
+    
     double processStartTime = getProcessStartTime();
     double preMainTime = (processStartTime == 0 || cppInitTime == 0) ? 0 : (cppInitTime - processStartTime);
     double afterMainTime = self.firstPageDidAppearTime - GrowingAPMUIMonitor.mainStartTime;
@@ -188,7 +213,7 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
         if (self.firstPageDidAppearTime == 0) {
             self.firstPageName = pageName;
             self.firstPageloadDuration = loadDuration;
-            self.firstPageDidAppearTime = [GrowingTimeUtil currentTimeMillis];
+            self.firstPageDidAppearTime = GrowingTimeUtil.currentTimeMillis;
         }
         
         [self sendColdReboot];
