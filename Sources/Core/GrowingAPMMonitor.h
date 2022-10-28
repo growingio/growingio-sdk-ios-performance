@@ -29,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 + (instancetype)sharedInstance;
-+ (void)setup;
 
 @end
 

@@ -61,10 +61,6 @@
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> pageLoadMonitor;
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> networkMonitor;
 
-#ifdef GROWING_APM_UI
-@property (nonatomic, assign) double coldRebootBeginTime;
-#endif
-
 #ifdef GROWING_APM_CRASH
 @property (class, nonatomic, weak) GrowingCrashInstallation *crashInstallation;
 #endif
@@ -97,7 +93,6 @@
     if (config.monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
         GrowingAPMUIMonitor *monitor = [GrowingAPMUIMonitor sharedInstance];
-        monitor.coldRebootBeginTime = apm.coldRebootBeginTime;
         [monitor startMonitor];
         apm.pageLoadMonitor = (id <GrowingAPMMonitor>)monitor;
 #endif
@@ -118,12 +113,12 @@
     }
 }
 
-+ (void)swizzle:(GrowingAPMMonitors)monitors {
++ (void)setupMonitors:(GrowingAPMMonitors)monitors appDelegateClass:(Class)appDelegateClass {
     if (monitors & GrowingAPMMonitorsUserInterface) {
 #ifdef GROWING_APM_UI
         [GrowingAppLifecycle setup];
-        [GrowingAPMUIMonitor setup];
-        GrowingAPM.sharedInstance.coldRebootBeginTime = GrowingTimeUtil.currentSystemTimeMillis;
+        GrowingAPMUIMonitor.mainStartTime = GrowingTimeUtil.currentSystemTimeMillis;
+        [GrowingAPMUIMonitor setup:appDelegateClass];
 #endif
     }
     
