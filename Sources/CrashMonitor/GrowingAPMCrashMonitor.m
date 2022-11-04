@@ -20,25 +20,68 @@
 #import "GrowingAPMCrashMonitor.h"
 #import "GrowingAPMMonitor.h"
 #import "GrowingAPM+Private.h"
-#import "GrowingCrashInstallation.h"
+#import "GrowingCrashInstallationAnalytics.h"
 
 @interface GrowingAPMCrashMonitor () <GrowingAPMMonitor>
+
+@property (strong, nonatomic, readonly) NSPointerArray *delegates;
+@property (strong, nonatomic, readonly) NSLock *delegateLock;
 
 @end
 
 @implementation GrowingAPMCrashMonitor
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _delegates = [NSPointerArray pointerArrayWithOptions:NSPointerFunctionsWeakMemory];
+        _delegateLock = [[NSLock alloc] init];
+    }
+
+    return self;
+}
+
 #pragma mark - Monitor
+
++ (void)setup {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [GrowingCrashInstallationAnalytics.sharedInstance install];
+    });
+}
 
 - (void)startMonitor {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [GrowingAPM.crashInstallation sendAllReportsWithCompletion:^(NSArray *filteredReports, BOOL completed, NSError *error) {
-            if (weakSelf.monitorBlock) {
-                weakSelf.monitorBlock(filteredReports, completed, error);
+        [GrowingCrashInstallationAnalytics.sharedInstance sendAllReportsWithCompletion:^(NSArray *filteredReports, BOOL completed, NSError *error) {
+            [weakSelf.delegateLock lock];
+            for (id delegate in weakSelf.delegates) {
+                if ([delegate respondsToSelector:@selector(growingapm_crashMonitorHandleWithReports:completed:error:)]) {
+                    [delegate growingapm_crashMonitorHandleWithReports:filteredReports completed:completed error:error];
+                }
             }
+            [weakSelf.delegateLock unlock];
         }];
     });
+}
+
+- (void)addMonitorDelegate:(id <GrowingAPMCrashMonitorDelegate>)delegate {
+    [self.delegateLock lock];
+    if (![self.delegates.allObjects containsObject:delegate]) {
+        [self.delegates addPointer:(__bridge void *)delegate];
+    }
+    [self.delegateLock unlock];
+}
+
+- (void)removeMonitorDelegate:(id <GrowingAPMCrashMonitorDelegate>)delegate {
+    [self.delegateLock lock];
+    [self.delegates.allObjects enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSObject *obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        if (delegate == obj) {
+            [self.delegates removePointerAtIndex:idx];
+            *stop = YES;
+        }
+    }];
+    [self.delegateLock unlock];
 }
 
 @end

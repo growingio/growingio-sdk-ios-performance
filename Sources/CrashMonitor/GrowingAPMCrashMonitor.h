@@ -33,13 +33,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^GrowingAPMCrashMonitorBlock)(NSArray *filteredReports, BOOL completed, NSError *error);
+@protocol GrowingAPMCrashMonitorDelegate <NSObject>
+
+- (void)growingapm_crashMonitorHandleWithReports:(NSArray *)reports
+                                       completed:(BOOL)completed
+                                           error:(NSError *)error;
+
+@end
 
 @interface GrowingAPMCrashMonitor : NSObject
 
-@property (nonatomic, copy) GrowingAPMCrashMonitorBlock monitorBlock;
-
++ (void)setup;
 - (void)startMonitor;
+- (void)addMonitorDelegate:(id <GrowingAPMCrashMonitorDelegate>)delegate;
+- (void)removeMonitorDelegate:(id <GrowingAPMCrashMonitorDelegate>)delegate;
 
 @end
 

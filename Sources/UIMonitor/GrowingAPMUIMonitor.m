@@ -39,6 +39,9 @@ static double kMaxColdRebootDuration = 30 * 1000L;
 
 @interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingAppLifecycleDelegate>
 
+@property (strong, nonatomic, readonly) NSPointerArray *delegates;
+@property (strong, nonatomic, readonly) NSLock *delegateLock;
+
 @property (nonatomic, copy) NSString *firstPageName;
 @property (nonatomic, assign) double firstPageloadDuration;
 @property (nonatomic, assign) BOOL didSendColdReboot;
@@ -48,6 +51,16 @@ static double kMaxColdRebootDuration = 30 * 1000L;
 @end
 
 @implementation GrowingAPMUIMonitor
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _delegates = [NSPointerArray pointerArrayWithOptions:NSPointerFunctionsWeakMemory];
+        _delegateLock = [[NSLock alloc] init];
+    }
+
+    return self;
+}
 
 + (instancetype)sharedInstance {
     static id _sharedInstance = nil;
@@ -59,15 +72,6 @@ static double kMaxColdRebootDuration = 30 * 1000L;
 }
 
 #pragma mark - Monitor
-
-- (void)startMonitor {
-    [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
-    
-    // 延迟初始化时，补发 cold reboot (如果未发)
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self sendColdReboot];
-    });
-}
 
 + (void)setup:(Class)appDelegateClass {
     static dispatch_once_t onceToken;
@@ -101,6 +105,34 @@ static double kMaxColdRebootDuration = 30 * 1000L;
             kMainStartTime = GrowingTimeUtil.currentTimeMillis;
         }
     });
+}
+
+- (void)startMonitor {
+    [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
+    
+    // 延迟初始化时，补发 cold reboot (如果未发)
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self sendColdReboot];
+    });
+}
+
+- (void)addMonitorDelegate:(id <GrowingAPMUIMonitorDelegate>)delegate {
+    [self.delegateLock lock];
+    if (![self.delegates.allObjects containsObject:delegate]) {
+        [self.delegates addPointer:(__bridge void *)delegate];
+    }
+    [self.delegateLock unlock];
+}
+
+- (void)removeMonitorDelegate:(id <GrowingAPMUIMonitorDelegate>)delegate {
+    [self.delegateLock lock];
+    [self.delegates.allObjects enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSObject *obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        if (delegate == obj) {
+            [self.delegates removePointerAtIndex:idx];
+            *stop = YES;
+        }
+    }];
+    [self.delegateLock unlock];
 }
 
 #pragma mark - Private Method
@@ -193,13 +225,17 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
                                             : (kFirstPageDidAppearTime - kMainStartTime);
     double total = preMainTime + afterMainTime;
     
-    if (self.monitorBlock) {
-        self.monitorBlock(self.firstPageName,
-                          self.firstPageloadDuration,
-                          (total > kMaxColdRebootDuration || total < 0) ? 0 : total,
-                          NO);
-        self.didSendColdReboot = YES;
+    [self.delegateLock lock];
+    for (id delegate in self.delegates) {
+        if ([delegate respondsToSelector:@selector(growingapm_UIMonitorHandleWithPageName:loadDuration:rebootTime:isWarm:)]) {
+            [delegate growingapm_UIMonitorHandleWithPageName:self.firstPageName
+                                                loadDuration:self.firstPageloadDuration
+                                                  rebootTime:(total > kMaxColdRebootDuration || total < 0) ? 0 : total
+                                                      isWarm:NO];
+        }
     }
+    [self.delegateLock unlock];
+    self.didSendColdReboot = YES;
 }
 
 - (void)pageLoadCompletedWithViewController:(UIViewController *)viewController
@@ -228,9 +264,16 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
         [self sendColdReboot];
     } else {
         // usual page loading
-        if (self.monitorBlock) {
-            self.monitorBlock(pageName, loadDuration, 0, NO);
+        [self.delegateLock lock];
+        for (id delegate in self.delegates) {
+            if ([delegate respondsToSelector:@selector(growingapm_UIMonitorHandleWithPageName:loadDuration:rebootTime:isWarm:)]) {
+                [delegate growingapm_UIMonitorHandleWithPageName:pageName
+                                                    loadDuration:loadDuration
+                                                      rebootTime:0
+                                                          isWarm:NO];
+            }
         }
+        [self.delegateLock unlock];
     }
 }
 
@@ -311,9 +354,16 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
     
     // warm reboot
     double duration = appLifecycle.appDidBecomeActiveTime - appLifecycle.appWillEnterForegroundTime;
-    if (self.monitorBlock) {
-        self.monitorBlock(NSStringFromClass([curController class]), duration, duration, YES);
+    [self.delegateLock lock];
+    for (id delegate in self.delegates) {
+        if ([delegate respondsToSelector:@selector(growingapm_UIMonitorHandleWithPageName:loadDuration:rebootTime:isWarm:)]) {
+            [delegate growingapm_UIMonitorHandleWithPageName:NSStringFromClass([curController class])
+                                                loadDuration:duration
+                                                  rebootTime:duration
+                                                      isWarm:YES];
+        }
     }
+    [self.delegateLock unlock];
 }
 
 #pragma mark - Getter & Setter

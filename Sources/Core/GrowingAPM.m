@@ -41,14 +41,10 @@
 
 // -------- CRASH MONITOR --------
 #ifdef GROWING_APM_CRASH
-#import <objc/runtime.h>
-
 #ifdef GROWING_APM_CRASH_SOURCE
 #import "GrowingAPMCrashMonitor.h"
-#import "GrowingCrashInstallation.h"
 #else
 #import <GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>
-#import <GrowingAPMCrashMonitor/GrowingCrashInstallation.h>
 #endif
 
 #endif
@@ -58,12 +54,8 @@
 
 @property (nonatomic, copy) GrowingAPMConfig *config;
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> crashMonitor;
-@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> pageLoadMonitor;
+@property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> loadMonitor;
 @property (nonatomic, strong, readwrite) id <GrowingAPMMonitor> networkMonitor;
-
-#ifdef GROWING_APM_CRASH
-@property (class, nonatomic, weak) GrowingCrashInstallation *crashInstallation;
-#endif
 
 @end
 
@@ -94,7 +86,7 @@
 #ifdef GROWING_APM_UI
         GrowingAPMUIMonitor *monitor = [GrowingAPMUIMonitor sharedInstance];
         [monitor startMonitor];
-        apm.pageLoadMonitor = (id <GrowingAPMMonitor>)monitor;
+        apm.loadMonitor = (id <GrowingAPMMonitor>)monitor;
 #endif
     }
     
@@ -123,7 +115,7 @@
     
     if (monitors & GrowingAPMMonitorsCrash) {
 #ifdef GROWING_APM_CRASH
-        [GrowingAPM.crashInstallation install];
+        [GrowingAPMCrashMonitor setup];
 #endif
     }
     
@@ -133,17 +125,5 @@
 #endif
     }
 }
-
-#ifdef GROWING_APM_CRASH
-#pragma mark - Getter & Setter
-
-+ (GrowingCrashInstallation *)crashInstallation {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-+ (void)setCrashInstallation:(GrowingCrashInstallation *)crashInstallation {
-    objc_setAssociatedObject(self, @selector(crashInstallation), crashInstallation, OBJC_ASSOCIATION_ASSIGN);
-}
-#endif
 
 @end

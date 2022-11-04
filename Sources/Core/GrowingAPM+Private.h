@@ -32,12 +32,10 @@
 #endif
 
 #if __has_include(<GrowingAPMCrashMonitor/GrowingAPMCrashMonitor.h>)
-@class GrowingCrashInstallation;
 #ifndef GROWING_APM_CRASH
 #define GROWING_APM_CRASH
 #endif
 #elif __has_include("GrowingAPMCrashMonitor.h")
-@class GrowingCrashInstallation;
 #ifndef GROWING_APM_CRASH
 #define GROWING_APM_CRASH
 #define GROWING_APM_CRASH_SOURCE
@@ -60,12 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GrowingAPM (Private)
 
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> crashMonitor;
-@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> pageLoadMonitor;
+@property (nonatomic, strong, readonly) id <GrowingAPMMonitor> loadMonitor;
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> networkMonitor;
-
-#ifdef GROWING_APM_CRASH
-@property (class, nonatomic, weak) GrowingCrashInstallation *crashInstallation;
-#endif
 
 @end
 
