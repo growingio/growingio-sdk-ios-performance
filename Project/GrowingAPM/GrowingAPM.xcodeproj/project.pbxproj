@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34034E222914C3E200577F6C /* GrowingCrashInstallationAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 34034E202914C3E200577F6C /* GrowingCrashInstallationAnalytics.m */; };
+		34034E232914C3E200577F6C /* GrowingCrashInstallationAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 34034E212914C3E200577F6C /* GrowingCrashInstallationAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		349DA40D28F26FBE00C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; };
 		349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */; };
 		349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
@@ -255,6 +257,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34034E202914C3E200577F6C /* GrowingCrashInstallationAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashInstallationAnalytics.m; sourceTree = "<group>"; };
+		34034E212914C3E200577F6C /* GrowingCrashInstallationAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingCrashInstallationAnalytics.h; sourceTree = "<group>"; };
 		349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMUIMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		349DA40C28F26FBE00C4281F /* GrowingAPMUIMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMUIMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMUIMonitorTests.m; sourceTree = "<group>"; };
@@ -828,6 +832,8 @@
 				34E27D3928F155AF005DF784 /* GrowingCrashInstallation+Private.h */,
 				34E27D3A28F155AF005DF784 /* GrowingCrashInstallation.h */,
 				34E27D3B28F155AF005DF784 /* GrowingCrashInstallation.m */,
+				34034E212914C3E200577F6C /* GrowingCrashInstallationAnalytics.h */,
+				34034E202914C3E200577F6C /* GrowingCrashInstallationAnalytics.m */,
 			);
 			path = Installations;
 			sourceTree = "<group>";
@@ -1014,6 +1020,7 @@
 				34E27DC128F155AF005DF784 /* GrowingCrashDoctor.h in Headers */,
 				34E27D7E28F155AF005DF784 /* GrowingCrashJSONCodec.h in Headers */,
 				34E27D9D28F155AF005DF784 /* GrowingCrashSysCtl.h in Headers */,
+				34034E232914C3E200577F6C /* GrowingCrashInstallationAnalytics.h in Headers */,
 				34E27D9028F155AF005DF784 /* GrowingCrashPlatformSpecificDefines.h in Headers */,
 				34E27D8628F155AF005DF784 /* GrowingCrashSymbolicator.h in Headers */,
 				34E27D7728F155AF005DF784 /* GrowingCrashMonitor_Deadlock.h in Headers */,
@@ -1375,6 +1382,7 @@
 				34E27D8428F155AF005DF784 /* GrowingCrashID.c in Sources */,
 				34E27DF128F155B0005DF784 /* ManglingUtils.cpp in Sources */,
 				34E27DB528F155AF005DF784 /* NSError+GrowingCrashSimpleConstructor.m in Sources */,
+				34034E222914C3E200577F6C /* GrowingCrashInstallationAnalytics.m in Sources */,
 				34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */,
 				34E27D8C28F155AF005DF784 /* GrowingCrashMach.c in Sources */,
 				34E27D9A28F155AF005DF784 /* GrowingCrashJSONCodecObjC.m in Sources */,
