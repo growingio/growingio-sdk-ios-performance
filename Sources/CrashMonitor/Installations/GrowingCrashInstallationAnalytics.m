@@ -37,7 +37,7 @@
     id originFilter = [GrowingCrashReportFilterPassthrough filter];
     id errorFilter = [GrowingCrashReportFilterObjectForKey filterWithKey:@"crash/error" allowNotFound:YES];
     id formatFilter = [GrowingCrashReportFilterAppleFmt filterWithReportStyle:GrowingCrashAppleReportStyleSymbolicated];
-    return [GrowingCrashReportFilterCombine filterWithFiltersAndKeys:originFilter, @"OriginReport",
+    return [GrowingCrashReportFilterCombine filterWithFiltersAndKeys:originFilter, @"rawReport",
                                                                      errorFilter, @"errorReport",
                                                                      formatFilter, @"AppleFmt",
                                                                      nil];

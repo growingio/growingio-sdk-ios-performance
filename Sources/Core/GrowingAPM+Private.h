@@ -61,6 +61,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> loadMonitor;
 @property (nonatomic, strong, readonly) id <GrowingAPMMonitor> networkMonitor;
 
+#ifdef GROWING_APM_UI
++ (void)didFinishLaunching;
+#endif
+
 @end
 
 NS_ASSUME_NONNULL_END

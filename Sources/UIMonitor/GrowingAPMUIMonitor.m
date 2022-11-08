@@ -20,12 +20,11 @@
 #import "GrowingAPMUIMonitor.h"
 #import "GrowingAPMMonitor.h"
 #import "UIViewController+GrowingUIMonitor.h"
+#import "GrowingAPM+Private.h"
 
 #import "GrowingTimeUtil.h"
 #import "GrowingAppLifecycle.h"
-#import "GrowingSwizzle.h"
 
-#import <objc/runtime.h>
 #import <sys/sysctl.h>
 #import <mach/mach.h>
 
@@ -73,41 +72,24 @@ static double kMaxColdRebootDuration = 30 * 1000L;
 
 #pragma mark - Monitor
 
-+ (void)setup:(Class)appDelegateClass {
++ (void)setup {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [UIViewController growingapm_startUIMonitorSwizzle];
         
         kIsActivePrewarm = [[NSProcessInfo processInfo].environment[@"ActivePrewarm"] isEqualToString:@"1"];
-        if (kIsActivePrewarm) {
-            // 依据 Sentry SDK 的注释可知，iOS 14 设备上 App 启动就已经有 prewarming
-            // https://github.com/getsentry/sentry-cocoa/blob/0979ac6c30342058175f08b68d136e42b5187c43/Sources/Sentry/SentryAppStartTracker.m#L74
-            if (@available(iOS 14, *)) {
-                
-                // 使用 hook 方式来实现虽然侵入性大，但考虑到 GrowingAnalyticsSDK + GrowingAPMSDK 延迟初始化的场景，比起在
-                // -[GrowingAPMUIMonitor startMonitor] 中直接计算 didFinishLaunchingStartTime 更合理一些
-                
-                Class class = appDelegateClass;
-                if (!class) {
-                    return;
-                }
-                __block NSInvocation *invocation = nil;
-                SEL selector = NSSelectorFromString(@"application:didFinishLaunchingWithOptions:");
-                if (![class instancesRespondToSelector:selector]) {
-                    return;
-                }
-                id block = ^(id delegate, UIApplication *app, NSDictionary *options) {
-                    return applicationDidFinishLaunchingWithOptions(invocation, delegate, app, options);
-                };
-                invocation = [class growing_swizzleMethod:selector withBlock:block error:nil];
-            }
-        } else {
+        if (!kIsActivePrewarm) {
             kMainStartTime = GrowingTimeUtil.currentTimeMillis;
         }
     });
 }
 
 - (void)startMonitor {
+    // 非零判断，兼容延迟初始化
+    if (kDidFinishLaunchingStartTime == 0) {
+        kDidFinishLaunchingStartTime = GrowingTimeUtil.currentTimeMillis;
+    }
+    
     [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
     
     // 延迟初始化时，补发 cold reboot (如果未发)
@@ -150,33 +132,13 @@ static double getExecTime(void) {
 }
 
 + (void)load {
+    // 获取 runtime load 时间
     kLoadTime = GrowingTimeUtil.currentTimeMillis;
 }
 
 __used __attribute__((constructor(60000))) static void beforeMain(void) {
     // c++ init 时间
     kCppInitTime = GrowingTimeUtil.currentTimeMillis;
-}
-
-static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
-                                                     id delegate,
-                                                     UIApplication *application,
-                                                     NSDictionary *launchOptions) {
-    // 获取 didFinishLaunching 开始时间
-    if (!invocation) {
-        return NO;
-    }
-
-    kDidFinishLaunchingStartTime = GrowingTimeUtil.currentTimeMillis;
-
-    [invocation retainArguments];
-    [invocation setArgument:&application atIndex:2];
-    [invocation setArgument:&launchOptions atIndex:3];
-    [invocation invokeWithTarget:delegate];
-
-    BOOL ret = NO;
-    [invocation getReturnValue:&ret];
-    return ret;
 }
 
 - (void)sendColdReboot {
@@ -385,6 +347,26 @@ static BOOL applicationDidFinishLaunchingWithOptions(NSInvocation *invocation,
         ]];
     }
     return _ignoredPrivateControllers;
+}
+
+@end
+
+@implementation GrowingAPM (UIMonitor)
+
++ (void)didFinishLaunching {
+    if (![NSThread isMainThread]) {
+        @throw [NSException exceptionWithName:@"+[GrowingAPM didFinishLaunching]执行异常"
+                                       reason:@"请在applicationDidFinishLaunching中调用+[GrowingAPM didFinishLaunching]，并且确保在主线程中"
+                                     userInfo:nil];
+    }
+    
+    if (kDidFinishLaunchingStartTime != 0) {
+        @throw [NSException exceptionWithName:@"+[GrowingAPM didFinishLaunching]执行异常"
+                                       reason:@"请在延迟初始化场景下，提前在applicationDidFinishLaunching中调用+[GrowingAPM didFinishLaunching]，并且确保在主线程中；正常初始化无需调用"
+                                     userInfo:nil];
+    }
+    
+    kDidFinishLaunchingStartTime = GrowingTimeUtil.currentTimeMillis;
 }
 
 @end

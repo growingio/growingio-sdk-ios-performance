@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol GrowingAPMMonitor <NSObject>
 
 @required
++ (void)setup;
 - (void)startMonitor;
 - (void)addMonitorDelegate:(id)delegate;
 - (void)removeMonitorDelegate:(id)delegate;

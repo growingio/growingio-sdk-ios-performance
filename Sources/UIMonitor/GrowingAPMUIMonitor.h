@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GrowingAPMUIMonitor : NSObject
 
 + (instancetype)sharedInstance;
-+ (void)setup:(Class)appDelegateClass;
++ (void)setup;
 - (void)startMonitor;
 - (void)addMonitorDelegate:(id <GrowingAPMUIMonitorDelegate>)delegate;
 - (void)removeMonitorDelegate:(id <GrowingAPMUIMonitorDelegate>)delegate;

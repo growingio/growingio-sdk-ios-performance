@@ -72,8 +72,9 @@
 
 + (void)startWithConfig:(GrowingAPMConfig *)config {
     if (![NSThread isMainThread]) {
-        @throw [NSException exceptionWithName:@"初始化异常" reason:@"请在主线程中调用 +[GrowingAPM startWithConfig:] 进行初始化" userInfo:nil];
-        return;
+        @throw [NSException exceptionWithName:@"GrowingAPM初始化异常"
+                                       reason:@"请在主线程中调用+[GrowingAPM startWithConfig:]进行初始化"
+                                     userInfo:nil];
     }
     
     GrowingAPM *apm = GrowingAPM.sharedInstance;
@@ -105,25 +106,25 @@
     }
 }
 
-+ (void)setupMonitors:(GrowingAPMMonitors)monitors appDelegateClass:(Class)appDelegateClass {
-    if (monitors & GrowingAPMMonitorsUserInterface) {
++ (void)setupMonitors {
+    if (![NSThread isMainThread]) {
+        @throw [NSException exceptionWithName:@"+[GrowingAPM setupMonitors]执行异常"
+                                       reason:@"请在主线程中调用+[GrowingAPM setupMonitors]"
+                                     userInfo:nil];
+    }
+    
 #ifdef GROWING_APM_UI
-        [GrowingAppLifecycle setup];
-        [GrowingAPMUIMonitor setup:appDelegateClass];
+    [GrowingAppLifecycle setup];
+    [GrowingAPMUIMonitor setup];
 #endif
-    }
     
-    if (monitors & GrowingAPMMonitorsCrash) {
 #ifdef GROWING_APM_CRASH
-        [GrowingAPMCrashMonitor setup];
+    [GrowingAPMCrashMonitor setup];
 #endif
-    }
     
-    if (monitors & GrowingAPMMonitorsNetwork) {
 #ifdef GROWING_APM_NETWORK
         
 #endif
-    }
 }
 
 @end

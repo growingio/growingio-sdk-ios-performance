@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)startWithConfig:(GrowingAPMConfig *)config;
 
-+ (void)setupMonitors:(GrowingAPMMonitors)monitors appDelegateClass:(Class)appDelegateClass;
++ (void)setupMonitors;
 
 @end
 
