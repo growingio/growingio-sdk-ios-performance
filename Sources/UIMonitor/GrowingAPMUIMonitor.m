@@ -152,6 +152,10 @@ __used __attribute__((constructor(60000))) static void beforeMain(void) {
         return;
     }
     
+    if (self.delegates.count == 0) {
+        return;
+    }
+    
     // 实际冷启动过程：
     // exec -> load -> c++ init -> main -> didFinishLaunching -> first_render_time -> first_vc_loadView -> first_vc_didAppear
     
