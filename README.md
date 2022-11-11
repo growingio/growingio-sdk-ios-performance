@@ -21,4 +21,29 @@ GrowingIO APM (Internal)
 4. 在 Podfile 中添加 `pod 'GrowingAPM', :path => './'`
 5. 执行 pod install 安装并运行您的项目
 
+#### 注意
 
+请使用 **Xcode 13** 进行打包，Xcode 14 对 _objc_msgSend 调用进行了[优化](https://www.wwdcnotes.com/notes/wwdc22/110363/)，以及[废弃了 bitcode](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-14-release-notes#Deprecations)，将导致 Xcode 14 的打包产物在 Xcode 13 上进行链接时报错。如果只能用 Xcode 14 进行打包，则需要先进行以下步骤：
+
+ - 修改 ./Project/GrowingAPM/generate_xcframework.sh 中 xcodebuild 命令参数，添加 `OTHER_CFLAGS="-fno-objc-msgsend-selector-stubs"`
+ - (Xcode 13) 设置需要链接的主工程 `ENABLE_BITCODE = NO`，并在 Podfile 添加 `post_install` 钩子之后，再执行 pod install：
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+```
+
+
+
+另外，Xcode 14 上，[on-device symbolication](https://github.com/kstenerud/KSCrash/blob/498aa21d23541b0bb4990f8d3d20bea2c280a18b/README.md#enabling-on-device-symbolication) 失效，原因未知，即：
+
+- Xcode 14 打包产物在 Xcode 14 运行的主工程下链接，符号化失效；
+
+- Xcode 14 打包产物在 Xcode 13 运行的主工程下链接，符号化有效 (需要执行以上步骤)；
+
+- Xcode 13 打包产物在 Xcode 13 运行的主工程下链接，符号化有效；
