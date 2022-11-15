@@ -15,9 +15,7 @@
 		349DA44628F27B6B00C4281F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA44528F27B6B00C4281F /* UIKit.framework */; };
 		349DA44728F27B7300C4281F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9428F127E5005DF784 /* Foundation.framework */; };
 		349DA44A28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; platformFilter = ios; };
-		349DA44B28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		349DA45328F29AF400C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; platformFilter = ios; };
-		349DA45428F29AF400C4281F /* GrowingAPMUIMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		349DA45A28F29C7700C4281F /* GrowingAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27DFA28F158F4005DF784 /* GrowingAPM.m */; };
 		349DA45B28F29C7B00C4281F /* GrowingAPMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27DFC28F158F4005DF784 /* GrowingAPMConfig.m */; };
 		349DA46528F2A1BB00C4281F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA45728F29C0700C4281F /* libc++.tbd */; };
@@ -240,21 +238,6 @@
 			remoteInfo = Example;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		349DA44E28F29AE900C4281F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				349DA44B28F29AE900C4281F /* GrowingAPMCrashMonitor.framework in Embed Frameworks */,
-				349DA45428F29AF400C4281F /* GrowingAPMUIMonitor.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		34034E202914C3E200577F6C /* GrowingCrashInstallationAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingCrashInstallationAnalytics.m; sourceTree = "<group>"; };
@@ -1148,7 +1131,6 @@
 				34E27E0A28F16026005DF784 /* Sources */,
 				34E27E0B28F16026005DF784 /* Frameworks */,
 				34E27E0C28F16026005DF784 /* Resources */,
-				349DA44E28F29AE900C4281F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
