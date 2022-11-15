@@ -10,7 +10,7 @@
 #import "GrowingAPM.h"
 
 int main(int argc, char * argv[]) {
-    [GrowingAPM swizzle:GrowingAPMMonitorsCrash | GrowingAPMMonitorsUserInterface];
+    [GrowingAPM setupMonitors];
     NSString * appDelegateClassName;
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.

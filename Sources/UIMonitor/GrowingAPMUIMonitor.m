@@ -22,8 +22,8 @@
 #import "UIViewController+GrowingUIMonitor.h"
 #import "GrowingAPM+Private.h"
 
-#import "GrowingTimeUtil.h"
-#import "GrowingApplicationLifecycle.h"
+#import "GrowingULTimeUtil.h"
+#import "GrowingULAppLifecycle.h"
 
 #import <sys/sysctl.h>
 #import <mach/mach.h>
@@ -36,7 +36,7 @@ static double kDidFinishLaunchingStartTime = 0;
 static double kFirstPageDidAppearTime = 0;
 static double kMaxColdRebootDuration = 30 * 1000L;
 
-@interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingApplicationLifecycleDelegate>
+@interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingULAppLifecycleDelegate>
 
 @property (strong, nonatomic, readonly) NSPointerArray *delegates;
 @property (strong, nonatomic, readonly) NSLock *delegateLock;
@@ -79,7 +79,7 @@ static double kMaxColdRebootDuration = 30 * 1000L;
         
         kIsActivePrewarm = [[NSProcessInfo processInfo].environment[@"ActivePrewarm"] isEqualToString:@"1"];
         if (!kIsActivePrewarm) {
-            kMainStartTime = GrowingTimeUtil.currentTimeMillis;
+            kMainStartTime = GrowingULTimeUtil.currentTimeMillis;
         }
     });
 }
@@ -87,10 +87,10 @@ static double kMaxColdRebootDuration = 30 * 1000L;
 - (void)startMonitor {
     // 非零判断，兼容延迟初始化
     if (kDidFinishLaunchingStartTime == 0) {
-        kDidFinishLaunchingStartTime = GrowingTimeUtil.currentTimeMillis;
+        kDidFinishLaunchingStartTime = GrowingULTimeUtil.currentTimeMillis;
     }
     
-    [GrowingApplicationLifecycle.sharedInstance addAppLifecycleDelegate:self];
+    [GrowingULAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
     
     // 延迟初始化时，补发 cold reboot (如果未发)
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -133,12 +133,12 @@ static double getExecTime(void) {
 
 + (void)load {
     // 获取 runtime load 时间
-    kLoadTime = GrowingTimeUtil.currentTimeMillis;
+    kLoadTime = GrowingULTimeUtil.currentTimeMillis;
 }
 
 __used __attribute__((constructor(60000))) static void beforeMain(void) {
     // c++ init 时间
-    kCppInitTime = GrowingTimeUtil.currentTimeMillis;
+    kCppInitTime = GrowingULTimeUtil.currentTimeMillis;
 }
 
 - (void)sendColdReboot {
@@ -224,7 +224,7 @@ __used __attribute__((constructor(60000))) static void beforeMain(void) {
         if (kFirstPageDidAppearTime == 0) {
             self.firstPageName = pageName;
             self.firstPageloadDuration = loadDuration;
-            kFirstPageDidAppearTime = GrowingTimeUtil.currentTimeMillis;
+            kFirstPageDidAppearTime = GrowingULTimeUtil.currentTimeMillis;
         }
         
         [self sendColdReboot];
@@ -296,10 +296,10 @@ __used __attribute__((constructor(60000))) static void beforeMain(void) {
     };
 }
 
-#pragma mark - GrowingApplicationLifecycleDelegate
+#pragma mark - GrowingULAppLifecycleDelegate
 
 - (void)applicationDidBecomeActive {
-    GrowingApplicationLifecycle *appLifecycle = GrowingApplicationLifecycle.sharedInstance;
+    GrowingULAppLifecycle *appLifecycle = GrowingULAppLifecycle.sharedInstance;
     if (appLifecycle.appDidEnterBackgroundTime == 0) {
         // 首次启动
         return;
@@ -370,7 +370,7 @@ __used __attribute__((constructor(60000))) static void beforeMain(void) {
                                      userInfo:nil];
     }
     
-    kDidFinishLaunchingStartTime = GrowingTimeUtil.currentTimeMillis;
+    kDidFinishLaunchingStartTime = GrowingULTimeUtil.currentTimeMillis;
 }
 
 @end

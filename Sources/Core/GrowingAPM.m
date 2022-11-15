@@ -24,11 +24,11 @@
 #endif
 
 #import "GrowingAPM+Private.h"
-#import "GrowingApplicationLifecycle.h"
+#import "GrowingULAppLifecycle.h"
 
 // -------- UI MONITOR --------
 #ifdef GROWING_APM_UI
-#import "GrowingTimeUtil.h"
+#import "GrowingULTimeUtil.h"
 
 #ifdef GROWING_APM_UI_SOURCE
 #import "GrowingAPMUIMonitor.h"
@@ -114,7 +114,7 @@
     }
     
 #ifdef GROWING_APM_UI
-    [GrowingApplicationLifecycle setup];
+    [GrowingULAppLifecycle setup];
     [GrowingAPMUIMonitor setup];
 #endif
     
