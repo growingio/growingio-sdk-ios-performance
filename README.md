@@ -37,13 +37,3 @@ post_install do |installer|
   end
 end
 ```
-
-
-
-另外，Xcode 14 上，[on-device symbolication](https://github.com/kstenerud/KSCrash/blob/498aa21d23541b0bb4990f8d3d20bea2c280a18b/README.md#enabling-on-device-symbolication) 失效，原因未知，即：
-
-- Xcode 14 打包产物在 Xcode 14 运行的主工程下链接，符号化失效；
-
-- Xcode 14 打包产物在 Xcode 13 运行的主工程下链接，符号化有效 (需要执行以上步骤)；
-
-- Xcode 13 打包产物在 Xcode 13 运行的主工程下链接，符号化有效；
