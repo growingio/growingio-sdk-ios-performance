@@ -23,7 +23,7 @@
 #import "GrowingAPM+Private.h"
 
 #import "GrowingTimeUtil.h"
-#import "GrowingAppLifecycle.h"
+#import "GrowingApplicationLifecycle.h"
 
 #import <sys/sysctl.h>
 #import <mach/mach.h>
@@ -36,7 +36,7 @@ static double kDidFinishLaunchingStartTime = 0;
 static double kFirstPageDidAppearTime = 0;
 static double kMaxColdRebootDuration = 30 * 1000L;
 
-@interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingAppLifecycleDelegate>
+@interface GrowingAPMUIMonitor () <GrowingAPMMonitor, GrowingApplicationLifecycleDelegate>
 
 @property (strong, nonatomic, readonly) NSPointerArray *delegates;
 @property (strong, nonatomic, readonly) NSLock *delegateLock;
@@ -90,7 +90,7 @@ static double kMaxColdRebootDuration = 30 * 1000L;
         kDidFinishLaunchingStartTime = GrowingTimeUtil.currentTimeMillis;
     }
     
-    [GrowingAppLifecycle.sharedInstance addAppLifecycleDelegate:self];
+    [GrowingApplicationLifecycle.sharedInstance addAppLifecycleDelegate:self];
     
     // 延迟初始化时，补发 cold reboot (如果未发)
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -296,10 +296,10 @@ __used __attribute__((constructor(60000))) static void beforeMain(void) {
     };
 }
 
-#pragma mark - GrowingAppLifecycleDelegate
+#pragma mark - GrowingApplicationLifecycleDelegate
 
 - (void)applicationDidBecomeActive {
-    GrowingAppLifecycle *appLifecycle = GrowingAppLifecycle.sharedInstance;
+    GrowingApplicationLifecycle *appLifecycle = GrowingApplicationLifecycle.sharedInstance;
     if (appLifecycle.appDidEnterBackgroundTime == 0) {
         // 首次启动
         return;
