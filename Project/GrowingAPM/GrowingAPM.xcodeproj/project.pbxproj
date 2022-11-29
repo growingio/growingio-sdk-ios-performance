@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34034E222914C3E200577F6C /* GrowingCrashInstallationAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 34034E202914C3E200577F6C /* GrowingCrashInstallationAnalytics.m */; };
-		34034E232914C3E200577F6C /* GrowingCrashInstallationAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 34034E212914C3E200577F6C /* GrowingCrashInstallationAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34034E232914C3E200577F6C /* GrowingCrashInstallationAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 34034E212914C3E200577F6C /* GrowingCrashInstallationAnalytics.h */; };
 		349DA40D28F26FBE00C4281F /* GrowingAPMUIMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349DA40528F26FBE00C4281F /* GrowingAPMUIMonitor.framework */; };
 		349DA41228F26FBF00C4281F /* GrowingAPMUIMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DA41128F26FBF00C4281F /* GrowingAPMUIMonitorTests.m */; };
 		349DA44328F27B1600C4281F /* GrowingAPMMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27DFB28F158F4005DF784 /* GrowingAPMMonitor.h */; };
@@ -30,12 +30,12 @@
 		34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB428F155AE005DF784 /* Container+DeepSearch.m */; };
 		34E27D5A28F155AF005DF784 /* Container+DeepSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB528F155AE005DF784 /* Container+DeepSearch.h */; };
 		34E27D5B28F155AF005DF784 /* GrowingCrashVarArgs.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB628F155AE005DF784 /* GrowingCrashVarArgs.h */; };
-		34E27D5C28F155AF005DF784 /* GrowingCrashReportFilterBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB728F155AE005DF784 /* GrowingCrashReportFilterBasic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D5C28F155AF005DF784 /* GrowingCrashReportFilterBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CB728F155AE005DF784 /* GrowingCrashReportFilterBasic.h */; };
 		34E27D5D28F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB828F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.m */; };
 		34E27D5E28F155AF005DF784 /* GrowingCrashReportFilterBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB928F155AE005DF784 /* GrowingCrashReportFilterBasic.m */; };
-		34E27D5F28F155AF005DF784 /* GrowingCrashReportFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBA28F155AE005DF784 /* GrowingCrashReportFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34E27D6028F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBB28F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34E27D6128F155AF005DF784 /* GrowingCrashCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBD28F155AE005DF784 /* GrowingCrashCString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D5F28F155AF005DF784 /* GrowingCrashReportFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBA28F155AE005DF784 /* GrowingCrashReportFilter.h */; };
+		34E27D6028F155AF005DF784 /* GrowingCrashReportFilterAppleFmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBB28F155AE005DF784 /* GrowingCrashReportFilterAppleFmt.h */; };
+		34E27D6128F155AF005DF784 /* GrowingCrashCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CBD28F155AE005DF784 /* GrowingCrashCString.h */; };
 		34E27D6228F155AF005DF784 /* GrowingCrashCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CBE28F155AE005DF784 /* GrowingCrashCString.m */; };
 		34E27D6328F155AF005DF784 /* GrowingAPMCrashMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CBF28F155AE005DF784 /* GrowingAPMCrashMonitor.m */; };
 		34E27D6428F155AF005DF784 /* GrowingCrashMonitor_AppState.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CC228F155AE005DF784 /* GrowingCrashMonitor_AppState.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
@@ -49,7 +49,7 @@
 		34E27D6C28F155AF005DF784 /* GrowingCrashMonitor_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCA28F155AE005DF784 /* GrowingCrashMonitor_User.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
 		34E27D6D28F155AF005DF784 /* GrowingCrashMonitor_Deadlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCB28F155AE005DF784 /* GrowingCrashMonitor_Deadlock.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
 		34E27D6E28F155AF005DF784 /* GrowingCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCC28F155AE005DF784 /* GrowingCrashMonitor_NSException.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
-		34E27D6F28F155AF005DF784 /* GrowingCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CCD28F155AE005DF784 /* GrowingCrashMonitorType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27D6F28F155AF005DF784 /* GrowingCrashMonitorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CCD28F155AE005DF784 /* GrowingCrashMonitorType.h */; };
 		34E27D7028F155AF005DF784 /* GrowingCrashMonitor_System.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CCE28F155AE005DF784 /* GrowingCrashMonitor_System.m */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
 		34E27D7128F155AF005DF784 /* GrowingCrashMonitor_Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CCF28F155AE005DF784 /* GrowingCrashMonitor_Signal.h */; };
 		34E27D7228F155AF005DF784 /* GrowingCrashMonitor_AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27CD028F155AE005DF784 /* GrowingCrashMonitor_AppState.h */; };
@@ -124,16 +124,16 @@
 		34E27DB728F155AF005DF784 /* GrowingCrashLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1628F155AE005DF784 /* GrowingCrashLogger.h */; };
 		34E27DB828F155AF005DF784 /* GrowingCrashDynamicLinker.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1728F155AE005DF784 /* GrowingCrashDynamicLinker.h */; };
 		34E27DB928F155AF005DF784 /* GrowingCrashDemangle_CPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1828F155AE005DF784 /* GrowingCrashDemangle_CPP.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
-		34E27DBA28F155AF005DF784 /* GrowingCrashC.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1928F155AE005DF784 /* GrowingCrashC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DBA28F155AF005DF784 /* GrowingCrashC.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1928F155AE005DF784 /* GrowingCrashC.h */; };
 		34E27DBB28F155AF005DF784 /* GrowingCrashSystemCapabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1A28F155AE005DF784 /* GrowingCrashSystemCapabilities.h */; };
 		34E27DBC28F155AF005DF784 /* GrowingCrashReportStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1B28F155AE005DF784 /* GrowingCrashReportStore.h */; };
 		34E27DBD28F155AF005DF784 /* GrowingCrashReportFixer.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D1C28F155AE005DF784 /* GrowingCrashReportFixer.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
 		34E27DBE28F155AF005DF784 /* GrowingCrashCachedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1D28F155AE005DF784 /* GrowingCrashCachedData.h */; };
-		34E27DBF28F155AF005DF784 /* GrowingCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1E28F155AE005DF784 /* GrowingCrash.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34E27DC028F155AF005DF784 /* GrowingCrashReportFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1F28F155AE005DF784 /* GrowingCrashReportFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DBF28F155AF005DF784 /* GrowingCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1E28F155AE005DF784 /* GrowingCrash.h */; };
+		34E27DC028F155AF005DF784 /* GrowingCrashReportFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D1F28F155AE005DF784 /* GrowingCrashReportFields.h */; };
 		34E27DC128F155AF005DF784 /* GrowingCrashDoctor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2028F155AF005DF784 /* GrowingCrashDoctor.h */; };
 		34E27DC228F155AF005DF784 /* GrowingCrashReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2128F155AF005DF784 /* GrowingCrashReport.h */; };
-		34E27DC328F155AF005DF784 /* GrowingCrashReportWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2228F155AF005DF784 /* GrowingCrashReportWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DC328F155AF005DF784 /* GrowingCrashReportWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2228F155AF005DF784 /* GrowingCrashReportWriter.h */; };
 		34E27DC428F155AF005DF784 /* GrowingCrashReportVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D2328F155AF005DF784 /* GrowingCrashReportVersion.h */; };
 		34E27DC528F155AF005DF784 /* GrowingCrashReportStore.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2428F155AF005DF784 /* GrowingCrashReportStore.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
 		34E27DC628F155AF005DF784 /* GrowingCrashC.c in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D2528F155AF005DF784 /* GrowingCrashC.c */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
@@ -150,8 +150,8 @@
 		34E27DD128F155AF005DF784 /* Compiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3428F155AF005DF784 /* Compiler.h */; };
 		34E27DD228F155B0005DF784 /* type_traits.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3528F155AF005DF784 /* type_traits.h */; };
 		34E27DD428F155B0005DF784 /* GrowingAPMCrashMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3728F155AF005DF784 /* GrowingAPMCrashMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34E27DD528F155B0005DF784 /* GrowingCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3928F155AF005DF784 /* GrowingCrashInstallation+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34E27DD628F155B0005DF784 /* GrowingCrashInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3A28F155AF005DF784 /* GrowingCrashInstallation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E27DD528F155B0005DF784 /* GrowingCrashInstallation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3928F155AF005DF784 /* GrowingCrashInstallation+Private.h */; };
+		34E27DD628F155B0005DF784 /* GrowingCrashInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3A28F155AF005DF784 /* GrowingCrashInstallation.h */; };
 		34E27DD728F155B0005DF784 /* GrowingCrashInstallation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D3B28F155AF005DF784 /* GrowingCrashInstallation.m */; };
 		34E27DD828F155B0005DF784 /* SwiftStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E27D3D28F155AF005DF784 /* SwiftStrings.h */; };
 		34E27DD928F155B0005DF784 /* NodePrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E27D3F28F155AF005DF784 /* NodePrinter.cpp */; settings = {COMPILER_FLAGS = "-fno-optimize-sibling-calls"; }; };
@@ -953,9 +953,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34E27DBF28F155AF005DF784 /* GrowingCrash.h in Headers */,
-				34E27DBA28F155AF005DF784 /* GrowingCrashC.h in Headers */,
-				34E27D6128F155AF005DF784 /* GrowingCrashCString.h in Headers */,
 				34E27DD428F155B0005DF784 /* GrowingAPMCrashMonitor.h in Headers */,
 				34E27DD628F155B0005DF784 /* GrowingCrashInstallation.h in Headers */,
 				34E27DD528F155B0005DF784 /* GrowingCrashInstallation+Private.h in Headers */,
@@ -965,7 +962,11 @@
 				34E27DC028F155AF005DF784 /* GrowingCrashReportFields.h in Headers */,
 				34E27D5F28F155AF005DF784 /* GrowingCrashReportFilter.h in Headers */,
 				34E27DC328F155AF005DF784 /* GrowingCrashReportWriter.h in Headers */,
+				34E27DBF28F155AF005DF784 /* GrowingCrash.h in Headers */,
+				34E27DBA28F155AF005DF784 /* GrowingCrashC.h in Headers */,
+				34E27D6128F155AF005DF784 /* GrowingCrashCString.h in Headers */,
 				34E27DEA28F155B0005DF784 /* Demangler.h in Headers */,
+				34034E232914C3E200577F6C /* GrowingCrashInstallationAnalytics.h in Headers */,
 				34E27D9928F155AF005DF784 /* GrowingCrashMachineContext.h in Headers */,
 				34E27DE728F155B0005DF784 /* Punycode.h in Headers */,
 				34E27DCE28F155AF005DF784 /* llvm-config.h in Headers */,
@@ -1003,7 +1004,6 @@
 				34E27DC128F155AF005DF784 /* GrowingCrashDoctor.h in Headers */,
 				34E27D7E28F155AF005DF784 /* GrowingCrashJSONCodec.h in Headers */,
 				34E27D9D28F155AF005DF784 /* GrowingCrashSysCtl.h in Headers */,
-				34034E232914C3E200577F6C /* GrowingCrashInstallationAnalytics.h in Headers */,
 				34E27D9028F155AF005DF784 /* GrowingCrashPlatformSpecificDefines.h in Headers */,
 				34E27D8628F155AF005DF784 /* GrowingCrashSymbolicator.h in Headers */,
 				34E27D7728F155AF005DF784 /* GrowingCrashMonitor_Deadlock.h in Headers */,
