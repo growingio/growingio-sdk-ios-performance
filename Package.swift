@@ -28,7 +28,23 @@ let package = Package(
     products: [
         .library(
             name: "GrowingAPM",
-            targets: ["GrowingAPM_Wrapper"]
+            targets: [
+                "GrowingAPMCore",
+                "GrowingAPMCrashMonitorWrapper",
+                "GrowingAPMUIMonitor",
+            ]
+        ),
+        .library(
+            name: "GrowingAPMCore",
+            targets: ["GrowingAPMCore"]
+        ),
+        .library(
+            name: "GrowingAPMCrashMonitorModule",
+            targets: ["GrowingAPMCrashMonitorWrapper"]
+        ),
+        .library(
+            name: "GrowingAPMUIMonitor",
+            targets: ["GrowingAPMUIMonitor"]
         ),
     ],
     dependencies: [
@@ -43,14 +59,11 @@ let package = Package(
         // MARK: - GrowingAPM Wrapper
         
         .target(
-            name: "GrowingAPM_Wrapper",
+            name: "GrowingAPMCrashMonitorWrapper",
             dependencies: [
                 "GrowingAPMCrashMonitor",
-                "GrowingAPMUIMonitor",
-                .product(name: "GrowingUtilsTrackerCore", package: "GrowingUtils"),
             ],
-            path: "Core",
-            publicHeadersPath: ".",
+            path: "SwiftPM-Wrap/GrowingAPMCrashMonitor-Wrapper",
             cxxSettings: [
                 .define("GCC_ENABLE_CPP_EXCEPTIONS", to: "YES"),
             ],
@@ -59,8 +72,8 @@ let package = Package(
                 .linkedLibrary("z"),
             ]
         ),
-        
-        // MARK: - GrowingAPM Modules
+
+        // MARK: - GrowingAPM Binary
         
         .binaryTarget(
             name: "GrowingAPMCrashMonitor",
@@ -69,6 +82,17 @@ let package = Package(
         .binaryTarget(
             name: "GrowingAPMUIMonitor",
             path: "UIMonitor/GrowingAPMUIMonitor.xcframework"
+        ),
+
+        // MARK: - GrowingAPM Core
+
+        .target(
+            name: "GrowingAPMCore",
+            dependencies: [
+                .product(name: "GrowingUtilsTrackerCore", package: "GrowingUtils"),
+            ],
+            path: "Core",
+            publicHeadersPath: "."
         ),
     ]
 )
