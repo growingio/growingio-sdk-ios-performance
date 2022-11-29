@@ -12,7 +12,9 @@ cp -r Lib/GrowingAPMCrashMonitor.xcframework GrowingAPM/CrashMonitor
 cp -r Lib/GrowingAPMUIMonitor.xcframework GrowingAPM/UIMonitor
 cp ./GrowingAPM.podspec GrowingAPM/
 cp ./Package.swift GrowingAPM/
+cp -r ./SwiftPM-Wrap GrowingAPM/
 zip -q -r GrowingAPM.zip GrowingAPM/
 rm -rf GrowingAPM/
+rm -rf Lib/
 
 
