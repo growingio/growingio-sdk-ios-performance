@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GrowingAPM'
-  s.version          = '0.0.13'
+  s.version          = '0.0.14'
   s.summary          = 'iOS SDK of GrowingIO.'
   s.description      = <<-DESC
 GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动分析、页面加载分析等。
@@ -9,8 +9,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
   s.license          = { :type => 'Apache2.0', :file => 'LICENSE' }
   s.author           = { 'GrowingIO' => 'support@growingio.com' }
   s.source           = { :git => 'https://github.com/growingio/growingio-sdk-ios-performance.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target =  '10.8'
+  s.ios.deployment_target = '9.0'
   s.frameworks = 'Foundation'
   s.libraries = 'c++', 'z'
   s.requires_arc = true
