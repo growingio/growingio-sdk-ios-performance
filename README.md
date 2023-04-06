@@ -38,6 +38,7 @@ GrowingIO APM (Internal)
 由于上述原因，自 2023.4.25 起，使用 **Xcode 14** 进行打包
 
 > 另外，如果使用者为企业级应用开发者，通过内部平台进行分发，不需要上传至 App Store，那么还是有可能使用 Xcode 13 进行日常开发，这就需要按照下方的兼容步骤进行修改打包使用
+> See: https://support.apple.com/zh-cn/guide/deployment/depce7cefc4d/web
 
 ##### 打包机使用 Xcode14 编译，兼容使用者为 Xcode 13 环境
 
