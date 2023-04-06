@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 参考: https://help.apple.com/xcode/mac/11.4/#/dev544efab96
+# 参考：https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle
 XCWORKSPACE_NAME="GrowingAPM"
 DERIVED_DATA_PATH="derivedData"
 ARCHIVE_PATH="archive"
