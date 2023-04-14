@@ -51,7 +51,7 @@ let package = Package(
         .package(
             name: "GrowingUtils",
             url: "https://github.com/growingio/growingio-sdk-ios-utilities.git",
-            .branch("master")
+            from: "0.0.4"
         ),
     ],
     targets: [
