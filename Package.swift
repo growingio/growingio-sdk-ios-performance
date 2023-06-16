@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 //
@@ -49,9 +49,8 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            name: "GrowingUtils",
             url: "https://github.com/growingio/growingio-sdk-ios-utilities.git",
-            from: "0.0.4"
+            "0.0.4" ..< "1.0.0"
         ),
     ],
     targets: [
@@ -89,7 +88,7 @@ let package = Package(
         .target(
             name: "GrowingAPMCore",
             dependencies: [
-                .product(name: "GrowingUtilsTrackerCore", package: "GrowingUtils"),
+                .product(name: "GrowingUtilsTrackerCore", package: "growingio-sdk-ios-utilities"),
             ],
             path: "Core",
             publicHeadersPath: "."
