@@ -25,6 +25,7 @@
 		34A606F428F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */; };
 		34A606F528F53D790013C5B5 /* GrowingAPMUIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */; };
 		34A606F628F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */; };
+		34C5D7312AB8791E00F4B41F /* GrowingAPMCrashMonitor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34C5D7302AB8791E00F4B41F /* GrowingAPMCrashMonitor.bundle */; };
 		34E27CA328F1556C005DF784 /* GrowingAPMCrashMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */; };
 		34E27CA828F1556C005DF784 /* GrowingAPMCrashMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CA728F1556C005DF784 /* GrowingAPMCrashMonitorTests.m */; };
 		34E27D5928F155AF005DF784 /* Container+DeepSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E27CB428F155AE005DF784 /* Container+DeepSearch.m */; };
@@ -259,6 +260,7 @@
 		34A606EF28F53D790013C5B5 /* UIViewController+GrowingUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GrowingUIMonitor.m"; sourceTree = "<group>"; };
 		34A606F028F53D790013C5B5 /* GrowingAPMUIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingAPMUIMonitor.m; sourceTree = "<group>"; };
 		34A606F128F53D790013C5B5 /* UIViewController+GrowingUIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GrowingUIMonitor.h"; sourceTree = "<group>"; };
+		34C5D7302AB8791E00F4B41F /* GrowingAPMCrashMonitor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GrowingAPMCrashMonitor.bundle; sourceTree = "<group>"; };
 		34E27C9428F127E5005DF784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34E27C9B28F1556B005DF784 /* GrowingAPMCrashMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GrowingAPMCrashMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E27CA228F1556C005DF784 /* GrowingAPMCrashMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingAPMCrashMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -504,6 +506,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		348A15FF2AB877D30022481E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34C5D7302AB8791E00F4B41F /* GrowingAPMCrashMonitor.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		349DA40628F26FBE00C4281F /* GrowingAPMUIMonitor */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +601,7 @@
 		34E27CB028F155AE005DF784 /* CrashMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				348A15FF2AB877D30022481E /* Resources */,
 				34E27D3728F155AF005DF784 /* GrowingAPMCrashMonitor.h */,
 				34E27CBF28F155AE005DF784 /* GrowingAPMCrashMonitor.m */,
 				34E27CB128F155AE005DF784 /* Reporting */,
@@ -1258,6 +1269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C5D7312AB8791E00F4B41F /* GrowingAPMCrashMonitor.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1492,7 +1504,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1528,7 +1540,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1723,7 +1735,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1760,7 +1772,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1838,7 +1850,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1875,7 +1887,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

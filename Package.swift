@@ -24,7 +24,7 @@ import PackageDescription
 
 let package = Package(
     name: "GrowingAPM",
-    platforms: [.iOS(.v9)],
+    platforms: [.iOS(.v10)],
     products: [
         .library(
             name: "GrowingAPM",
@@ -50,7 +50,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/growingio/growingio-sdk-ios-utilities.git",
-            "0.0.4" ..< "1.0.0"
+            "0.0.7" ..< "1.0.0"
         ),
     ],
     targets: [
