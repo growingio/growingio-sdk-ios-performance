@@ -30,7 +30,7 @@ let package = Package(
             name: "GrowingAPM",
             targets: [
                 "GrowingAPMCore",
-                "GrowingAPMCrashMonitorWrapper",
+                "GrowingAPMCrashMonitor",
                 "GrowingAPMUIMonitor",
             ]
         ),
@@ -39,8 +39,8 @@ let package = Package(
             targets: ["GrowingAPMCore"]
         ),
         .library(
-            name: "GrowingAPMCrashMonitorModule",
-            targets: ["GrowingAPMCrashMonitorWrapper"]
+            name: "GrowingAPMCrashMonitor",
+            targets: ["GrowingAPMCrashMonitor"]
         ),
         .library(
             name: "GrowingAPMUIMonitor",
@@ -58,9 +58,9 @@ let package = Package(
         // MARK: - GrowingAPM Wrapper
         
         .target(
-            name: "GrowingAPMCrashMonitorWrapper",
+            name: "GrowingAPMCrashMonitor",
             dependencies: [
-                "GrowingAPMCrashMonitor",
+                "GrowingAPMCrashMonitorFramework",
             ],
             path: "SwiftPM-Wrap/GrowingAPMCrashMonitor-Wrapper",
             resources: [.copy("Resources/GrowingAPMCrashMonitor.bundle/PrivacyInfo.xcprivacy")],
@@ -76,7 +76,7 @@ let package = Package(
         // MARK: - GrowingAPM Binary
         
         .binaryTarget(
-            name: "GrowingAPMCrashMonitor",
+            name: "GrowingAPMCrashMonitorFramework",
             path: "CrashMonitor/GrowingAPMCrashMonitor.xcframework"
         ),
         .binaryTarget(
