@@ -63,6 +63,7 @@ let package = Package(
                 "GrowingAPMCrashMonitor",
             ],
             path: "SwiftPM-Wrap/GrowingAPMCrashMonitor-Wrapper",
+            resources: [.copy("Resources/GrowingAPMCrashMonitor.bundle/PrivacyInfo.xcprivacy")],
             cxxSettings: [
                 .define("GCC_ENABLE_CPP_EXCEPTIONS", to: "YES"),
             ],

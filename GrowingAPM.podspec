@@ -21,6 +21,7 @@ GrowingAPM提供移动端性能采集分析功能，包括崩溃分析、启动�
 
   s.subspec 'CrashMonitor' do |monitor|
     monitor.vendored_framework = "CrashMonitor/GrowingAPMCrashMonitor.xcframework"
+    monitor.resource_bundles = {'GrowingAPMCrashMonitor' => ['CrashMonitor/Resources/GrowingAPMCrashMonitor.bundle/PrivacyInfo.xcprivacy']}
     monitor.libraries = 'c++', 'z'
     monitor.pod_target_xcconfig = { 'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES' }
     monitor.dependency 'GrowingAPM/Core'
