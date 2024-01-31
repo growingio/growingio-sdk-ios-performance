@@ -13,6 +13,8 @@ cp -r Sources/Core GrowingAPM/
 cp -r Sources/CrashMonitor/Resources GrowingAPM/CrashMonitor
 cp -r Lib/GrowingAPMCrashMonitor.xcframework GrowingAPM/CrashMonitor
 cp -r Lib/GrowingAPMUIMonitor.xcframework GrowingAPM/UIMonitor
+codesign --timestamp -v --sign "Apple Distribution: Beijing Yishu Technology Co., Ltd. (SXBU677CPT)" GrowingAPM/CrashMonitor/GrowingAPMCrashMonitor.xcframework
+codesign --timestamp -v --sign "Apple Distribution: Beijing Yishu Technology Co., Ltd. (SXBU677CPT)" GrowingAPM/UIMonitor/GrowingAPMUIMonitor.xcframework
 cp ./GrowingAPM.podspec GrowingAPM/
 cp ./Package.swift GrowingAPM/
 cp -r ./SwiftPM-Wrap GrowingAPM/
