@@ -23,6 +23,16 @@ GrowingIO APM (Internal)
 
 #### 注意
 
+##### 2024.1.31 更新
+
+自 GrowingAPM 1.0.1 起，`generate_zip.sh` 执行时会使用开发者证书进行签名，如本地环境没有对应的开发者证书，请联系本仓库开发者协助解决
+
+> 自 2024 年春季起，第三方供应的[常用 SDK](https://developer.apple.com/support/third-party-SDK-requirements/) 需要同时[包含隐私清单和签名](https://developer.apple.com/news/?id=r1henawx)。
+>
+> (GrowingIO SDK 虽不在列表中，但作为先进的第三方 SDK 供应商，及时响应苹果策略）
+
+---
+
 ##### 2023.4.6 更新
 
 ~~请使用 **Xcode 13** 进行打包，Xcode 14 对 _objc_msgSend 调用进行了[优化](https://www.wwdcnotes.com/notes/wwdc22/110363/)，以及[废弃了 bitcode](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-14-release-notes#Deprecations)，将导致 Xcode 14 的打包产物在 Xcode 13 上进行链接时报错。~~
