@@ -38,7 +38,7 @@ for i in ${schemes[@]}; do
 	MAC_CATALYST_ARCHIVE_PATH="${ARCHIVE_PATH}/maccatalyst"
 	MAC_CATALYST_FRAMEWORK_PATH=${MAC_CATALYST_ARCHIVE_PATH}.xcarchive/Products/Library/Frameworks/${FRAMEWORK_NAME}.framework
 	OUTPUT_PATH="../../Lib/${FRAMEWORK_NAME}.xcframework"
-	COMMON_ARGS="archive -workspace ${XCWORKSPACE_NAME}.xcworkspace -scheme ${FRAMEWORK_NAME} -configuration 'Release' -derivedDataPath ${DERIVED_DATA_PATH}"
+	COMMON_ARGS="archive -workspace ${XCWORKSPACE_NAME}.xcworkspace -scheme ${FRAMEWORK_NAME} -configuration 'Release' -derivedDataPath ${DERIVED_DATA_PATH} OTHER_CFLAGS='-fno-objc-msgsend-selector-stubs'"
 
 	echo "---------------------"
 	echo -e "\033[36m step: clear output \033[0m"
