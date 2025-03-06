@@ -1,66 +1,121 @@
 GrowingIO APM (Internal)
 ======
-![GrowingIO](https://www.growingio.com/vassets/images/home_v3/gio-logo-primary.svg) 
+![GrowingIO](https://www.growingio.com/vassets/images/home_v3/gio-logo-primary.svg)
 
 ### SDK 简介
 
 **GrowingAPM** 提供移动端性能采集分析功能，包括崩溃分析、启动分析、页面加载分析等。
 
 
-#### 源码集成（对内调试）
 
-1. 将 Sources 文件夹内的所有文件拷贝至您的项目根目录
-2. 在 Podfile 中添加 `pod 'GrowingAPM', :path => './'`
-3. 执行 pod install 安装并运行您的项目
+### Cocoapods 集成
 
-#### 二进制集成（对外，生成的 zip 解压到 [GrowingAPM External](https://github.com/growingio/growingio-sdk-ios-performance-ext) 来发版，注意修改版本号）
+#### 集成 APM
 
-1. 执行 `sh ./generate_zip.sh`
-2. 将生成的 GrowingAPM.zip 解压缩
-3. 将解压后的 GrowingAPM 文件夹内的所有文件拷贝至您的项目根目录
-4. 在 Podfile 中添加 `pod 'GrowingAPM', :path => './'`
-5. 执行 pod install 安装并运行您的项目
+1. 集成 APM 模块
 
-#### 注意
+```
+pod 'GrowingAnalytics/APM'
+```
 
-##### 2024.1.31 更新
+1. 集成 GrowingAPM
 
-自 GrowingAPM 1.0.1 起，`generate_zip.sh` 执行时会使用开发者证书进行签名，如本地环境没有对应的开发者证书，请联系本仓库开发者协助解决
+```
+pod 'GrowingAPM'
+```
 
-> 自 2024 年春季起，第三方供应的[常用 SDK](https://developer.apple.com/support/third-party-SDK-requirements/) 需要同时[包含隐私清单和签名](https://developer.apple.com/news/?id=r1henawx)。
->
-> (GrowingIO SDK 虽不在列表中，但作为先进的第三方 SDK 供应商，及时响应苹果策略）
+打开终端，切换到项目目录，执行 `pod install` 或 `pod update`
 
----
+#### 初始化 GrowingAPM
 
-##### 2023.4.6 更新
+1. 在 main.m 中导入 `#import "GrowingAPMModule.h"`，并在 main 函数中添加代码：
 
-~~请使用 **Xcode 13** 进行打包，Xcode 14 对 _objc_msgSend 调用进行了[优化](https://www.wwdcnotes.com/notes/wwdc22/110363/)，以及[废弃了 bitcode](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-14-release-notes#Deprecations)，将导致 Xcode 14 的打包产物在 Xcode 13 上进行链接时报错。~~
+```
+int main(int argc, char * argv[]) {
+    // GrowingAPM Setup
+    [GrowingAPM setupMonitors];
+    NSString * appDelegateClassName;
+    @autoreleasepool {
+        // Setup code that might create autoreleased objects goes here.
+        appDelegateClassName = NSStringFromClass([AppDelegate class]);
+    }
+    return UIApplicationMain(argc, argv, nil, appDelegateClassName);
+}
+```
 
-> ## App Store submission requirement starts April 25
->
-> March 28, 2023
->
-> Starting April 25, 2023, iOS, iPadOS, and watchOS apps submitted to the App Store must be built with Xcode 14.1 or later. The latest version of Xcode 14, which includes the latest SDKs for iOS 16, iPadOS 16, and watchOS 9, is available for free on the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12).
->
-> See: https://developer.apple.com/news/?id=jd9wcyov
+1. 在 AppDelegate.m 中导入 `#import "GrowingAPMModule.h"`，并在 `application:didFinishLaunchingWithOptions:` 中初始化 GrowingAnalytics SDK 的同时，导入 GrowingAPMConfig 配置:
 
-由于上述原因，自 2023.4.25 起，使用 **Xcode 14** 进行打包
+```
+GrowingAutotrackConfiguration *configuration = [GrowingAutotrackConfiguration configurationWithProjectId:@"YourAccountId"];
+configuration.dataCollectionServerHost = @"YourServerHost";
+configuration.dataSourceId = @"YourDatasourceId";
 
-> 另外，如果使用者为企业级应用开发者，通过内部平台进行分发，不需要上传至 App Store，那么还是有可能使用 Xcode 13 进行日常开发，这就需要按照下方的兼容步骤进行修改打包使用
-> See: https://support.apple.com/zh-cn/guide/deployment/depce7cefc4d/web
+// 添加 GrowingAPM 初始化配置
+GrowingAPMConfig *config = GrowingAPMConfig.config;
+// 根据您需要的监控类型
+config.monitors = GrowingAPMMonitorsCrash | GrowingAPMMonitorsUserInterface;
+configuration.APMConfig = config;
 
-##### 打包机使用 Xcode14 编译，兼容使用者为 Xcode 13 环境
+[GrowingAutotracker startWithConfiguration:configuration launchOptions:launchOptions];
+```
 
- - 在打包机 (Xcode14)，修改 ./Project/GrowingAPM/generate_xcframework.sh 中 xcodebuild 命令参数，添加 `OTHER_CFLAGS="-fno-objc-msgsend-selector-stubs"`
- - 在使用者环境 (Xcode13)，设置需要链接的主工程 `ENABLE_BITCODE = NO`，并在 Podfile 添加 `post_install` 钩子之后，再执行 pod install：
+#### 其他
 
-```ruby
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-    end
-  end
-end
+如您的 App 采用延迟初始化方式初始化 GrowingAnalytics SDK（即不在 `application:didFinishLaunchingWithOptions:`中初始化），则需要您在 `application:didFinishLaunchingWithOptions:` 中添加以下代码，以便 GrowingAPM 正确获取启动耗时：
+
+```
+[GrowingAPM didFinishLaunching];
+```
+
+另外，如果您仅需要部分 APM 监控功能，可按需集成对应的 GrowingAPM 子模块：
+
+```
+# GrowingAnalytics/APM 模块
+pod 'GrowingAnalytics/APM'
+# 按照所需 GrowingAPM 子模块自由组合
+pod 'GrowingAPM/UIMonitor'
+pod 'GrowingAPM/CrashMonitor'
+# ...
+```
+
+
+
+### SwiftPM 集成
+
+#### 集成 APM
+
+添加 **GrowingModule_APM** Package
+
+![img](./Resources/spm_select_apm.png)
+
+#### 初始化 GrowingAPM
+
+1. 在 **main.swift** 中导入 `import GrowingModule_APM`，并添加以下代码：
+
+```
+GrowingAPM.setupMonitors()
+```
+
+1. 在 **AppDelegate.swift** 中导入 `import GrowingModule_APM`，并在 `application:didFinishLaunchingWithOptions:` 中初始化 GrowingAnalytics SDK 的同时，导入 GrowingAPMConfig 配置:
+
+```
+let config = GrowingAutotrackConfiguration(projectId: "YourAccountId")
+config?.dataCollectionServerHost = "YourServerHost"
+config?.dataSourceId = "YourDatasourceId"
+
+// 添加 GrowingAPM 初始化配置
+let apmconfig = GrowingAPMConfig()
+// 根据您需要的监控类型
+apmconfig.monitors = [.crash, .userInterface]
+config?.apmConfig = apmconfig
+
+GrowingAutotracker.start(with: config!, launchOptions: launchOptions ?? [:])
+```
+
+#### 其他
+
+如您的 App 采用延迟初始化方式初始化 GrowingAnalytics SDK（即不在 `application:didFinishLaunchingWithOptions:`中初始化），则需要您在 `application:didFinishLaunchingWithOptions:` 中添加以下代码，以便 GrowingAPM 正确获取启动耗时：
+
+```
+GrowingAPM.didFinishLaunching()
 ```
