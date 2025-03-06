@@ -18,7 +18,7 @@ GrowingIO APM (Internal)
 pod 'GrowingAnalytics/APM'
 ```
 
-1. 集成 GrowingAPM
+2. 集成 GrowingAPM
 
 ```
 pod 'GrowingAPM'
@@ -43,7 +43,7 @@ int main(int argc, char * argv[]) {
 }
 ```
 
-1. 在 AppDelegate.m 中导入 `#import "GrowingAPMModule.h"`，并在 `application:didFinishLaunchingWithOptions:` 中初始化 GrowingAnalytics SDK 的同时，导入 GrowingAPMConfig 配置:
+2. 在 AppDelegate.m 中导入 `#import "GrowingAPMModule.h"`，并在 `application:didFinishLaunchingWithOptions:` 中初始化 GrowingAnalytics SDK 的同时，导入 GrowingAPMConfig 配置:
 
 ```
 GrowingAutotrackConfiguration *configuration = [GrowingAutotrackConfiguration configurationWithProjectId:@"YourAccountId"];
@@ -96,7 +96,7 @@ pod 'GrowingAPM/CrashMonitor'
 GrowingAPM.setupMonitors()
 ```
 
-1. 在 **AppDelegate.swift** 中导入 `import GrowingModule_APM`，并在 `application:didFinishLaunchingWithOptions:` 中初始化 GrowingAnalytics SDK 的同时，导入 GrowingAPMConfig 配置:
+2. 在 **AppDelegate.swift** 中导入 `import GrowingModule_APM`，并在 `application:didFinishLaunchingWithOptions:` 中初始化 GrowingAnalytics SDK 的同时，导入 GrowingAPMConfig 配置:
 
 ```
 let config = GrowingAutotrackConfiguration(projectId: "YourAccountId")
